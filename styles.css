@@ -5,7 +5,8 @@
     border: 0px; 
 }
 body {
-    background-color: hsl(0, 0%, 94%);
+    background-color: hsl(50, 13%, 81%);
+    height: 6000px;
 } 
 h2 { 
     margin: 400px 0 50px; 
@@ -16,11 +17,26 @@ h2 {
 }
 p {
     font-family: 'Titillium Web', system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300px;  
     color: rgb(44,44,44);
+    padding: 0 0 25px; 
 }
 /* main page (intro animations) */
+.cv-container {
+    box-shadow: 20px 20px black;
+}
+.cv-button {
+    margin: 650px 0 0 1200px;
+    border-radius: 50px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    color: rgb(44,44,44);
+    position: fixed;
+    background-color: rgb(192, 243, 186, 20);
+    font-size: 35px;
+    height: 60px;
+    width: 100px;
+}
 .header-container {
     display: grid; 
     width: 90%;
@@ -70,9 +86,12 @@ p {
 .main-container {
     width: 75%;
     margin: auto; 
+    /*background-image: url('images/jalen.png');
+    background-repeat: no-repeat;
+    background-size: 80%;*/
 }
 .intro {
-    margin: 250px 0 0; 
+    margin: 250px 0 0;
     padding: 0;
     font-size: calc(2.75vw + 2.75vh);
     text-align: right; 
@@ -85,13 +104,29 @@ p {
     font-size: calc(1.4vw + 1.4vh);
     margin: 0;
 }
+/*about me*/
+.about-container {
+    width: 75%;
+    margin: auto; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.emoji-container {
+    flex: 0.60 1.40;
+    object-fit: contain;
+}
+.anemoji {
+    width: 100%;
+    height: 100%;
+}
 /*projects*/
 .projects-wrapper {
-    background-color: rgb(210, 207, 212);
+    background-color: hsl(50, 9%, 73%);
     border-style: dashed; 
     border-width: 1px; 
     border-color: rgb(117, 115, 118);
-    margin: 50px auto 0 auto;
+    margin: 400px auto 0 auto;
 }
 .projects-container {
     width: 95%;
@@ -102,14 +137,14 @@ p {
 }
 .space-repo {
     height: 20px;
-    background-color: rgb(210, 207, 212);
+    background-color: hsl(50, 9%, 73%);
     border-style: dashed; 
     border-width: 1px; 
     border-color: rgb(117, 115, 118);
 }
 .repo {
     height: 400px;
-    background-color: rgb(210, 207, 212);
+    background-color: hsl(50, 9%, 73%);
     border-style: dashed; 
     border-width: 1px; 
     border-color: rgb(117, 115, 118);
@@ -133,6 +168,7 @@ p {
 /*bottom*/
 .bottom-wrapper {
     background-color: rgb(229, 246, 228);
+    height: 1900px;
 }
 .bottom-container {
     width: 75%;
