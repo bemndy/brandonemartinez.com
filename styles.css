@@ -113,12 +113,12 @@ p {
     flex-wrap: wrap;
 }
 .emoji-container {
-    flex: 0.60 1.40;
+    flex: 0.50 1.50;
     object-fit: contain;
 }
 .anemoji {
     width: 100%;
-    height: 100%;
+    height: 80%;
 }
 /*projects*/
 .projects-wrapper {
