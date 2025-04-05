@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './navbar.css'
 import { Button } from './button';
 
@@ -27,27 +27,30 @@ function Navbar() {
         <>
             <nav className="navbar">
                 <div className ="nav-container">    
-                    <Link to ="/projects" className="nav-logo"> 
+                    <NavLink to ="/projects" className="nav-logo"> 
                         <div className="logo-container"> 
                             <img src="/images/logo.png" alt="bem.logo" className="logo"/> 
                         </div>
-                    </Link>
+                    </NavLink>
                     <ul className="nav">
                         <li className ="nav-element">
-                        <Link to='/projects' className="nav-links">Projects
-                            </Link>
+                            <NavLink 
+                            to='/projects' 
+                            className={({ isActive }) => "nav-links" + (isActive ? " active" : "")}>
+                                Projects
+                            </NavLink>
                         </li>
                         <li className ="nav-element">
-                        <Link to='/about' className="nav-links">About
-                            </Link>
+                            <NavLink to='/about' className="nav-links">About
+                            </NavLink>
                         </li>
                         <li className ="nav-element">
-                            <Link to='/misc' className="nav-links">Misc
-                            </Link>
+                            <NavLink to='/misc' className="nav-links">Misc
+                            </NavLink>
                         </li>
                         <li className ="nav-element">
-                            <Link to='/cirriculum-vitae' className="nav-links">CV
-                            </Link>
+                            <NavLink to='/cirriculum-vitae' className="nav-links">CV
+                            </NavLink>
                         </li>
                     </ul> 
                     {button && <Button buttonStyle='btn--primary'> HELLO

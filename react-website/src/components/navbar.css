@@ -27,9 +27,7 @@
     color: rgb(44,44,44); 
 }
 .nav-links:link {
-    transition: color 0.75s, 
-    text-decoration-color 0.75s,
-    background-color 1s; 
+    transition: 0.5s 0.75s, 1s; 
 }
 .nav-links:visited { 
     color: rgb(44,44,44 ); 
@@ -39,7 +37,8 @@
     color: #fff; 
     text-decoration-color: rgb(44,44,44 ); 
 }
-.nav-links:active {
+.nav-links.active {
     background-color: rgb(44,44,44 ); 
+    color: #fff;
     transition: 0.15s;
 }
