@@ -1,0 +1,45 @@
+.nav-container { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 95%;
+    z-index: 999;
+    margin: 0 auto; 
+    display: flex;
+    gap: 18rem; 
+    padding: 1rem 0; 
+}
+.logo-container {
+    object-fit: contain;
+}
+.logo {
+    width: 130px;
+    height: 75px;
+    object-fit: contain;
+}
+.nav-element {
+    list-style: none;
+    margin-right: 65px; 
+    font-size: 18px;
+    font-family: 'Barlow', Roboto, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu;
+    display: inline-block;
+    letter-spacing: 0.1rem;
+    color: rgb(44,44,44); 
+}
+.nav-links:link {
+    transition: color 0.75s, 
+    text-decoration-color 0.75s,
+    background-color 1s; 
+}
+.nav-links:visited { 
+    color: rgb(44,44,44 ); 
+}
+.nav-links:hover {
+    background-color: rgb(225, 255, 222); 
+    text-decoration-color: rgb(225, 255, 222); 
+}
+.nav-links:active {
+    color: rgb(225, 255, 222); 
+    background-color: rgb(225, 255, 222); 
+    transition: 0.15s;
+}

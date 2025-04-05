@@ -5,7 +5,7 @@
     border: 0px; 
 }
 body {
-    background-color: hsl(50, 13%, 81%);
+    background-color: hsl(100, 18%, 93%);
     height: 6000px;
 } 
 h2 { 
@@ -41,7 +41,7 @@ p {
     display: grid; 
     width: 90%;
     margin: 30px auto 0 auto; 
-    grid-template-columns: 12.5% 1fr;
+    grid-template-columns: 10.5% 1fr;
 }
 .logo-container {
     object-fit: contain;
@@ -53,7 +53,7 @@ p {
 }
 .nav-container { 
     margin-top: 25px;
-    text-align: right;
+    text-align: center;
 }
 .nav-element {
     list-style: none;
@@ -122,9 +122,9 @@ p {
 }
 /*projects*/
 .projects-wrapper {
-    background-color: hsl(50, 9%, 73%);
+    background-color: hsl(48, 4%, 78%);
     border-style: dashed; 
-    border-width: 1px; 
+    border-width: 0.5px; 
     border-color: rgb(117, 115, 118);
     margin: 400px auto 0 auto;
 }
@@ -137,16 +137,16 @@ p {
 }
 .space-repo {
     height: 20px;
-    background-color: hsl(50, 9%, 73%);
+    background-color: hsl(48, 4%, 78%);
     border-style: dashed; 
-    border-width: 1px; 
+    border-width: 0.5px; 
     border-color: rgb(117, 115, 118);
 }
 .repo {
     height: 400px;
-    background-color: hsl(50, 9%, 73%);
+    background-color: hsl(48, 4%, 78%);
     border-style: dashed; 
-    border-width: 1px; 
+    border-width: 0.5px; 
     border-color: rgb(117, 115, 118);
     margin: 0 0 30px;
 }

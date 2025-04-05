@@ -1,0 +1,23 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {  
+  margin: 0;
+  padding: 0;
+  font-family: 'monaco', 'Italiana', 'Roboto', monospace,'serif';
+  font-weight: normal;
+  font-size: calc(2.75vw + 2.75vh);
+  color: rgb(44,44,44);
+}
+
+p {
+  margin: 0;
+  padding: 0; 
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+  font-size: 22px;
+  font-weight: 300px;  
+  color: rgb(44,44,44);
+}
