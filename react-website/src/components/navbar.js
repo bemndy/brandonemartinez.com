@@ -13,11 +13,6 @@ function Navbar() {
                             <img src="/images/logo.png" alt="bem. logo" className="logo"/> 
                         </div>
                     </NavLink>
-                    <div className="nav-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
                     <ul>
                         <li className ="nav-element">
                             <NavLink 
@@ -45,6 +40,11 @@ function Navbar() {
                             </NavLink>
                         </li>
                     </ul> 
+                    <div className="nav-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </nav>
         </>
