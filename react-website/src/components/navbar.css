@@ -1,10 +1,10 @@
+.navbar {
+    width: 95%;
+    margin: 0 auto; 
+}
 .nav-container { 
     position: fixed;
-    top: 0;
-    left: 0;
-    max-width: 95%;
-    z-index: 999;
-    margin: 0 auto; 
+    z-index: 1000;
     display: flex;
     gap: 18rem; 
     padding: 1rem 0; 
@@ -35,11 +35,11 @@
     color: rgb(44,44,44 ); 
 }
 .nav-links:hover {
-    background-color: rgb(225, 255, 222); 
-    text-decoration-color: rgb(225, 255, 222); 
+    background-color: rgb(44,44,44 ); 
+    color: #fff; 
+    text-decoration-color: rgb(44,44,44 ); 
 }
 .nav-links:active {
-    color: rgb(225, 255, 222); 
-    background-color: rgb(225, 255, 222); 
+    background-color: rgb(44,44,44 ); 
     transition: 0.15s;
 }

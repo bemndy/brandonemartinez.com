@@ -12,7 +12,8 @@
     --color1: 158, 255, 166;
     --color2: 255, 230, 149;
     --color3: 76, 178, 84;
-    --color-interactive: 140, 100, 255;
+    /*--color-interactive: 140, 100, 255; purpleish color very nice but clashes*/ 
+    --color-interactive: 76, 178, 84; 
     --circle-size: 80%;
     --blending: hard-light;
   }
