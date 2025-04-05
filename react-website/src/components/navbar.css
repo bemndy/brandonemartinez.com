@@ -20,11 +20,11 @@
 .nav-element {
     list-style: none;
     margin-right: 65px; 
+    display: inline-block;
+    color: rgb(44,44,44); 
     font-size: 18px;
     font-family: 'Barlow', Roboto, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu;
-    display: inline-block;
     letter-spacing: 0.1rem;
-    color: rgb(44,44,44); 
 }
 .nav-links:link {
     transition: 0.5s 0.75s, 1s; 
@@ -32,7 +32,7 @@
 .nav-links:visited { 
     color: rgb(44,44,44 ); 
 }
-.nav-links:hover {
+.nav-links:not(.active):hover {
     background-color: rgb(44,44,44 ); 
     color: #fff; 
     text-decoration-color: rgb(44,44,44 ); 
@@ -41,4 +41,33 @@
     background-color: rgb(44,44,44 ); 
     color: #fff;
     transition: 0.15s;
+}
+.nav-menu {
+    display: none;
+}
+@media (max-width: 1200px) {
+    ul { 
+        display: none;
+    }
+    .nav-container {
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .nav-menu {
+        display: flex;
+        position: absolute;
+        top: 0.75rem;
+        bottom: 0.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25 rem;
+        height: 2.25 rem;
+    }
+    .nav-menu span {
+        height: 0.4rem;
+        width: 100%;
+        background-color: rgb(44,44,44 );
+        border-radius: 0.2rem;
+    }
 }

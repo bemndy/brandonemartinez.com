@@ -1,7 +1,7 @@
 import React, { useEffect}  from 'react';
 import './hero.css'
 
-function HeroSection () {
+function Hero () {
     useEffect(() => {
         const interBubble = document.querySelector('.interactive');
         let curX = 0;
@@ -57,10 +57,7 @@ function HeroSection () {
 
                 <div className='intro-container'>
                     <h2 className="intro-greeting">
-                        👋 hi. 
-                    </h2>
-                    <h2 className="intro-greeting">
-                        i'm Brandon Martinez.
+                        👋 hi. i'm Brandon.
                     </h2>
                     <p className="intro-elements">
                         i am a handsome computer science student at Notre Dame. 
@@ -75,4 +72,4 @@ function HeroSection () {
         </>
     )
 };
-export default HeroSection
+export default Hero

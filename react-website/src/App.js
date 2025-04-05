@@ -1,6 +1,6 @@
 import React from 'react'; 
 import Navbar from './components/navbar';
-import HeroSection from './components/hero';
+import Hero from './components/hero';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-          <Route path='/projects' element={<HeroSection/>} />
+          <Route path='/projects' element={<Hero/>} />
       </Routes>
     </Router>
     </>

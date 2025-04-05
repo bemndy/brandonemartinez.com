@@ -174,9 +174,9 @@
   }
 
 .intro-container {
-    width: 80%; 
+    width: 70%; 
     margin: auto; 
-    padding: 15rem 0;
+    padding: 18rem 0;
 }
 .intro-greeting {
     font-size: calc(2.50vw + 2.50vh);
