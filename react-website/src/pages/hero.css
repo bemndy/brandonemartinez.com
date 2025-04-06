@@ -150,7 +150,7 @@
   
     .interactive {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.4) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.6) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: 100%;
@@ -158,14 +158,14 @@
       top: -50%;
       left: -50%;
   
-      opacity: 0.7;
+      opacity: 0.9;
     }
   }
 
 .intro-container {
     width: 70%; 
     margin: 0 auto; 
-    padding: 18rem 0;
+    padding: 17rem 0;
 }
 .intro-greeting {
     font-size: calc(2.50vw + 2.50vh);

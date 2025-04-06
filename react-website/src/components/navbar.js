@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.css'
 import { Button } from './button';
 
+
 function Navbar() { 
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleToggle = () => {
+        setMenuOpen((prev) => !prev);
+    };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     return (
         <>
             <nav className="navbar">
@@ -34,13 +45,15 @@ function Navbar() {
                             </NavLink>
                         </li>
                         <li className ="nav-element">
-                            <NavLink 
-                            to='/misc'
-                            className="nav-links">CV
-                            </NavLink>
+                            <a
+                            href="/resume.pdf"
+                            className="nav-links"
+                            target="_blank"
+                            rel="noopener noreferrer">CV
+                            </a>
                         </li>
                     </ul> 
-                    <div className="nav-menu">
+                    <div className="nav-menu" onClick={handleToggle}>
                         <span></span>
                         <span></span>
                         <span></span>

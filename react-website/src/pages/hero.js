@@ -1,5 +1,23 @@
 import React, { useEffect}  from 'react';
+import Header from '../components/header';
+import Lenis from '@studio-freight/lenis';
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './hero.css'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 function Hero () {
     useEffect(() => {
@@ -54,7 +72,6 @@ function Hero () {
                         <div className="interactive"></div>
                     </div>
                 </div>
-
                 <div className='intro-container'>
                     <h2 className="intro-greeting">
                         👋 hi. i'm Brandon.
@@ -68,9 +85,38 @@ function Hero () {
                         go birds. 
                     </p>
                 </div>
+                <Header/>
                 <div className='project-container'>
                     <div className="project-item">
                         <div className="project-name">Aruco Detection</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
                         <div className="project-box"></div>
                     </div>
                     <div className="project-item">
@@ -78,7 +124,15 @@ function Hero () {
                         <div className="project-box"></div>
                     </div>
                     <div className="project-item">
-                        <div className="project-name">Game of Life Console</div>
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
                         <div className="project-box"></div>
                     </div>
                     <div className="project-item">
@@ -90,43 +144,7 @@ function Hero () {
                         <div className="project-box"></div>
                     </div>
                     <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
+                        <div className="project-name">Game of Life Console</div>
                         <div className="project-box"></div>
                     </div>
                     <div className="project-item">
