@@ -68,6 +68,72 @@ function Hero () {
                         go birds. 
                     </p>
                 </div>
+                <div className='project-container'>
+                    <div className="project-item">
+                        <div className="project-name">Aruco Detection</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Sentiment Analysis</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Game of Life Console</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Spotify Local</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                    <div className="project-item">
+                        <div className="project-name">Coming Soon</div>
+                        <div className="project-box"></div>
+                    </div>
+                </div>
             </div>
         </>
     )

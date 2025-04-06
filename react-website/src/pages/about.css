@@ -1,0 +1,13 @@
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full viewport height */
+    background-color: #f7f7f7;
+}
+.coming-soon-logo {
+    width: auto;
+    max-width: 30%;
+    height: auto;
+    object-fit: contain
+}

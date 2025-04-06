@@ -8,7 +8,7 @@ function Navbar() {
         <>
             <nav className="navbar">
                 <div className ="nav-container">    
-                    <NavLink to ="/projects" className="nav-logo"> 
+                    <NavLink to ="/" className="nav-logo"> 
                         <div className="logo-container"> 
                             <img src="/images/logo.png" alt="bem. logo" className="logo"/> 
                         </div>
@@ -16,7 +16,7 @@ function Navbar() {
                     <ul>
                         <li className ="nav-element">
                             <NavLink 
-                            to='/projects' 
+                            to='/' 
                             className={({ isActive }) => "nav-links" + (isActive ? " active" : "")}>
                                 Projects
                             </NavLink>
@@ -35,7 +35,7 @@ function Navbar() {
                         </li>
                         <li className ="nav-element">
                             <NavLink 
-                            to='/cirriculum-vitae' 
+                            to='/misc'
                             className="nav-links">CV
                             </NavLink>
                         </li>
