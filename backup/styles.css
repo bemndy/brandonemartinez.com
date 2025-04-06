@@ -1,0 +1,215 @@
+/* Bem Title */
+* {
+    margin: 0px;
+    padding: 0px; 
+    border: 0px; 
+}
+body {
+    background-color: hsl(100, 18%, 93%);
+    height: 6000px;
+} 
+h2 { 
+    margin: 400px 0 50px; 
+    font-family: 'Baskervville', 'Italiana', 'Roboto', monospace,'serif';
+    font-weight: bold;
+    color: rgb(44,44,44);
+    font-size: calc(2.75vw + 2.75vh);
+}
+p {
+    font-family: 'Titillium Web', system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    font-size: 22px;
+    font-weight: 300px;  
+    color: rgb(44,44,44);
+    padding: 0 0 25px; 
+}
+/* main page (intro animations) */
+.cv-container {
+    box-shadow: 20px 20px black;
+}
+.cv-button {
+    margin: 650px 0 0 1200px;
+    border-radius: 50px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    color: rgb(44,44,44);
+    position: fixed;
+    background-color: rgb(192, 243, 186, 20);
+    font-size: 35px;
+    height: 60px;
+    width: 100px;
+}
+.header-container {
+    display: grid; 
+    width: 90%;
+    margin: 30px auto 0 auto; 
+    grid-template-columns: 10.5% 1fr;
+}
+.logo-container {
+    object-fit: contain;
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.nav-container { 
+    margin-top: 25px;
+    text-align: center;
+}
+.nav-element {
+    list-style: none;
+    margin-right: 50px; 
+    font-size: calc(0.8vw + 0.8vh);
+    font-family: 'Barlow', Roboto, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu;
+    font-weight: semi-bold;
+    display: inline-block;
+}
+.nav-links:link {
+    color: rgb(44,44,44); 
+    transition: color 0.3s, 
+    text-decoration-color 0.3s,
+    background-color 0.1s; 
+}
+.nav-links:visited { 
+    color: rgb(44,44,44);
+    transition: color 0.3s, 
+    text-decoration-color 0.3s,
+    background-color 0.1s;  
+}
+.nav-links:hover {
+    color: rgb(192, 243, 186, 40); 
+    text-decoration-color: rgb(192, 243, 186, 40);
+}
+.nav-links:active {
+    background-color: rgb(192, 243, 186, 40);
+}
+/*intros*/
+.main-container {
+    width: 75%;
+    margin: auto; 
+    /*background-image: url('images/jalen.png');
+    background-repeat: no-repeat;
+    background-size: 80%;*/
+}
+.intro {
+    margin: 250px 0 0;
+    padding: 0;
+    font-size: calc(2.75vw + 2.75vh);
+    text-align: right; 
+}
+.intros {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    font-weight: normal;
+    text-align: right; 
+    color: rgb(44,44,44);
+    font-size: calc(1.4vw + 1.4vh);
+    margin: 0;
+}
+/*about me*/
+.about-container {
+    width: 75%;
+    margin: auto; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.emoji-container {
+    flex: 0.50 1.50;
+    object-fit: contain;
+}
+.anemoji {
+    width: 100%;
+    height: 80%;
+}
+/*projects*/
+.projects-wrapper {
+    background-color: hsl(48, 4%, 78%);
+    border-style: dashed; 
+    border-width: 0.5px; 
+    border-color: rgb(117, 115, 118);
+    margin: 400px auto 0 auto;
+}
+.projects-container {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+}
+.space-repo {
+    height: 20px;
+    background-color: hsl(48, 4%, 78%);
+    border-style: dashed; 
+    border-width: 0.5px; 
+    border-color: rgb(117, 115, 118);
+}
+.repo {
+    height: 400px;
+    background-color: hsl(48, 4%, 78%);
+    border-style: dashed; 
+    border-width: 0.5px; 
+    border-color: rgb(117, 115, 118);
+    margin: 0 0 30px;
+}
+.description {
+    display: inline-block;
+    font-size: calc(0.7vw + 0.7vh);
+    padding: 0 0 0 0; 
+    margin-left: 180px;
+    color: rgb(44,44,44);
+}
+.title {
+    display: inline-block;
+    font-size: calc(0.7vw + 0.7vh);
+    padding: 0 0 0 0; 
+    margin: 10px 10px 0 10px;
+    color: rgb(44,44,44);
+
+}
+/*bottom*/
+.bottom-wrapper {
+    background-color: rgb(229, 246, 228);
+    height: 1900px;
+}
+.bottom-container {
+    width: 75%;
+    margin: auto; 
+}
+/*footer*/
+.connect {
+    display: inline-block;
+    font-family: 'Barlow', system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    font-size: calc(4vw + 4vh);
+}
+.lets {
+    margin: 0;
+    display: inline-block;
+    font-family: "Clicker script";
+    font-size: calc(4vw + 4vh);
+}
+.copyright {
+    font-family: 'system-ui';
+    font-size: calc(4vw + 4vh);
+    padding: 0;
+}
+.phone {
+    display: inline-block;
+    font-family: 'system-ui';
+    font-size: calc(3vw + 3vh);
+    text-align: right;
+    margin-left: 400px;
+}
+.titles {
+    display: inline-block;
+    font-family: 'system-ui';
+    font-style: italic;
+    font-size: calc(2vw + 2vh);
+    margin-right: 300px;
+}
+.handles {
+    display: inline-block;
+    font-family: 'system-ui';
+    font-size: calc(2vw + 2vh);
+    margin-left: 100px;
+    margin-right: 120px;
+    margin-bottom: 200px;
+}
