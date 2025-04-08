@@ -16,7 +16,7 @@
     object-fit: contain;
 }
 .logo {
-    width: 130px;
+    width: 120px;
     height: 75px;
     object-fit: contain;
 }
@@ -25,31 +25,26 @@
     align-items: center;
     list-style: none;
 }
-.nav-element {
-    margin: 0 65px 0 0; 
+
+.nav-links {
+    margin: 0 75px 0 0; 
     display: block;
-    color: rgb(44,44,44); 
     font-size: 18px;
     font-family: 'Barlow', Roboto, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu;
-    letter-spacing: 0.1rem;
-}
-.nav-links:link {
-    transition: 0.5s 0.75s, 1s; 
-    color: rgb(44,44,44 ); 
-}
-.nav-links:visited { 
-    color: rgb(44,44,44 ); 
-}
-.nav-links:not(.active):hover {
-    background-color: rgb(44,44,44 ); 
-    color: #fff; 
-    text-decoration-color: rgb(44,44,44 ); 
-}
-.nav-links.active {
-    background-color: rgb(44,44,44 ); 
-    color: #fff;
+    letter-spacing: 0.075rem;
+    color: black;
     text-decoration: none;
-    transition: 0.05s;
+}
+.nav-links:link, .nav-links:visited {
+    color:black; 
+}
+/*.nav-links:not(.active):hover {
+    background-color: black; 
+    color: #fff; 
+}*/
+.nav-links.active {
+    background-color: black; 
+    color: #fff;
 }
 .nav-menu {
     display:none;
@@ -73,7 +68,7 @@
     .nav-menu span {
         height: 0.15rem;
         width: 100%;
-        background-color: rgb(44,44,44 );
+        background-color: black;
         border-radius: 0.1rem;
         transition: all 0.3s ease;
     }

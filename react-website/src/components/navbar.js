@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import { FlipLink } from './linkwrap'
 import './navbar.css'
 import { Button } from './button';
 
@@ -25,31 +26,32 @@ function Navbar() {
                         </div>
                     </NavLink>
                     <ul>
-                        <li className ="nav-element">
-                            <NavLink 
+                        <li>
+                            <NavLink
                             to='/' 
                             className={({ isActive }) => "nav-links" + (isActive ? " active" : "")}>
-                                Projects
+                                <FlipLink>Projects</FlipLink>
                             </NavLink>
                         </li>
-                        <li className ="nav-element">
-                            <NavLink 
+                        <li>
+                            <NavLink
                             to='/about' 
-                            className="nav-links">About
+                            className="nav-links"><FlipLink>About</FlipLink>
                             </NavLink>
                         </li>
-                        <li className ="nav-element">
+                        <li>
                             <NavLink 
                             to='/misc' 
-                            className="nav-links">Misc
+                            className="nav-links">
+                                <FlipLink>Misc</FlipLink>
                             </NavLink>
                         </li>
-                        <li className ="nav-element">
+                        <li>
                             <a
                             href="/resume.pdf"
                             className="nav-links"
                             target="_blank"
-                            rel="noopener noreferrer">CV
+                            rel="noopener noreferrer"><FlipLink>CV</FlipLink>
                             </a>
                         </li>
                     </ul> 

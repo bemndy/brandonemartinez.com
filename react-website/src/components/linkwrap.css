@@ -1,0 +1,21 @@
+.flip-container {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.flip-container-b {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    color: #fff;
+}
+.nav-links.active .flip-container-b {
+    background-color: black;
+    color: white;
+    transform: translateY(0%);
+}
+
+.nav-links.active .flip-container > div:first-child {
+    transform: translateY(100%);
+}

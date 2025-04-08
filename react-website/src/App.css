@@ -10,23 +10,22 @@ html, body, #root {
 }
 :root {
   --color-bg1: rgb(255, 255, 255);
-  --color-bg2: rgb(240, 240, 240);
-  --color1: 158, 255, 166;
-  --color2: 255, 253, 123;
-  --color3: 76, 178, 84;
-  --color4: 0, 119, 184;
-  /*--color-interactive: 140, 100, 255; purpleish color very nice but clashes */
-  --color-interactive: 76, 178, 84;
+  --color-bg2: rgba(205, 205, 205, 0.842);
+  --color1: 95, 188, 103;
+  --color2: 255, 241, 81;
+  --color3: 69, 180, 249;
+  /*--color3: 140, 100, 255; purpleish color very nice */
+  --color-interactive: 202, 255, 175;
   --circle-size: 80%;
   --blending: hard-light;
 }
 h2 {  
   margin: 0;
   padding: 0;
-  font-family: 'monaco', 'Italiana', 'Roboto', monospace,'serif';
+  font-family: 'monaco', Menlo;
   font-weight: normal;
   font-size: calc(2.75vw + 2.75vh);
-  color: rgb(44,44,44);
+  color: black;
 }
 p {
   margin: 0;
@@ -34,5 +33,5 @@ p {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   font-size: 22px;
   font-weight: 300px;  
-  color: rgb(44,44,44);
+  color: black;
 }

@@ -1,13 +1,16 @@
 import React from 'react';
 import './header.css'
+import { FlipLink } from './linkwrap';
 
 function Header() { 
     return (
         <>
             <div className='header-wrapper'>
                 <div className='header-box'>
-                    <p>Contact Me</p>
-                    <p>brandonprvbox@gmail.com</p>
+                    <div className='header-text'>Contact Me</div>
+                    <FlipLink>
+                        <div className='header-text'>brandonprvbox@gmail.com</div>  
+                    </FlipLink>
                 </div>
             </div>
         </>
