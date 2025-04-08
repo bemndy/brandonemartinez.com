@@ -148,7 +148,7 @@
     }
     .interactive {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 30%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: 100%;
@@ -156,7 +156,7 @@
       top: -50%;
       left: -50%;
   
-      opacity: 0.6;
+      opacity: 1;
     }
   }
 
