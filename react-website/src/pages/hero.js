@@ -1,4 +1,4 @@
-import React, { useEffect}  from 'react';
+import React, { useEffect, useState}  from 'react';
 import Header from '../components/header';
 import StickyFooter  from '../components/footer';
 
@@ -24,7 +24,61 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
+
+const texts = [
+    'i am an asipiring full-stack software engineer, studying computer science at Notre Dame.',
+    'correction, a handsome computer science student at Notre Dame!',
+    'i work on projects that involve machine-learning, data engineering, and robotics.',
+    'i play the piano and guitar by ear... someone teach me theory though.',
+    'the best way to reach me is by email!',
+    'sorry mobile users...',
+    'the best software engineer - mi abuela.',
+    "Time's person of the year in 2006.",
+    'they call me baby jalen brunson, but taller and with bounce.',
+    'i will not be replaced by ai... (cope)',
+    'if you move your cursor, colors.',
+    'modern burst fade...thats it.',
+    'go birds.',
+    'one day i will migrate this to next.js... one day.relax, right now its just react',
+    'thanks for visitng my website!',
+
+]
+const randomText = texts[Math.floor(Math.random() * texts.length)];
+
 function Hero () {
+    const [index, setIndex] = useState(0);
+    const [displayedText, setDisplayedText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const fullText = texts[index];
+        let typingSpeed = isDeleting ? 40 : 60;
+      
+        const handleTyping = () => {
+          if (!isDeleting) {
+            const nextText = fullText.slice(0, displayedText.length + 1);
+            setDisplayedText(nextText);
+      
+            if (nextText === fullText) {
+              setTimeout(() => setIsDeleting(true), 4000);
+            }
+          } else {
+            const nextText = fullText.slice(0, displayedText.length - 1);
+            setDisplayedText(nextText);
+      
+            if (nextText === "") {
+              setIsDeleting(false);
+              setIndex((prev) => (prev + 1) % texts.length);
+            }
+          }
+        };
+      
+        const timeout = setTimeout(handleTyping, typingSpeed);
+      
+        return () => clearTimeout(timeout);
+      }, [displayedText, isDeleting, index]);
+      
+
     useEffect(() => {
         const interBubble = document.querySelector('.interactive');
         let curX = 0;
@@ -77,17 +131,10 @@ function Hero () {
                         <div className="interactive"></div>
                     </div>
                 </div>
-                <div className='intro-container'>
-                    <h2 className="intro-greeting">
-                        👋 hi. i'm Brandon.
-                    </h2>
-                    <p className="intro-elements">
-                        i am a handsome computer science student at Notre Dame. they call me baby jalen brunson, but taller and with bounce.
-                        modern burst fade. 
-                        my program will create a perfect march madness bracket. 
-                        the best software engineer - mi abuela. 
-                        go birds.
-                    </p>
+                <div className="intro-container">
+                    <h2 className="intro-greeting">👋 hi. i'm Brandon.</h2>
+                    <div className="typewriter-container"><span className="typewriter-text">{displayedText}</span>
+                    </div>
                 </div>
                 <Header/>
                 <div className='project-container'>

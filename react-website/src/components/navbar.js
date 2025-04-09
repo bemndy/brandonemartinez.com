@@ -55,8 +55,7 @@ function Navbar() {
                             </a>
                         </li>
                     </ul> 
-                    <div className="nav-menu" onClick={handleToggle}>
-                        <span></span>
+                    <div className="nav-menu" onClick={handleToggle}> 
                         <span></span>
                         <span></span>
                     </div>

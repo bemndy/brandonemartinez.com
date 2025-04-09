@@ -7,10 +7,9 @@
     z-index: 1;
     display: flex; 
     align-items: center;
-    justify-content: flex-start;
-    gap: 52rem;
+    justify-content: space-between;
     padding: 0.5rem 0; 
-    width: 100%;
+    width: 95%;
 }
 .logo-container {
     object-fit: contain;
@@ -31,7 +30,6 @@
     display: block;
     font-size: 16px;
     font-family: 'Barlow', Roboto, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu;
-    letter-spacing: 0.0rem;
     color: black;
     text-decoration: none;
     text-transform: uppercase;

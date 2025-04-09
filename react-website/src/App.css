@@ -10,12 +10,12 @@ html, body, #root {
   --color-bg1: rgb(255, 255, 255);
   --color-bg2: rgba(205, 205, 205, 0.842);
   --color1: 95, 188, 103;
-  --color2: 0, 41, 145;
+  --color2: 82, 131, 255;
   --color3: 69, 180, 249;
   /*--color3: 140, 100, 255; purpleish color very nice */
   --color-interactive: 175, 255, 183;
   --circle-size: 80%;
-  --blending: color;
+  --blending: hard-light;
 }
 h2 {  
   font-family: 'monaco', Menlo;
@@ -26,7 +26,6 @@ h2 {
 p {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   font-size: 22px;
-  font-weight: 300px;  
   color: black;
 }
 a, a:hover, a:active, a:visited {
