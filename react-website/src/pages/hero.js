@@ -1,9 +1,12 @@
 import React, { useEffect}  from 'react';
 import Header from '../components/header';
 import StickyFooter  from '../components/footer';
+
+
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import './hero.css'
 
 
@@ -79,12 +82,11 @@ function Hero () {
                         👋 hi. i'm Brandon.
                     </h2>
                     <p className="intro-elements">
-                        i am a handsome computer science student at Notre Dame. 
-                        they call me baby jalen brunson, but taller and with bounce.
+                        i am a handsome computer science student at Notre Dame. they call me baby jalen brunson, but taller and with bounce.
                         modern burst fade. 
                         my program will create a perfect march madness bracket. 
                         the best software engineer - mi abuela. 
-                        go birds. 
+                        go birds.
                     </p>
                 </div>
                 <Header/>

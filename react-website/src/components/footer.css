@@ -1,13 +1,14 @@
 .footer-wrapper {
     position: relative; 
     height: 600px; 
+    max-width: 100%;
     clip-path: polygon(0% 0 , 100% 0%, 100% 100%, 0 100%); 
 }
 
 .footer-container {
     position: fixed; 
     height: 600px; 
-    width: 100%; 
+    width: 100%;
     bottom: 0; 
     background-color: rgb(97, 93, 101); 
 }
@@ -16,7 +17,6 @@
     flex-wrap: wrap; 
     font-family: -apple-system, system-ui, BlinkMacSystemFont;
     color: #fff;
-    width: 100%;
     margin: 10vh 10vh 0 10vh;
   }
 
@@ -50,6 +50,6 @@
 }
 .Follow-me {
     padding: 10rem 0;
-    font-size: 170px;
+    font-size: clamp(140px, 2vw, 50px);
     font-family: "Libre Bodoni"
 }
