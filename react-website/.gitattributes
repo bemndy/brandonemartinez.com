@@ -1,0 +1,3 @@
+react-website/**/*.js linguist-language=JavaScript
+react-website/**/*.css linguist-language=CSS
+react-website/**/*.html linguist-language=HTML
