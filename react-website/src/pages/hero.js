@@ -35,12 +35,13 @@ const texts = [
     'the best software engineer - mi abuela.',
     "Time's person of the year in 2006.",
     'they call me baby jalen brunson, but taller and with bounce.',
-    'i will not be replaced by ai... (cope)',
+    'one day i will migrate this to next.js... one day.',
+    'relax, right now its just react, next is so gooood though.',
+    'i will not be replaced by ai... (cope).',
     'if you move your cursor, colors.',
     'modern burst fade...thats it.',
     'go birds.',
-    'one day i will migrate this to next.js... one day.relax, right now its just react',
-    'thanks for visitng my website!',
+    'thanks for visiting my website!',
 
 ]
 const randomText = texts[Math.floor(Math.random() * texts.length)];
@@ -132,7 +133,7 @@ function Hero () {
                     </div>
                 </div>
                 <div className="intro-container">
-                    <h2 className="intro-greeting">👋 hi. i'm Brandon.</h2>
+                    <h2 className="intro-greeting">👋 hi, i'm Brandon.</h2>
                     <div className="typewriter-container"><span className="typewriter-text">{displayedText}</span>
                     </div>
                 </div>

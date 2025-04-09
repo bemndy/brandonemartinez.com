@@ -162,19 +162,20 @@
 .intro-container {
     width: 70%; 
     margin: 0 auto; 
-    padding: 17rem 0;
+    padding: 15rem 0 13rem;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 .intro-greeting {
-    font-size: calc(2.50vw + 2.50vh);
+  padding: 5rem 0 0 0;
+    font-size: calc(2.60vw + 2.60vh);
 }
 .typewriter-container {
   font-family: -apple-system, system-ui, BlinkMacSystemFont;
   font-weight: normal;
   color: black;
-  font-size: calc(1.15vw + 1.15vh);
+  font-size: calc(1.25vw + 1.25vh);
   width: fit-content;
   min-height: 2.5em;
   display: flex;
