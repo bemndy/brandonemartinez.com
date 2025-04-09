@@ -1,9 +1,11 @@
 import React, { useEffect}  from 'react';
 import Header from '../components/header';
+import StickyFooter  from '../components/footer';
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './hero.css'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -152,6 +154,8 @@ function Hero () {
                         <div className="project-box"></div>
                     </div>
                 </div>
+                <StickyFooter>
+                </StickyFooter>
             </div>
         </>
     )

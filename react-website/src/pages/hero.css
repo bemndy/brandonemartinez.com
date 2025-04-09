@@ -1,7 +1,6 @@
 .hero-wrapper {
     position: relative;
     width: 100vw;
-    height: 1500;
     margin: 0 auto; 
     overflow: hidden;
     z-index: 0; 

@@ -1,0 +1,55 @@
+.footer-wrapper {
+    position: relative; 
+    height: 600px; 
+    clip-path: polygon(0% 0 , 100% 0%, 100% 100%, 0 100%); 
+}
+
+.footer-container {
+    position: fixed; 
+    height: 600px; 
+    width: 100%; 
+    bottom: 0; 
+    background-color: rgb(97, 93, 101); 
+}
+.footer-heading {
+    display: flex; 
+    flex-wrap: wrap; 
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+    color: #fff;
+    width: 100%;
+    margin: 10vh 10vh 0 10vh;
+  }
+
+.footer-box {
+    width: 15%;
+}
+.Socials {
+    font-size: 24px; 
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ccc
+}
+.footer-list {
+    padding: 1rem 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+}
+.footer-links {
+    padding: 3px 0;
+}
+.Message {
+    font-size: 38px;
+    font-family: 'Barlow';
+    width: 40%;
+}
+.space {
+    width: 10%;
+}
+.Follow-me {
+    padding: 10rem 0;
+    font-size: 170px;
+    font-family: "Libre Bodoni"
+}
