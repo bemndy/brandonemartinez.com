@@ -47,7 +47,7 @@
     left: 0;
     z-index: -1; 
     width: 100%;
-    height: 50%;
+    height: 70%;
     overflow: hidden;
     background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
     pointer-events: none;
@@ -62,7 +62,7 @@
   
     .gradients-container {
       position: relative;
-      filter: url(#goo) blur(40px) ;
+      filter: url(#goo) blur(60px) ;
       width: 100%;
       height: 100%;
     }
@@ -85,7 +85,7 @@
   
     .g2 {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 55%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: var(--circle-size);
@@ -101,7 +101,7 @@
   
     .g3 {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 55%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: var(--circle-size);
@@ -117,7 +117,7 @@
   
     .g4 {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 55%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: var(--circle-size);
@@ -132,7 +132,7 @@
     }
     .g5 {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 55%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: var(--circle-size);
@@ -147,7 +147,7 @@
     }
     .interactive {
       position: absolute;
-      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 30%) no-repeat;
+      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 40%) no-repeat;
       mix-blend-mode: var(--blending);
   
       width: 100%;
@@ -162,16 +162,33 @@
 .intro-container {
     width: 70%; 
     margin: 0 auto; 
-    padding: 15rem 0 13rem;
+    padding: 16rem 0 10rem;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-.intro-greeting {
-  padding: 5rem 0 0 0;
-    font-size: calc(2.60vw + 2.60vh);
+.greeting, .greeting-cursive, .greeting-pixelated {
+  margin: 0;
+  padding: 0;
+}
+.greeting-cursive {
+  font-size: calc(3.25vw + 3.25vh);
+  font-family: 'Great Vibes';
+  font-weight: 500;
+}
+.greeting {
+  font-size: calc(2.40vw + 2.40vh);
+  font-family: 'Libre Caslon';
+  font-weight: 400;
+  line-height: 0.85; 
+}
+.greeting-pixelated {
+  font-size: calc(2.75vw + 2.75vh);
+  font-family: 'DotGothic16';
+  line-height: 1.3;
 }
 .typewriter-container {
+  padding: 0;
   font-family: -apple-system, system-ui, BlinkMacSystemFont;
   font-weight: normal;
   color: black;
@@ -181,46 +198,13 @@
   display: flex;
   align-items: center;
 }
-
 .typewriter-text {
   white-space: nowrap;
   border-right: 2px solid black;
   animation: blink 0.75s step-end infinite;
 }
-
 @keyframes blink {
   50% {
     border-color: transparent;
   }
-}
-.project-container {
-    background-color: rgb(222, 222, 222);
-    display: flex; 
-    flex-wrap: wrap;
-    border-left: 1px solid rgb(179, 179, 179);
-    border-top: 1px solid rgb(179, 179, 179);
-    width: 100%;
-}
-.project-item {
-    display: flex;
-    width: 25%;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-right: 1px solid rgb(179, 179, 179);
-    border-bottom: 1px solid rgb(179, 179, 179);
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-
-}
-.project-name {
-    color: black;
-    font-family: 'Barlow', Menlo, system-ui, BlinkMacSystemFont, "Segoe UI", Ubuntu;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    padding: 4px 6px;
-}
-.project-box {
-    height: 350px;
-    border-top: 1px solid rgb(179, 179, 179);
 }

@@ -8,12 +8,13 @@ html, body, #root {
 }
 :root {
   --color-bg1: rgb(255, 255, 255);
-  --color-bg2: rgba(205, 205, 205, 0.842);
-  --color1: 95, 188, 103;
-  --color2: 82, 131, 255;
-  --color3: 69, 180, 249;
+  --color-bg2: rgba(231, 231, 231, 0.842);
+  --color1: 50, 188, 103;
+  --color2: 73, 153, 207;
+  --color3: 76, 117, 213;
   /*--color3: 140, 100, 255; purpleish color very nice */
-  --color-interactive: 175, 255, 183;
+  /*--color-interactive: 175, 255, 183;*/
+  --color-interactive: 92, 153, 97;
   --circle-size: 80%;
   --blending: hard-light;
 }

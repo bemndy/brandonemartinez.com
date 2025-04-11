@@ -1,4 +1,5 @@
 import React from 'react'; 
+import Overlay from './components/overlay'
 import Navbar from './components/navbar';
 import Hero from './pages/hero';
 import About from './pages/about';
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
     <Router>
+      <Overlay/>
       <Navbar/>
       <Routes>
           <Route path='/' element={<Hero/>} />

@@ -1,0 +1,23 @@
+
+.preloader {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(240, 246, 238);
+    overflow: hidden;
+}
+.texts-container {
+    width: 10%;
+    opacity: 1;
+    animation: fadeinout 5s forwards infinite;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+}
+@keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }

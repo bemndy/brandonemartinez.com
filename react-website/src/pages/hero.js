@@ -133,77 +133,17 @@ function Hero () {
                     </div>
                 </div>
                 <div className="intro-container">
-                    <h2 className="intro-greeting">👋 hi, i'm Brandon.</h2>
+                    <h2 className="greeting"><span className="greeting-cursive">B</span>RANDON E 
+                    <span className="greeting-cursive">M</span>ARTINEZ</h2>
+                    <h2 className="greeting">FULL-STACK SOFTWARE</h2>
+                    <h2 className="greeting-pixelated">☀DEVELOPER☀</h2>
+                    <h2 className="greeting">CURRENTLY<span className="greeting-cursive">@</span> 
+                    NOTRE DAME</h2>
+                    <h2 className="greeting-pixelated">✨BEM©2025✨</h2>
                     <div className="typewriter-container"><span className="typewriter-text">{displayedText}</span>
-                    </div>
+                </div>
                 </div>
                 <Header/>
-                <div className='project-container'>
-                    <div className="project-item">
-                        <div className="project-name">Aruco Detection</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Sentiment Analysis</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Spotify Local</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Game of Life Console</div>
-                        <div className="project-box"></div>
-                    </div>
-                    <div className="project-item">
-                        <div className="project-name">Coming Soon</div>
-                        <div className="project-box"></div>
-                    </div>
-                </div>
                 <StickyFooter>
                 </StickyFooter>
             </div>
