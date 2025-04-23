@@ -12,30 +12,30 @@ To run the project locally:
 
 Clone the repository:
 
-<pre> <code>
+```
 git clone https://github.com/bemndy/brandonemartinez.com.git
 cd brandonemartinez.com
-</code> </pre>
+```
 
 Install dependencies:
 
-<pre> <code>
+```
 npm install
 # or
 yarn install
-</code> </pre>
+```
 
 Run the development server:
 
-<pre> <code>
+```
 npm run dev
 # or
 yarn dev
-</code> </pre>
+```
 Open in your browser: Navigate to http://localhost:3000 to view the website.
 
 # 📁 Project Structure
-<pre> <code>
+```
 brandonemartinez.com/
 ├── public/             # Static assets
 ├── pages/              # Next.js pages
@@ -43,7 +43,7 @@ brandonemartinez.com/
 ├── styles/             # CSS stylesheets
 ├── package.json        # Project metadata and scripts
 └── README.md           # Project documentation
-</code> </pre>
+```
 📦 Deployment
 The site is deployed on Vercel, which offers seamless integration with GitHub for continuous deployment.​
 
