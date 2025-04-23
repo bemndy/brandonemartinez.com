@@ -1,3 +1,10 @@
-react-website/**/*.js linguist-language=JavaScript
-react-website/**/*.css linguist-language=CSS
-react-website/**/*.html linguist-language=HTML
+# Set proper languages for common web files
+*.js linguist-language=JavaScript
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+
+# Exclude dependency and build output folders from language stats
+node_modules/* linguist-vendored
+build/* linguist-generated
+dist/* linguist-generated
+
