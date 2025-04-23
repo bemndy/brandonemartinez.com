@@ -47,7 +47,7 @@
     left: 0;
     z-index: -1; 
     width: 100%;
-    height: 70%;
+    height: 60%;
     overflow: hidden;
     background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
     pointer-events: none;
@@ -162,7 +162,7 @@
 .intro-container {
     width: 70%; 
     margin: 0 auto; 
-    padding: 16rem 0 10rem;
+    padding: 16rem 0 13rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -172,18 +172,18 @@
   padding: 0;
 }
 .greeting-cursive {
-  font-size: calc(3.25vw + 3.25vh);
+  font-size: calc(2.75vw + 2.75vh);
   font-family: 'Great Vibes';
   font-weight: 500;
 }
 .greeting {
-  font-size: calc(2.40vw + 2.40vh);
+  font-size: calc(2vw + 2vh);
   font-family: 'Libre Caslon';
   font-weight: 400;
   line-height: 0.85; 
 }
 .greeting-pixelated {
-  font-size: calc(2.75vw + 2.75vh);
+  font-size: calc(2.25vw + 2.25vh);
   font-family: 'DotGothic16';
   line-height: 1.3;
 }
@@ -192,7 +192,7 @@
   font-family: -apple-system, system-ui, BlinkMacSystemFont;
   font-weight: normal;
   color: black;
-  font-size: calc(1.25vw + 1.25vh);
+  font-size: calc(1vw + 1vh);
   width: fit-content;
   min-height: 2.5em;
   display: flex;
@@ -207,4 +207,24 @@
   50% {
     border-color: transparent;
   }
+}
+.projects-container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  margin: 0 auto 50px;
+}
+.project-header {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  padding: 50px 0 5px;
+  color: rgb(117, 117, 117);
+}
+.projects-header {
+  font-family: system-ui;
+  font-size: 16px;
+  text-transform: uppercase;
 }

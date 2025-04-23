@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
-import { FlipLink } from './linkwrap'
+import { FlipLink } from '../linkwrap/linkwrap'
 import './navbar.css'
-import { Button } from './button';
+import { Button } from '../button/button';
 
 
 function Navbar() { 

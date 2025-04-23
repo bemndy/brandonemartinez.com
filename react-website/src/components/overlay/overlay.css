@@ -8,14 +8,15 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: rgb(240, 246, 238);
+    background-color: white;
     overflow: hidden;
 }
 .texts-container {
     width: 10%;
     opacity: 1;
-    animation: fadeinout 5s forwards infinite;
+    animation: fadeinout 5s forwards;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+    font-size: 22px;
 }
 @keyframes fadeinout {
     0%,100% { opacity: 0; }

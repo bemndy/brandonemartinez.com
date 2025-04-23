@@ -1,0 +1,54 @@
+/*const texts = [
+    'i am an asipiring full-stack software engineer, studying computer science at Notre Dame.',
+    'correction, a handsome computer science student at Notre Dame!',
+    'i work on projects that involve machine-learning, data engineering, and robotics.',
+    'i play the piano and guitar by ear... someone teach me theory though.',
+    'the best way to reach me is by email!',
+    'sorry mobile users...',
+    'the best software engineer - mi abuela.',
+    "Time's person of the year in 2006.",
+    'they call me baby jalen brunson, but taller and with bounce.',
+    'one day i will migrate this to next.js... one day.',
+    'relax, right now its just react, next is so gooood though.',
+    'i will not be replaced by ai... (cope).',
+    'if you move your cursor, colors.',
+    'modern burst fade...thats it.',
+    'go birds.',
+    'thanks for visiting my website!',
+
+]
+const randomText = texts[Math.floor(Math.random() * texts.length)];*/
+
+
+    /*const [index, setIndex] = useState(0);
+    const [displayedText, setDisplayedText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const fullText = texts[index];
+        let typingSpeed = isDeleting ? 40 : 60;
+      
+        const handleTyping = () => {
+          if (!isDeleting) {
+            const nextText = fullText.slice(0, displayedText.length + 1);
+            setDisplayedText(nextText);
+      
+            if (nextText === fullText) {
+              setTimeout(() => setIsDeleting(true), 4000);
+            }
+          } else {
+            const nextText = fullText.slice(0, displayedText.length - 1);
+            setDisplayedText(nextText);
+      
+            if (nextText === "") {
+              setIsDeleting(false);
+              setIndex((prev) => (prev + 1) % texts.length);
+            }
+          }
+        };
+      
+        const timeout = setTimeout(handleTyping, typingSpeed);
+      
+        return () => clearTimeout(timeout);
+      }, [displayedText, isDeleting, index]);*/
+      

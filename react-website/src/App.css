@@ -8,7 +8,7 @@ html, body, #root {
 }
 :root {
   --color-bg1: rgb(255, 255, 255);
-  --color-bg2: rgba(231, 231, 231, 0.842);
+  --color-bg2: rgb(255, 255, 255);
   --color1: 50, 188, 103;
   --color2: 73, 153, 207;
   --color3: 76, 117, 213;
@@ -19,13 +19,13 @@ html, body, #root {
   --blending: hard-light;
 }
 h2 {  
-  font-family: 'monaco', Menlo;
+  font-family: 'Inter', Menlo, 'monaco';
   font-weight: normal;
-  font-size: calc(2.75vw + 2.75vh);
+  font-size: 22px;
   color: black;
 }
 p {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+  font-family: 'Inter', Menlo, 'monaco';
   font-size: 22px;
   color: black;
 }

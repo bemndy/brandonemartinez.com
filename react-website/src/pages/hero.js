@@ -1,19 +1,17 @@
-import React, { useEffect, useState}  from 'react';
-import Header from '../components/header';
-import StickyFooter  from '../components/footer';
-
-
+import React, { useEffect, useState }  from 'react';
+import Header from '../components/header/header';
+import StickyFooter  from '../components/footer/footer';
+import Project from '../components/project/project'
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 import './hero.css'
 
 
 gsap.registerPlugin(ScrollTrigger)
 
 const lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.5,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
 })
 
@@ -24,61 +22,32 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-
-const texts = [
-    'i am an asipiring full-stack software engineer, studying computer science at Notre Dame.',
-    'correction, a handsome computer science student at Notre Dame!',
-    'i work on projects that involve machine-learning, data engineering, and robotics.',
-    'i play the piano and guitar by ear... someone teach me theory though.',
-    'the best way to reach me is by email!',
-    'sorry mobile users...',
-    'the best software engineer - mi abuela.',
-    "Time's person of the year in 2006.",
-    'they call me baby jalen brunson, but taller and with bounce.',
-    'one day i will migrate this to next.js... one day.',
-    'relax, right now its just react, next is so gooood though.',
-    'i will not be replaced by ai... (cope).',
-    'if you move your cursor, colors.',
-    'modern burst fade...thats it.',
-    'go birds.',
-    'thanks for visiting my website!',
-
+const projects = [
+  {
+    title: "Spotify Localizer",
+    source: "c2fy.png",
+    color: "blue",
+    category: "Frontend",
+    date: "MAR 2025"
+  },
+  {
+    title: "Pose Estimation",
+    source: "pest.png",
+    color: "red",
+    category: "Backend",
+    date: "DEC 2024"
+  },
+  {
+    title: "Sentimental Analysis",
+    source: "sent.png",
+    color: "white",
+    category: "Data",
+    date: "NOV 2024"
+  }
 ]
-const randomText = texts[Math.floor(Math.random() * texts.length)];
 
 function Hero () {
-    const [index, setIndex] = useState(0);
-    const [displayedText, setDisplayedText] = useState("");
-    const [isDeleting, setIsDeleting] = useState(false);
-
-    useEffect(() => {
-        const fullText = texts[index];
-        let typingSpeed = isDeleting ? 40 : 60;
-      
-        const handleTyping = () => {
-          if (!isDeleting) {
-            const nextText = fullText.slice(0, displayedText.length + 1);
-            setDisplayedText(nextText);
-      
-            if (nextText === fullText) {
-              setTimeout(() => setIsDeleting(true), 4000);
-            }
-          } else {
-            const nextText = fullText.slice(0, displayedText.length - 1);
-            setDisplayedText(nextText);
-      
-            if (nextText === "") {
-              setIsDeleting(false);
-              setIndex((prev) => (prev + 1) % texts.length);
-            }
-          }
-        };
-      
-        const timeout = setTimeout(handleTyping, typingSpeed);
-      
-        return () => clearTimeout(timeout);
-      }, [displayedText, isDeleting, index]);
-      
+    const [modal, setModal] = useState({active: false, index: 0})
 
     useEffect(() => {
         const interBubble = document.querySelector('.interactive');
@@ -111,7 +80,6 @@ function Hero () {
 
 
     return (
-        <>
             <div className='hero-wrapper'>
                 <div className='gradient-bg'>
                     <svg xmlns="http://www.w3.org/2000/svg">
@@ -139,15 +107,27 @@ function Hero () {
                     <h2 className="greeting-pixelated">☀DEVELOPER☀</h2>
                     <h2 className="greeting">CURRENTLY<span className="greeting-cursive">@</span> 
                     NOTRE DAME</h2>
-                    <h2 className="greeting-pixelated">✨BEM©2025✨</h2>
-                    <div className="typewriter-container"><span className="typewriter-text">{displayedText}</span>
+                    <h2 className="greeting-pixelated">BEM©2025✨</h2>
+                    <div className="typewriter-container"><span className="typewriter-text"></span>
                 </div>
                 </div>
                 <Header/>
+                <div className='projects-container'>
+                  <div className='project-header'>
+                    <div className='projects-header'>project</div>
+                    <div className='projects-header'>category</div>
+                    <div className='projects-header'>date</div>
+                  </div>
+                  {
+                    projects.map( (project, index) => { 
+                      return <Project key={index} index={index} title={project.title} category={project.category}
+                      date = {project.date} setModal={setModal}/>
+                    })
+                  }   
+                </div>
                 <StickyFooter>
                 </StickyFooter>
             </div>
-        </>
     )
 };
 export default Hero

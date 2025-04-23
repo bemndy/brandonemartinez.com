@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.css'
-import { FlipLink } from './linkwrap';
+import { FlipLink } from '../linkwrap/linkwrap';
 
 function Header() { 
     return (

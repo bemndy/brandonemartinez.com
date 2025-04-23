@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css'
-import { FlipLink } from './linkwrap'
+import { FlipLink } from '../linkwrap/linkwrap'
 
 export function  StickyFooter() {
     return (
