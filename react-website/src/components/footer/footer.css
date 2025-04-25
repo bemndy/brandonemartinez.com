@@ -1,44 +1,43 @@
 .footer-wrapper {
     position: relative; 
-    height: 650px; 
-    max-width: 100%;
-    clip-path: polygon(0% 0 , 100% 0%, 100% 100%, 0 100%); 
+    width: 100%;
+    height: 600px;
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0 100%);
 }
-
 .footer-container {
     position: fixed; 
-    height: 650px; 
+    bottom: 0;
+    height: 600px;
     width: 100%;
-    bottom: 0; 
-    background-color: rgb(97, 93, 101); 
+    background-color: rgb(56, 56, 67);
 }
 .footer-heading {
     display: flex; 
     flex-wrap: wrap; 
     font-family: -apple-system, system-ui, BlinkMacSystemFont;
     color: #fff;
-    margin: 8.5vh 10vh 0 10vh;
-  }
+}
 
 .footer-box {
-    width: 12.5%;
+    margin: 5vh 0 0 3vw;
+    width: 7.5%;
 }
-.Socials {
-    font-size: 18px; 
+.socials {
+    font-size: 14px; 
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 500;
     color: #ccc
 }
 .footer-list {
-    padding: 0.5rem 0;
+    padding: 7.5px 0;
     display: flex;
     list-style: none;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: start;
+    align-items: flex-start;
 }
 .footer-links {
-    padding: 3px 0;
+    padding: 5px 0;
     font-size: 14px;
 }
 .Message {
@@ -47,10 +46,12 @@
     width: 40%;
 }
 .space {
-    width: 10%;
+    width: 100%;
+    height: 150px;
 }
 .Follow-me {
-    padding: 15rem 0;
-    font-size: clamp(180px, 2vw, 40px);
-    font-family: "Libre Bodoni"
+    padding: 0 0 0 3vw;
+    font-size: clamp(200px, 3vw, 40px);
+    font-family: "Libre Bodoni";
+    color: rgb(244, 244, 244);
 }

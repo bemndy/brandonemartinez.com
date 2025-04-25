@@ -19,13 +19,13 @@ html, body, #root {
   --blending: hard-light;
 }
 h2 {  
-  font-family: 'Inter', Menlo, 'monaco';
+  font-family: BlinkMacSystemFont, 'monaco' Menlo;
   font-weight: normal;
   font-size: 22px;
   color: black;
 }
 p {
-  font-family: 'Inter', Menlo, 'monaco';
+  font-family: BlinkMacSystemFont, 'Inter', 'Helvetica Neue';
   font-size: 22px;
   color: black;
 }

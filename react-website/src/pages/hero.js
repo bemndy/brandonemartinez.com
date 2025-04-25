@@ -24,6 +24,13 @@ requestAnimationFrame(raf)
 
 const projects = [
   {
+    title: "VIM Completion",
+    source: "sent.png",
+    color: "white",
+    category: "Backend",
+    date: "APR 2025"
+  },
+  {  
     title: "Spotify Localizer",
     source: "c2fy.png",
     color: "blue",
@@ -124,6 +131,7 @@ function Hero () {
                       date = {project.date} setModal={setModal}/>
                     })
                   }   
+                  <div className='space'></div>
                 </div>
                 <StickyFooter>
                 </StickyFooter>

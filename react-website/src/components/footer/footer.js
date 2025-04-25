@@ -8,7 +8,7 @@ export function  StickyFooter() {
             <div className='footer-container'>
                 <div className="footer-heading">
                     <div className="footer-box">
-                        <div className="Socials">Socials</div>
+                        <div className="socials">Socials</div>
                             <ul className="footer-list">
                                 <li className="footer-links">
                                     <FlipLink>
@@ -67,7 +67,7 @@ export function  StickyFooter() {
                             </ul>
                         </div>
                     <div className="footer-box">
-                        <div className="Socials">Contact Me</div>
+                        <div className="socials">Contact Me</div>
                             <ul className="footer-list">
                                 <li className="footer-links">
                                     <a
