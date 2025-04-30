@@ -6,17 +6,19 @@
     height: 100vh;
     z-index: 3;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: black;
     overflow: hidden;
 }
 .texts-container {
-    width: 10%;
+    display: flex;
     opacity: 1;
-    animation: fadeinout 3.25s forwards;
+    animation: fadeinout 3s forwards;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
-    font-size: 22px;
+    font-size: clamp(16px, 5vw, 32px);
+    font-weight: 300;
+    align-self: center;
     color: white;
 }
 @keyframes fadeinout {

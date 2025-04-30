@@ -1,26 +1,12 @@
 import React, { useEffect, useState }  from 'react';
 import Header from '../components/header/header';
-import StickyFooter  from '../components/footer/footer';
 import Project from '../components/project/project'
-import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './hero.css'
 
 
 gsap.registerPlugin(ScrollTrigger)
-
-const lenis = new Lenis({
-    duration: 1.5,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-})
-
-function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
 
 const projects = [
   {
@@ -125,7 +111,7 @@ function Hero () {
                     <svg xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <filter id="goo">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur" />
                             <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
                             <feBlend in="SourceGraphic" in2="goo" />
                             </filter>
@@ -166,8 +152,6 @@ function Hero () {
                   }   
                   <div className='space'></div>
                 </div>
-                <StickyFooter>
-                </StickyFooter>
             </div>
     )
 };

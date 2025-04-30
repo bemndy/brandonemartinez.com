@@ -4,10 +4,11 @@
     align-items: center;
     height: 100vh; /* full viewport height */
     background-color: #f7f7f7;
+    height: 300vh;
 }
 .coming-soon-logo {
     width: auto;
     max-width: 30%;
     height: auto;
-    object-fit: contain
+    object-fit: contain;
 }

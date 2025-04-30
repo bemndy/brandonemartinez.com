@@ -1,25 +1,21 @@
-import React, { useEffect } from 'react'
-import './overlay.css'
-import preLoaderAnim from '../preloader/preloader'
+import React, { useEffect } from 'react';
+import './overlay.css';
+import { preLoaderAnim } from '../preloader/preloader';
 
-export function Overlay() {
-    useEffect(()=>{
-        preLoaderAnim()
-    },[]);
+const Overlay = ({ onFinish }) => {
+  useEffect(() => {
+    preLoaderAnim().then(() => {
+      onFinish?.(); // Notify parent when done
+    });
+  }, [onFinish]);
 
-    return(
-        <div className="preloader">
-            <div className="texts-container">
-            Think.
-            </div>
-            <div className="texts-container">
-            Design.
-            </div>
-            <div className="texts-container">
-            Develop.
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="preloader">
+      <div className="texts-container"><span>Think.</span></div>
+      <div className="texts-container"><span>Design.</span></div>
+      <div className="texts-container"><span>Develop.</span></div>
+    </div>
+  );
+};
 
-export default Overlay
+export default Overlay;
