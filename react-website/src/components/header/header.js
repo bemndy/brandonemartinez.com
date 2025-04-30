@@ -8,12 +8,10 @@ function Header() {
             <div className='header-wrapper'>
                 <div className='header-box'>
                     <div className='header-text'>Contact Me</div>
-                    <FlipLink>
                        <a className='header-text'
                         href="mailto:brandonprvbox@gmail.com">
-                        brandonprvbox@gmail.com
+                        <FlipLink>brandonprvbox@gmail.com</FlipLink>
                         </a>
-                    </FlipLink>
                 </div>
             </div>
         </>

@@ -10,7 +10,7 @@
     bottom: 0;
     height: 600px;
     width: 100%;
-    background-color: rgb(40, 40, 58);
+    background-color: rgb(43, 43, 59);
 }
 .footer-heading {
     display: flex; 
@@ -20,7 +20,7 @@
 }
 
 .footer-box {
-    margin: 8vh 0 0 3vw;
+    margin: 7vh 0 0 3vw;
     width: 7.5%;
 }
 .socials {
@@ -54,7 +54,7 @@
     font-weight: 100;
 }
 .cp-update {
-    margin: 0 0 0 11vw;
+    margin: 0 0 0 6vw;
     display: flex; 
     flex-wrap: wrap; 
     font-family: -apple-system, system-ui, BlinkMacSystemFont;

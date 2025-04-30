@@ -2,8 +2,8 @@ import React from 'react'
 import './footer.css'
 import { FlipLink } from '../linkwrap/linkwrap'
 
-const lastUpdated = typeof import.meta.env !== 'undefined' && import.meta.env.VERCEL_GIT_COMMIT_TIMESTAMP
-  ? new Date(import.meta.env.VERCEL_GIT_COMMIT_TIMESTAMP).toLocaleDateString()
+const lastUpdated = process.env.REACT_APP_VERCEL_GIT_COMMIT_TIMESTAMP
+  ? new Date(process.env.REACT_APP_VERCEL_GIT_COMMIT_TIMESTAMP).toLocaleDateString()
   : 'Local Development';
 
 

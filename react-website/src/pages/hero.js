@@ -91,11 +91,11 @@ function Hero () {
           {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 0.5,
             ease: "power2.out",
             scrollTrigger: {
               trigger: ".projects-container",
-              start: "top 80%",
+              start: "top 90%",
               toggleActions: "play none none reverse",
               scrub: true
             }
@@ -107,7 +107,7 @@ function Hero () {
           { opacity: 1, y: 0 },
           {
             opacity: 0,
-            y: -100,
+            y: 0,
             duration: 1,
             ease: "power2.out",
             scrollTrigger: {
@@ -122,15 +122,15 @@ function Hero () {
     return (
             <div className='hero-wrapper'>
                 <div className='gradient-bg'>
-                <svg xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <filter id="goo">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
-                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                      <feBlend in="SourceGraphic" in2="goo" />
-                    </filter>
-                  </defs>
-              </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                        </defs>
+                    </svg>
                     <div className='gradient-container'>
                         <div className='g1'></div>
                         <div className="g2"></div>
