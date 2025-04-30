@@ -11,7 +11,7 @@ function Header() {
                     <FlipLink>
                        <a className='header-text'
                         href="mailto:brandonprvbox@gmail.com">
-                        <FlipLink>brandonprvbox@gmail.com</FlipLink>
+                        brandonprvbox@gmail.com
                         </a>
                     </FlipLink>
                 </div>

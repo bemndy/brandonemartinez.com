@@ -1,6 +1,7 @@
 import gsap from "gsap";
 
 const tl = gsap.timeline();
+tl.timeScale(1.50);
 
 // Preloader Animation
 export const preLoaderAnim = () => {

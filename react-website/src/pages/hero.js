@@ -31,7 +31,7 @@ const projects = [
     date: "APR 2025"
   },
   {  
-    title: "Spotify Localizer",
+    title: "Spotify Features",
     source: "c2fy.png",
     color: "blue",
     category: "Frontend",
@@ -45,59 +45,92 @@ const projects = [
     date: "DEC 2024"
   },
   {
+    title: "Conway Console",
+    source: "sent.png",
+    color: "white",
+    category: "Backend",
+    date: "NOV 2024"
+  },
+  {
     title: "Sentimental Analysis",
     source: "sent.png",
     color: "white",
     category: "Data",
-    date: "NOV 2024"
+    date: "OCT 2024"
   }
 ]
 
 function Hero () {
     const [modal, setModal] = useState({active: false, index: 0})
-
     useEffect(() => {
-        const interBubble = document.querySelector('.interactive');
-        let curX = 0;
-        let curY = 0;
-        let tgX = 0;
-        let tgY = 0;
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
     
-        function move() {
-          curX += (tgX - curX) / 20;
-          curY += (tgY - curY) / 20;
-          if (interBubble) {
-            interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+      function move() {
+        curX += (tgX - curX) / 20;
+        curY += (tgY - curY) / 20;
+        if (interBubble) {
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+        }
+        requestAnimationFrame(move);
+      }
+    
+      window.addEventListener('mousemove', (event) => {
+        tgX = event.clientX;
+        tgY = event.clientY;
+      });
+    
+      move();
+    });    
+      useEffect(() => {
+        gsap.fromTo(".projects-container", 
+          { opacity: 0, y: 100 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".projects-container",
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+              scrub: true
+            }
           }
-          requestAnimationFrame(move);
-        }
-    
-        function handleMouseMove(event) {
-          tgX = event.clientX;
-          tgY = event.clientY;
-        }
-    
-        window.addEventListener('mousemove', handleMouseMove);
-        move();
-    
-        return () => {
-          window.removeEventListener('mousemove', handleMouseMove);
-        };
+        );
       }, []);
-
-
+      useEffect(() => {
+        gsap.fromTo(".intro-container",
+          { opacity: 1, y: 0 },
+          {
+            opacity: 0,
+            y: -100,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".projects-container",
+              start: "top 135%",
+              toggleActions: "play none none reverse",
+              scrub: true
+            }
+          }
+        );
+      }, []);       
     return (
             <div className='hero-wrapper'>
                 <div className='gradient-bg'>
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="goo">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                            <feBlend in="SourceGraphic" in2="goo" />
-                            </filter>
-                        </defs>
-                    </svg>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="goo">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                      <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                  </defs>
+              </svg>
                     <div className='gradient-container'>
                         <div className='g1'></div>
                         <div className="g2"></div>
@@ -118,7 +151,7 @@ function Hero () {
                     <div className="typewriter-container"><span className="typewriter-text"></span>
                 </div>
                 </div>
-                <Header/>
+                <Header className="header"/>
                 <div className='projects-container'>
                   <div className='project-header'>
                     <div className='projects-header'>project</div>

@@ -5,11 +5,12 @@
     clip-path: polygon(0% 0, 100% 0, 100% 100%, 0 100%);
 }
 .footer-container {
+    margin: 0 auto;
     position: fixed; 
     bottom: 0;
     height: 600px;
     width: 100%;
-    background-color: rgb(56, 56, 67);
+    background-color: rgb(40, 40, 58);
 }
 .footer-heading {
     display: flex; 
@@ -19,7 +20,7 @@
 }
 
 .footer-box {
-    margin: 5vh 0 0 3vw;
+    margin: 8vh 0 0 3vw;
     width: 7.5%;
 }
 .socials {
@@ -40,18 +41,25 @@
     padding: 5px 0;
     font-size: 14px;
 }
-.Message {
-    font-size: 38px;
-    font-family: 'Barlow';
-    width: 40%;
-}
 .space {
     width: 100%;
-    height: 150px;
+    height: 130px;
 }
-.Follow-me {
+.lets-connect {
     padding: 0 0 0 3vw;
     font-size: clamp(200px, 3vw, 40px);
     font-family: "Libre Bodoni";
-    color: rgb(244, 244, 244);
+    color: rgb(255, 255, 255);
+    letter-spacing: -10px;
+    font-weight: 100;
+}
+.cp-update {
+    margin: 0 0 0 11vw;
+    display: flex; 
+    flex-wrap: wrap; 
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+    font-size: 12px;
+    color: #454151;
+    font-weight: 300;
+    align-self: flex-end;
 }
