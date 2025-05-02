@@ -15,9 +15,8 @@ function About () {
                     <img src="/images/portrait.JPG" alt="portrait of me" className="portrait"/> 
                     <div className="biography-text-container">
                         <p className="biography-text">
-                        Hey 👋🏽 I’m Brandon — a Computer Science student at the University of Notre Dame from South Jersey, always chasing 
-                        creative and technical challenges. I’ve built everything from front-end web designs to autonomous navigation systems,
-                        and I’m especially drawn to spaces where code becomes creative — like robotics, audio signal processing, and graphic design.
+                        Hey 👋🏽 I’m Brandon — a Computer Science student at the University of Notre Dame from South Jersey. I’ve built everything from front-end web designs to autonomous navigation systems,
+                        and I’m especially drawn to spaces where code becomes an expression — like robotics, audio signal processing, and graphic design.
                         </p>
                         <p className="biography-text">
                         I also love people. As a first-generation Hispanic 
@@ -27,9 +26,8 @@ function About () {
                         place. 
                         </p>
                         <p className="biography-text">
-                        Outside the screen, you can usually find me in the gym, on the basketball court, or driving my Sentra 
-                        around, probably overthinking a Spotify playlist. I’m always looking to connect, collaborate, or just talk shop 
-                        about tech and design.
+                        Outside the screen, you can usually find me in the gym, on the basketball court, or overthinking a Spotify playlist. 
+                        I’m always looking to connect, collaborate, or just talk shop about tech and design.
                     </p>
                     </div>
                    </div> 
