@@ -48,7 +48,7 @@ function Navbar() {
                         </li>
                         <li>
                             <a
-                            href="/resume.pdf"
+                            href="/resume2 copy.pdf"
                             className="nav-links"
                             target="_blank"
                             rel="noopener noreferrer"><FlipLink>CV</FlipLink>
