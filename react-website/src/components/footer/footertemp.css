@@ -1,0 +1,131 @@
+.footer-wrapper {
+    position: relative; 
+    width: 100%;
+    height: 600px;
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0 100%);
+}
+.footer-container {
+    margin: 0 auto;
+    position: fixed; 
+    bottom: 0;
+    height: 600px;
+    width: 100%;
+    background-color: rgb(46, 46, 60);
+}
+.footer-heading {
+    display: flex; 
+    flex-wrap: wrap; 
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+    color: #fff;
+}
+
+.footer-box {
+    margin: 7vh 0 0 3vw;
+    width: 7.5%;
+}
+.socials {
+    font-size: 14px; 
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #ccc
+}
+.footer-list {
+    padding: 7.5px 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.footer-links {
+    padding: 5px 0;
+    font-size: 14px;
+}
+.space {
+    width: 100%;
+    height: 130px;
+}
+.lets-connect {
+    padding: 0 0 0 3vw;
+    font-size: clamp(200px, 3vw, 40px);
+    font-family: "Libre Bodoni";
+    color: rgb(255, 255, 255);
+    letter-spacing: -10px;
+    font-weight: 100;
+}
+.cp-update {
+    margin: 0 0 0 6vw;
+    display: flex; 
+    flex-wrap: wrap; 
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+    font-size: 12px;
+    color: #454151;
+    font-weight: 300;
+    align-self: flex-end;
+}
+/* ---------------- Tablet (<= 1024px) ---------------- */
+@media (max-width: 1024px) {
+  .footer-wrapper, 
+  .footer-container {
+    height: 420px;               /* ADDED: smaller than 600px */
+  }
+
+  .footer-box {
+    margin: 4vh 0 0 2vw;         /* ADDED: pull margins in a bit */
+    width: 15%;                  /* ADDED: give items a bit more room */
+  }
+
+  .space {
+    height: 90px;                /* ADDED: reduce spacer */
+  }
+
+  /* Keep your desktop typography, but scale this on tablet */
+  .lets-connect {
+    font-size: clamp(28px, 4vw, 40px); /* ADDED: smaller on tablet only */
+    /* letter-spacing left unchanged here */
+  }
+}
+
+/* ---------------- Mobile (<= 600px) ---------------- */
+@media (max-width: 600px) {
+  .footer-wrapper {
+    height: auto;                /* ADDED: let content size the wrapper */
+  }
+
+  .footer-container {
+    position: static;            /* ADDED: avoid fixed footer on mobile */
+    height: auto;                /* ADDED */
+    padding: 16px 12px;          /* ADDED: give content breathing room */
+  }
+
+  .footer-heading {
+    flex-direction: column;      /* ADDED */
+    align-items: center;         /* ADDED */
+  }
+
+  .footer-box {
+    margin: 12px 0;              /* ADDED: stack with tighter spacing */
+    width: 100%;                 /* ADDED */
+  }
+
+  .footer-list {
+    padding: 6px 0;              /* ADDED: smaller list spacing */
+  }
+
+  .space {
+    height: 60px;                /* ADDED */
+  }
+
+  .lets-connect {
+    font-size: clamp(22px, 8vw, 36px); /* ADDED: shrink only on mobile */
+    letter-spacing: -4px;        /* ADDED: gentler tracking to prevent overlap on small screens */
+    text-align: center;          /* ADDED */
+    padding: 8px 0;              /* ADDED */
+  }
+
+  .cp-update {
+    margin: 10px 0 0 0;          /* ADDED */
+    justify-content: center;     /* ADDED */
+    font-size: 11px;             /* ADDED */
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import './footer.css'
+import './footertemp.css'
 import { FlipLink } from '../linkwrap/linkwrap'
 
 const lastUpdated = process.env.REACT_APP_VERCEL_GIT_COMMIT_TIMESTAMP
