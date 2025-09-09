@@ -10,10 +10,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
   {
-    title: "VIM Completion",
+    title: "Live Object Detection",
     source: "sent.png",
     color: "white",
-    category: "Backend",
+    category: "Computer Vision",
     date: "APR 2025"
   },
   {  
@@ -27,7 +27,7 @@ const projects = [
     title: "Pose Estimation",
     source: "pest.png",
     color: "red",
-    category: "Backend",
+    category: "Computer Vision",
     date: "DEC 2024"
   },
   {
