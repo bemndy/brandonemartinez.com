@@ -10,17 +10,17 @@ gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
   {
-    title: "Live Object Detection",
+    title: "Futbol Detection",
     source: "sent.png",
     color: "white",
     category: "Computer Vision",
     date: "APR 2025"
   },
   {  
-    title: "Spotify Features",
+    title: "Spotify Dev Tools",
     source: "c2fy.png",
     color: "blue",
-    category: "Frontend",
+    category: "Fullstack",
     date: "MAR 2025"
   },
   {
