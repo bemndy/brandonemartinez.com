@@ -19,12 +19,6 @@ function About () {
                         and I’m especially drawn to spaces where code becomes an expression — like robotics, audio signal processing, and graphic design.
                         </p>
                         <p className="biography-text">
-                        I also love people. As a first-generation Hispanic 
-                        student, I care deeply about the communities that helped raise me — and I want to pass along the knowledge, 
-                        support, and confidence I wish I had when starting out. I am involved with the Hammonton Health Coalition, 
-                        ColorStack and HSF Foundation. 
-                        </p>
-                        <p className="biography-text">
                         Blog bubbles coming soon...           New animations coming soon...            Music recs coming soon... New robots coming soon...
                     </p>
                     </div>
