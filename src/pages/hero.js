@@ -47,7 +47,7 @@ const projects = [
 ]
 
 function Hero () {
-    const [modal, setModal] = useState({active: false, index: 0})
+    const [, setModal] = useState({active: false, index: 0})
     useEffect(() => {
       const interBubble = document.querySelector('.interactive');
       let curX = 0;
