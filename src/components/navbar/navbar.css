@@ -1,0 +1,59 @@
+.navbar {
+    width: 100%;
+    margin: 0 auto; 
+}
+
+.nav-container { 
+    position: absolute;
+    z-index: 1;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px; /* Consistently apply padding everywhere */
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: var(--font--body);
+    text-decoration: none;
+    color: black;
+    z-index: 101; 
+}
+
+/* List of Links (Simple Flex) */
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none; /* No bullets */
+    margin: 0;
+    padding: 0;
+}
+
+/* Individual Link Item Styles */
+.nav-link {
+    margin-right: 20px; 
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-link);
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-link:visited {
+    color: black; 
+}
+
+.nav-link.active {
+    background-color: black; 
+    color: #fff;
+}
+
+/* Remove last item margin if we want perfect alignment, 
+   but usually margin-right everywhere is fine or we can do: */
+.nav-item:last-child .nav-link {
+    margin-right: 0;
+}

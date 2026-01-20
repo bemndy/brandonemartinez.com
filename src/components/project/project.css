@@ -1,0 +1,40 @@
+.project {
+    display: flex;
+    width: 95%;
+    padding: 10px 20px;
+    /* justify-content: space-between; */
+    /*border-top: 1px solid rgb(220, 220, 220);*/
+    border-top: 2px solid black;
+    cursor: pointer;
+    font-size: 18px; /* Reduced from 22px to be slightly larger than 16px header */
+    font-family: var(--font-link);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.project-title {
+    flex: 2;
+    text-align: left;
+}
+.project-category {
+    flex: 1;
+    text-align: left;
+}
+.project-date {
+    flex: 1;
+    text-align: right;
+}
+.project:hover {
+    background-color: black;
+    color: white;
+    border-top: 2px solid white; /* Optional: separates highlights if stacked? No, let's keep it consistent */
+}
+.project > div {
+    transition: transform 0.3s ease;
+}
+.project:hover .project-title {
+    transform: translateX(10px);
+}
+.project:hover .project-category,
+.project:hover .project-date {
+    transform: translateX(-10px);
+}

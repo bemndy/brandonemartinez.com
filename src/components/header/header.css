@@ -1,6 +1,7 @@
 .header-wrapper {
     width: 90%; 
     margin: 0 auto;
+    padding: 0 0 50px;
 }
 .header-box {
     display: flex; 
@@ -11,6 +12,7 @@
 .header-text {
     text-transform: uppercase; 
     font-size: 16px;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    font-family: var(--font-link);
+    font-weight: 500;
     color: black;
 }

@@ -15,12 +15,23 @@ function About () {
                     <img src="/images/portrait.JPG" alt="portrait of me" className="portrait"/> 
                     <div className="biography-text-container">
                         <p className="biography-text">
-                        Hey 👋🏽 I’m Brandon — a Computer Science student at the University of Notre Dame from South Jersey. I’ve built everything from front-end web designs to autonomous navigation systems,
-                        and I’m especially drawn to spaces where code becomes an expression — like robotics, audio signal processing, and graphic design.
+                        Hello 👋🏽 I'm Brandon,
                         </p>
                         <p className="biography-text">
-                        Blog bubbles coming soon...           New animations coming soon...            Music recs coming soon... New robots coming soon...
-                    </p>
+                        a current junior studying CS @ Notre Dame.
+                        </p>
+                        <p className="biography-text">
+                        I am an aspiring software engineer. I enjoy working on projects where code becomes an expression of creativity and problem solving.
+                        </p>
+                        <p className="biography-text">
+                        I build, own, and operate production systems end-to-end (API, data, UI). I'm strong in Python, C/C++, and modern web frameworks (JavaScript, React)
+                        </p>
+                        <p className="biography-text">
+                        My interests include: Fullstack-dev, ML, and Signal Processing
+                        </p>
+                        <p className="biography-text">
+                        The rest of my site will improve, I promise. Do not hesitate to reach out, I love building.
+                        </p>
                     </div>
                    </div> 
             </div>

@@ -7,7 +7,7 @@
     position: fixed;
     height: 60px;
     width: 100px;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+    font-family: var(--font-body);
     font-size: 35px;
     border-radius: 50px;
     transition: all 0.3s ease-out;

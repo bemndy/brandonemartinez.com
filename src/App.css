@@ -1,0 +1,64 @@
+:root {
+  --font-header: 'Prata', monospace, serif;
+  --font-body: 'Domine', 'Georgia', serif;
+  --font-link: BlinkMacSystemFont, Helvetica, Arial;
+  --font-pixel: 'VT323', 'Domine', 'Georgia', serif;
+  /* Colors */
+  --color-bg1: rgb(255, 255, 255);
+  --color-bg2: rgb(255, 255, 255);
+  --color-text: rgb(0, 0, 0);
+  
+  /* Blob/Gradient Colors */
+  --color1: 155, 255, 163;  
+  --color2: 163, 56, 131;      
+  --color3: 76, 117, 213;     
+  --color4: 255, 216, 86;
+  --color-interactive: 155, 255, 163;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+}
+p {
+  font-family: var(--font-body);
+  font-weight: normal;
+  font-size: 18px;
+}
+a {
+  font-family: var(--font-link);
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent by default */
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+a:hover {
+  opacity: 0.7;
+}
+ul, ol {
+  list-style: none; 
+}

@@ -15,7 +15,7 @@
     display: flex;
     opacity: 1;
     animation: fadeinout 3s forwards;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+    font-family: var(--font-body);
     font-size: clamp(16px, 5vw, 32px);
     font-weight: 300;
     align-self: center;

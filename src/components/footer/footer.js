@@ -1,5 +1,5 @@
 import React from 'react'
-import './footertemp.css'
+import './footer.css'
 import { FlipLink } from '../linkwrap/linkwrap'
 
 const lastUpdated = process.env.REACT_APP_VERCEL_GIT_COMMIT_TIMESTAMP
@@ -85,7 +85,8 @@ export function  StickyFooter() {
                         </div>
                     <div className='space'></div>
                     <div className="lets-connect">Let's Connect</div>
-                    <div className="cp-update"> Bem©2025 Last Updated: {lastUpdated}</div>
+                    <div className="cp-update">LAST UPDATED: {lastUpdated}</div>
+                    <div className="copyright">bem&copy;2026</div>
                 </div>
             </div>
         </div>

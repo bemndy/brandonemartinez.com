@@ -72,18 +72,38 @@ function Hero () {
       move();
     });    
       useEffect(() => {
+        // Animate the projects container moving up
         gsap.fromTo(".projects-container", 
-          { opacity: 0, y: 100 },
+          { opacity: 0, y: 150 }, // Increased y for more dramatic "coming up"
           {
             opacity: 1,
             y: 0,
-            duration: 0.5,
+            duration: 0.8,
             ease: "power2.out",
             scrollTrigger: {
               trigger: ".projects-container",
-              start: "top 90%",
+              start: "top 85%", // Start when top of container is near bottom of viewport
               toggleActions: "play none none reverse",
-              scrub: true
+              // scrub: true // Removed scrub to let the animation play out naturally on trigger
+            }
+          }
+        );
+
+        // STAGGERED REVEAL FOR PROJECTS (Left to Right Wipe + Fade)
+        gsap.fromTo(".project", 
+          { 
+            opacity: 0, 
+            clipPath: "inset(0 100% 0 0)" // Hidden (clipped from right)
+          },
+          {
+            opacity: 1,
+            clipPath: "inset(0 0% 0 0)", // Fully visible
+            duration: 0.8,
+            stagger: 0.15, // Delay between each project
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".projects-container",
+              start: "top 80%",
             }
           }
         );
@@ -93,12 +113,13 @@ function Hero () {
           { opacity: 1, y: 0 },
           {
             opacity: 0,
-            y: 0,
+            y: -50, // Slight upward movement as it fades
             duration: 1,
             ease: "power2.out",
             scrollTrigger: {
-              trigger: ".projects-container",
-              start: "top 135%",
+              trigger: ".intro-container", // Changed trigger to self
+              start: "top top", // Start fading when top of intro hits top of viewport
+              end: "bottom 60%", // Fade out quicker (by the time bottom is 60% up)
               toggleActions: "play none none reverse",
               scrub: true
             }
@@ -118,22 +139,19 @@ function Hero () {
                         </defs>
                     </svg>
                     <div className='gradient-container'>
-                        <div className='g1'></div>
+                        {/* <div className='g1'></div>
                         <div className="g2"></div>
                         <div className="g3"></div>
                         <div className='g4'></div>
-                        <div className="g5"></div>
+                        <div className="g5"></div> */}
                         <div className="interactive"></div>
                     </div>
                 </div>
                 <div className="intro-container">
-                    <h2 className="greeting"><span className="greeting-cursive">B</span>RANDON E 
-                    <span className="greeting-cursive">M</span>ARTINEZ</h2>
-                    <h2 className="greeting">FULL-STACK SOFTWARE</h2>
-                    <h2 className="greeting-pixelated">☀DEVELOPER☀</h2>
-                    <h2 className="greeting">CURRENTLY<span className="greeting-cursive">@</span> 
-                    NOTRE DAME</h2>
-                    <h2 className="greeting-pixelated">BEM©2025✨</h2>
+                    <h1 className="greeting-header">Brandon E Martinez</h1>
+                    <h1 className="greeting-header" id="greeting-pixel">cs @ notredame</h1>
+                    <h1 className="greeting-header">Based in Philadelphia</h1>
+                    <h1 className="greeting-header">BEM&copy;2026</h1>
                     <div className="typewriter-container"><span className="typewriter-text"></span>
                 </div>
                 </div>
