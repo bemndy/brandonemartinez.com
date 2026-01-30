@@ -17,7 +17,7 @@ const animateMainShape = () => {
       ease: "expo.easeOut",
     })
     .to(".shapes .main-circle", {
-      duration: 2,
+      duration: 3,
       x: 0,
       y: 0,
       ease: "expo.easeOut",
@@ -66,7 +66,7 @@ const animateShapes = () => {
 export const preLoaderAnim = () => {
   return new Promise((resolve) => {
     const tl = gsap.timeline({
-      timeScale: 2.5, // ✅ Speeds up the whole sequence
+      timeScale: 2.5, // Speeds up the whole sequence
       onComplete: resolve,
     });
 
@@ -89,7 +89,7 @@ export const preLoaderAnim = () => {
         delay: 0.3,
         y: 50,
         skewY: 10,
-        stagger: 0.25,
+        stagger: 0.3,
         ease: "Power3.easeOut",
       })
       .to(".texts-container span", {
