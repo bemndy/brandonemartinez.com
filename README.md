@@ -20,6 +20,3 @@ brandonemartinez.com/
 ```
 Deployment
 The site is deployed on Vercel, build status will be updated.​
-
-License
-This project is licensed under the MIT License.
