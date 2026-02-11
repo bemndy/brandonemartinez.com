@@ -39,6 +39,17 @@
     text-transform: lowercase;
 }
 .techstack {
-    width: 0%; 
-    margin: 0 0 50rem 0; 
+    width: 0%;
+    margin: 0 0 50rem 0;
+}
+
+@media (max-width: 768px) {
+    .biography-container {
+        flex-direction: column;
+        width: 90%;
+    }
+    .portrait {
+        width: 60%;
+        margin: 0 auto;
+    }
 }

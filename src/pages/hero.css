@@ -132,7 +132,7 @@
     height: 100%;
     top: -50%;
     left: -50%;
-    opacity: 0.7;
+    opacity: 0.9;
   }
 }
 /*section for the background gradient*/
@@ -152,10 +152,11 @@
   font-size: calc(3vw + 2vh);
   font-weight: 100;
   line-height: 0.85;
+  font-weight: 400;
 }
 #greeting-pixel {
   font-family: var(--font-pixel);
-  font-size: calc(5vw + 2vh);
+  font-size: calc(5vw + 5vh);
 }
 .typewriter-container {
   padding: 0;
@@ -184,7 +185,7 @@
   flex-wrap: wrap;
   background-color: rgb(255, 255, 255);
   width: 100vw;
-  padding: 0 0 200px 0;
+  margin: 100px 0 0 0;
   position: relative;
   z-index: 2; 
   opacity: 0;
