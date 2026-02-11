@@ -33,10 +33,10 @@
     max-width: calc(3 * (100px + 20px));
 }
 
-.footer-links {
-    font-family: var(--font-link);
+.footer-links a {
+    font-family: 'JetBrains Mono', monospace;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .credit-container {
@@ -48,7 +48,7 @@
 }
 
 .copyright {
-    font-family: var(--font-link);
+    font-family: 'JetBrains Mono', monospace;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 14px;
 }
