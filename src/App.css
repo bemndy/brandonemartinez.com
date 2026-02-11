@@ -1,6 +1,6 @@
 :root {
   --font-header: 'Prata', monospace, serif;
-  --font-body: 'Domine', 'Georgia', serif;
+  --font-body: 'Source Serif 4', 'Georgia', serif;
   --font-link: BlinkMacSystemFont, Helvetica, Arial;
   --font-pixel: 'VT323', 'Domine', 'Georgia', serif;
   /* Colors */
@@ -13,9 +13,10 @@
   --color2: 163, 56, 131;      
   --color3: 76, 117, 213;     
   --color4: 255, 216, 86;
-  --color-interactive: 155, 255, 163;
-  --circle-size: 80%;
-  --blending: hard-light;
+  --color-interactive: 197, 139, 214;
+  /* --color-interactive: 155, 255, 163; */
+  --circle-size: 15%;
+  --blending: screen;
 }
 
 * {
