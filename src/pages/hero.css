@@ -139,7 +139,7 @@
 .intro-container {
   width: 70%; 
   margin: 0 auto; 
-  padding: 17rem 0 16rem 0;
+  padding: 11rem 0 16rem 0;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -148,15 +148,16 @@
 }
 .greeting-header {
   font-family: var(--font-pixel);
-  text-transform: lowercase;
-  font-size: calc(3vw + 2vh);
-  font-weight: 100;
-  line-height: 0.85;
+  font-family: var(--font-link);
+  text-transform: uppercase;
+  font-size: calc(4vw + 1vh);
+  line-height: 1.9;
   font-weight: 400;
 }
 #greeting-pixel {
   font-family: var(--font-pixel);
-  font-size: calc(5vw + 5vh);
+  font-family: var(--font-link);
+  font-size: calc(4vw + 1vh);
 }
 .typewriter-container {
   padding: 0;
@@ -185,7 +186,7 @@
   flex-wrap: wrap;
   background-color: rgb(255, 255, 255);
   width: 100vw;
-  margin: 100px 0 0 0;
+  margin: 0px 0 0 0;
   position: relative;
   z-index: 2; 
   opacity: 0;

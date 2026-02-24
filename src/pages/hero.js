@@ -170,7 +170,7 @@ function Hero () {
               <div className="typewriter-container"><span className="typewriter-text"></span>
           </div>
           </div>
-          <Header className="header"/>
+          {/* <Header className="header"/> */}
           <div className='projects-container'>
             <div className='project-header'>
               <div className='projects-header'>project</div>
