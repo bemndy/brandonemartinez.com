@@ -7,9 +7,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <NavLink to="/" className="nav-logo">
+        {/* <NavLink to="/" className="nav-logo">
           bem.
-        </NavLink>
+        </NavLink> */}
 
         {/* Navigation Links List */}
         <ul className="nav-list">
@@ -31,14 +31,14 @@ function Navbar() {
               <FlipLink>Bio</FlipLink>
             </NavLink>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink 
               to="/misc" 
               className="nav-link" 
             >
               <FlipLink>Misc</FlipLink>
             </NavLink>
-          </li>
+          </li> */}
           <li className="nav-item">
             <a
               href="/resume.pdf"

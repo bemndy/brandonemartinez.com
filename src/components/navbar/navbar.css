@@ -4,17 +4,18 @@
 }
 
 .nav-container { 
-    position: absolute;
+    position: absolute; 
     z-index: 1;
     display: flex; 
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 15px 20px; /* Consistently apply padding everywhere */
+    justify-self: center;
+    justify-content: center;
+    width: 80%;
+    padding: 30px 0px; /* Consistently apply padding everywhere */
 }
 
 .nav-logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     font-family: var(--font-link);
     text-decoration: none;
@@ -38,7 +39,6 @@
     display: block;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'JetBrains Mono', monospace;
     color: black;
     text-decoration: none;
     text-transform: uppercase;
