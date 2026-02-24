@@ -1,5 +1,5 @@
 import React, { useEffect, useState }  from 'react';
-import Header from '../components/header/header';
+// import Header from '../components/header/header';
 import Project from '../components/project/project'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
