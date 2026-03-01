@@ -38,7 +38,7 @@ function Navbar() {
             >
               <FlipLink>Misc</FlipLink>
             </NavLink>
-          </li> */}
+          </li> */} 
           <li className="nav-item">
             <a
               href="/resume.pdf"
@@ -48,6 +48,14 @@ function Navbar() {
             >
               <FlipLink>CV</FlipLink>
             </a>
+          </li> 
+          <li className="nav-item">
+            <NavLink
+              to="/music"
+              className="nav-link"
+            >
+              <FlipLink>🎵</FlipLink>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -1,0 +1,51 @@
+.like-wrapper {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    z-index: 100;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like-btn:focus-visible {
+    outline: 2px solid black;
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+.heart-icon {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: fill 0.35s ease, stroke 0.35s ease;
+}
+
+.like-btn.liked .heart-icon {
+    fill: #ff6b9d;
+    stroke: #ff6b9d;
+}
+
+.like-count {
+    font-family: var(--font-link);
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+}

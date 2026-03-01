@@ -16,9 +16,10 @@
     opacity: 1;
     animation: fadeinout 3.5s forwards;
     font-family: var(--font-body);
-    font-size: clamp(16px, 5vw, 32px);
-    font-weight: 300;
+    font-size: clamp(16px, 3vw, 32px);
+    font-weight: 400;
     align-self: center;
+    text-transform: lowercase;
     color: white;
 }
 @keyframes fadeinout {

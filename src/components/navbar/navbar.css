@@ -1,21 +1,24 @@
 .navbar {
     width: 100%;
     margin: 0 auto; 
+    background-color: var(--color-bg1);
 }
 
 .nav-container { 
-    position: absolute; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     z-index: 1;
     display: flex; 
-    align-items: center;
-    justify-self: center;
     justify-content: center;
-    width: 80%;
-    padding: 30px 0px; /* Consistently apply padding everywhere */
+    width: 100%;
+    padding: 30px 0px 15px; /* Consistently apply padding everywhere */
+    border-bottom: 1px solid black;
 }
 
 .nav-logo {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     font-family: var(--font-link);
     text-decoration: none;
@@ -37,7 +40,7 @@
 .nav-link {
     margin-right: 20px; 
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: black;
     text-decoration: none;

@@ -3,8 +3,8 @@
     width: 95%;
     padding: 10px 20px;
     /* justify-content: space-between; */
-    /*border-top: 1px solid rgb(220, 220, 220);*/
-    border-top: 1.5px solid black;
+    /* border-top: 1px solid rgb(220, 220, 220); */
+    border-top: 1px solid black;
     cursor: pointer;
     font-size: 18px; /* Reduced from 22px to be slightly larger than 16px header */
     font-family: var(--font-link);
