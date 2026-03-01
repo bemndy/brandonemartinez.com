@@ -10,6 +10,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 // TODO: make this exported via json, ordered not mattering (uses forEach callback rightnow)
 const projects = [
+  {
+    title: "Autonomous Robot",
+    color: "blue",
+    source: "sent.png",
+    category: "Machine Learning",
+    date: "MAY 2026"
+  },
   {  
     title: "Cozy Cubes",
     source: "c2fy.png",
@@ -51,14 +58,7 @@ const projects = [
     color: "white",
     category: "Machine Learning",
     date: "SEP 2024"
-  },
-  {
-    title: "Autonomous Robot",
-    source: "sent.png",
-    color: "black",
-    category: "Machine Learning",
-    date: "APR 2024"
-  }
+  } 
 ]
 
 function Hero () {
@@ -189,6 +189,10 @@ function Hero () {
             <div className='project-header'>
               <div className='projects-header'>project</div>
               <div className='projects-header'>category</div>
+              <div className='projects-header'>date</div>
+            </div>
+            <div className='project-header-mobile'>
+              <div className='projects-header'>project</div>
               <div className='projects-header'>date</div>
             </div>
             {

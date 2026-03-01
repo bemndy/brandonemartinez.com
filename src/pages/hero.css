@@ -201,6 +201,10 @@
   /* Removed justify-content: space-between */
   padding: 25px 20px 10px 20px;
 }
+.project-header-mobile {
+  display: none;
+}
+
 .projects-header {
   font-family: var(--font-link);
   font-size: 12px;
@@ -218,4 +222,19 @@
 .projects-header:nth-child(3) {
   flex: 1;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .project-header {
+    display: none;
+  }
+  .project-header-mobile {
+    display: flex;
+    width: 95%;
+    padding: 25px 20px 10px 20px;
+  }
+  .projects-header:nth-child(2) {
+    flex: 1;
+    text-align: right;
+  }
 }
