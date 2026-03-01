@@ -7,11 +7,6 @@ import Header from '../components/header/header';
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Add new entries at the top — song title, artist, date
-const staticSongs = [
-    { title: "Period Blood", artist: "Roc Marciano", date: "MAR 1" },
-];
-
 function SongEntry({ title, artist, date }) {
     return (
         <div className="song-entry">
@@ -25,7 +20,14 @@ function SongEntry({ title, artist, date }) {
 }
 
 function Music() {
-    const [songs, setSongs] = useState(staticSongs);
+    const [songs, setSongs] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/songs')
+            .then(r => r.json())
+            .then(data => setSongs(data))
+            .catch(() => {});
+    }, []);
 
     useEffect(() => {
         gsap.fromTo(".music-logo",
@@ -44,18 +46,6 @@ function Music() {
         );
     }, []);
 
-    useEffect(() => {
-        const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
-        fetch('/api/top-track')
-            .then(r => r.json())
-            .then(data => {
-                if (data.found) {
-                    setSongs([{ title: data.title, artist: data.artist, date: today }, ...staticSongs]);
-                }
-            })
-            .catch(() => {});
-    }, []);
-
     return (
         <div className="music-wrapper">
             <div className="music-container">
@@ -69,10 +59,6 @@ function Music() {
                 <div className="song-section">
                     <div className="song-section-header">
                         <h2 className="song-title">Song of the days</h2>
-                    </div>
-                    <div className="song-list-header">
-                        <span>song</span>
-                        <span>date</span>
                     </div>
                     <div className="song-list">
                         {songs.map((s, i) => (

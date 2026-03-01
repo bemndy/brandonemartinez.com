@@ -24,32 +24,20 @@
 }
 .song-section {
     width: 50%;
-    margin: 4rem auto 10rem auto;
+    margin: 2rem auto 10rem auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 .song-section-header {
     display: flex;
     align-items: center;
 }
 .song-title {
-    font-family: var(--font-body);
-    font-size: 28px;
-    font-weight: 600;
-    text-transform: capitalize;
-}
-.song-list-header {
-    display: flex;
-    justify-content: space-between;
     font-family: var(--font-link);
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 33px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.4;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 .song-list {
     display: flex;
@@ -60,7 +48,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid rgba(0, 0, 0);
 }
 .song-entry-left {
     display: flex;
@@ -68,22 +56,22 @@
     gap: 3px;
 }
 .song-entry-title {
-    font-family: var(--font-link);
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: 18px;
     font-weight: 500;
     color: black;
 }
 .song-entry-artist {
-    font-family: var(--font-link);
-    font-size: 12px;
+    font-family: var(--font-body);
+    font-size: 14px;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.45);
+    color: rgba(0, 0, 0, 0.85);
 }
 .song-entry-date {
-    font-family: var(--font-link);
-    font-size: 11px;
+    font-family: var(--font-body);
+    font-size: 14px;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.35);
+    color: rgba(0, 0, 0, 0.85);
     letter-spacing: 0.05em;
     flex-shrink: 0;
 }
