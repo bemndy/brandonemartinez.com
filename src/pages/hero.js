@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react';
+import { useEffect, useState } from 'react';
 // import Header from '../components/header/header';
 import Project from '../components/project/project'
 import gsap from 'gsap'
@@ -69,23 +69,37 @@ function Hero () {
       let curY = 0;
       let tgX = 0;
       let tgY = 0;
-    
+      let rafId;
+
       function move() {
         curX += (tgX - curX) / 20;
         curY += (tgY - curY) / 20;
         if (interBubble) {
           interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
         }
-        requestAnimationFrame(move);
+        rafId = requestAnimationFrame(move);
       }
-    
-      window.addEventListener('mousemove', (event) => {
+
+      function handleMouseMove(event) {
         tgX = event.clientX;
         tgY = event.clientY;
-      });
-    
+      }
+
+      window.addEventListener('mousemove', handleMouseMove);
       move();
-    });    
+
+      return () => {
+        cancelAnimationFrame(rafId);
+        window.removeEventListener('mousemove', handleMouseMove);
+      };
+    }, []);
+    useEffect(() => {
+      // Start each blob at a random point in its animation cycle on every load
+      document.querySelectorAll('.g1, .g2, .g3').forEach(blob => {
+        const duration = parseFloat(getComputedStyle(blob).animationDuration);
+        blob.style.animationDelay = `-${(Math.random() * duration).toFixed(2)}s`;
+      });
+    }, []);
       useEffect(() => {
         // Animate the projects container moving up
         gsap.fromTo(".projects-container", 
@@ -147,24 +161,24 @@ function Hero () {
           <svg xmlns="http://www.w3.org/2000/svg">
               <defs>
                   <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="50" result="blur" />
                   <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
                   <feBlend in="SourceGraphic" in2="goo" />
                   </filter>
               </defs>
           </svg>
           <div className='gradient-container'>
-              {/* <div className='g1'></div>
+              <div className='g1'></div>
               <div className="g2"></div>
               <div className="g3"></div>
-              <div className='g4'></div>
-              <div className="g5"></div> */}
+              {/* <div className='g4'></div> */}
+              {/* <div className="g5"></div> */}
               <div className="interactive"></div>
           </div>
         </div>
           <div className="intro-container">
               <h1 className="greeting-header">Brandon E Martinez</h1>
-              <h1 className="greeting-header" id="greeting-pixel">cs @ notredame</h1>
+              <h1 className="greeting-header" id="greeting-pixel">cs @ notre dame</h1>
               <h1 className="greeting-header">Based in Philadelphia</h1>
               <h1 className="greeting-header">BEM&copy;2026</h1>
               <div className="typewriter-container"><span className="typewriter-text"></span>
