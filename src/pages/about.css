@@ -78,12 +78,23 @@
 }
 
 @media (max-width: 768px) {
+    .about-logo {
+        width: 70%;
+    }
     .biography-container {
         flex-direction: column;
-        width: 90%;
+        width: 60%;
     }
     .portrait {
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
+    }
+    .biography-text-container p,
+    .biography-text-container span {
+        font-size: 14px;
+    }
+    .biography-text a,
+    .biography-subtitle a {
+        font-size: 14px;
     }
 }
