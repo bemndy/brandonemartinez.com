@@ -1,6 +1,6 @@
-import { createClient } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
 
-const kv = createClient({
+const kv = new Redis({
     url: process.env.STORAGE_KV_REST_API_URL,
     token: process.env.STORAGE_KV_REST_API_TOKEN,
 });
