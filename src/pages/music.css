@@ -18,9 +18,13 @@
     width: 35%;
     margin: 4rem auto 0 auto;
 }
+.now-playing-wrapper {
+    width: 50%;
+    margin: 3rem auto 0 auto;
+}
 .song-section {
     width: 50%;
-    margin: 8rem auto 10rem auto;
+    margin: 4rem auto 10rem auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -28,9 +32,6 @@
 .song-section-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
 }
 .song-title {
     font-family: var(--font-body);
@@ -90,6 +91,9 @@
 @media (max-width: 768px) {
     .music-logo {
         width: 70%;
+    }
+    .now-playing-wrapper {
+        width: 90%;
     }
     .song-section {
         width: 90%;

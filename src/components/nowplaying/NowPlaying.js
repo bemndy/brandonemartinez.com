@@ -33,6 +33,7 @@ function NowPlaying() {
             target="_blank"
             rel="noopener noreferrer"
         >
+            <span>Currently playing:</span>
             <span className="now-playing-dot" />
             {track.albumArt && (
                 <img

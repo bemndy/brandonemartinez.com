@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NowPlaying from '../components/nowplaying/NowPlaying';
@@ -8,7 +8,7 @@ import Header from '../components/header/header';
 gsap.registerPlugin(ScrollTrigger)
 
 // Add new entries at the top — song title, artist, date
-const songs = [
+const staticSongs = [
     { title: "Period Blood", artist: "Roc Marciano", date: "MAR 1" },
 ];
 
@@ -25,6 +25,8 @@ function SongEntry({ title, artist, date }) {
 }
 
 function Music() {
+    const [songs, setSongs] = useState(staticSongs);
+
     useEffect(() => {
         gsap.fromTo(".music-logo",
             { opacity: 1, y: 0 },
@@ -42,6 +44,18 @@ function Music() {
         );
     }, []);
 
+    useEffect(() => {
+        const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+        fetch('/api/top-track')
+            .then(r => r.json())
+            .then(data => {
+                if (data.found) {
+                    setSongs([{ title: data.title, artist: data.artist, date: today }, ...staticSongs]);
+                }
+            })
+            .catch(() => {});
+    }, []);
+
     return (
         <div className="music-wrapper">
             <div className="music-container">
@@ -49,10 +63,12 @@ function Music() {
                     <Header/>
                 </div>
                 <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
+                <div className="now-playing-wrapper">
+                    <NowPlaying />
+                </div>
                 <div className="song-section">
                     <div className="song-section-header">
-                        <h2 className="song-title">Song of the day</h2>
-                        <NowPlaying />
+                        <h2 className="song-title">Song of the days</h2>
                     </div>
                     <div className="song-list-header">
                         <span>song</span>

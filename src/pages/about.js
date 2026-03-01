@@ -32,9 +32,10 @@ function About () {
                 </div>
                 <img src="/images/lucky2.png" alt="2$ bill" className="about-logo"/>
                 <div className="biography-container">
+                    <img src="/images/portrait.JPG" alt="portrait of me" className="portrait"/> 
                     <div className="biography-text-container">
                         <div className="biography-header-container">
-                          <div className="biography-emoji">💙</div>
+                          <div className="biography-emoji">🖤</div>
                           <span>
                             <div className="biography-title">Brandon E Martinez</div>
                             <div className="biography-subtitle">CS @ <a href="https://cse.nd.edu/" target="_blank" rel="noopener noreferrer">Notre Dame</a></div>
@@ -54,7 +55,6 @@ function About () {
                         (as am I).
                         </p>
                     </div>
-                    <img src="/images/portrait.JPG" alt="portrait of me" className="portrait"/> 
                 </div> 
             </div>
         </div>
