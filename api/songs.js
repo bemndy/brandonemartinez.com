@@ -17,7 +17,11 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
         try {
-            const songs = await kv.get('site:songs');
+            let songs = await kv.get('site:songs');
+            // Upstash data browser saves arrays as objects with numeric keys — convert back
+            if (songs && !Array.isArray(songs)) {
+                songs = Object.values(songs);
+            }
             return res.status(200).json(songs ?? FALLBACK_SONGS);
         } catch {
             return res.status(200).json(FALLBACK_SONGS);
