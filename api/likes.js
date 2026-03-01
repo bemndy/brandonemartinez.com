@@ -1,4 +1,9 @@
-import { kv } from '@vercel/kv';
+import { createClient } from '@vercel/kv';
+
+const kv = createClient({
+    url: process.env.STORAGE_KV_REST_API_URL,
+    token: process.env.STORAGE_KV_REST_API_TOKEN,
+});
 
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');

@@ -1,7 +1,12 @@
-import { kv } from '@vercel/kv';
+import { createClient } from '@vercel/kv';
+
+const kv = createClient({
+    url: process.env.STORAGE_KV_REST_API_URL,
+    token: process.env.STORAGE_KV_REST_API_TOKEN,
+});
 
 const FALLBACK_SONGS = [
-    { title: "Period Blood", artist: "Roc Marciano", date: "MAR 1" },
+    { title: "API is not working lol", artist: "Brandon E Martinez", date: "MAR 6" },
 ];
 
 export default async function handler(req, res) {
