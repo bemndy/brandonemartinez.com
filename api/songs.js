@@ -39,7 +39,10 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'title, artist, and date are required' });
         }
 
-        const current = (await kv.get('site:songs')) ?? FALLBACK_SONGS;
+        let current = (await kv.get('site:songs')) ?? FALLBACK_SONGS;
+        if (current && !Array.isArray(current)) {
+            current = Object.values(current);
+        }
         const updated = [{ title, artist, date }, ...current];
         await kv.set('site:songs', updated);
         return res.status(200).json(updated);
