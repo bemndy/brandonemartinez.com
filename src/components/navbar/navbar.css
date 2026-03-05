@@ -56,8 +56,25 @@
     color: #fff;
 }
 
-/* Remove last item margin if we want perfect alignment, 
+/* Remove last item margin if we want perfect alignment,
    but usually margin-right everywhere is fine or we can do: */
 .nav-item:last-child .nav-link {
     margin-right: 0;
+}
+
+.dark-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.nav-icon-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-link svg {
+    display: block;
 }

@@ -189,7 +189,7 @@
   flex-wrap: wrap;
   background-color: var(--color-bg1);
   width: 100%;
-  margin: 5rem auto 5rem auto;
+  margin: 2rem auto 5rem auto;
   position: relative;
   z-index: 2; 
   opacity: 0;
