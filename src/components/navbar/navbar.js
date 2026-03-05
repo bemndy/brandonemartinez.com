@@ -23,14 +23,14 @@ function Navbar() {
               <FlipLink>Projects</FlipLink>
             </NavLink>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink 
               to="/about" 
               className="nav-link" 
             >
               <FlipLink>Bio</FlipLink>
             </NavLink>
-          </li>
+          </li> */}
           {/* <li className="nav-item">
             <NavLink 
               to="/misc" 

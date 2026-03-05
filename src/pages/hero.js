@@ -11,11 +11,25 @@ gsap.registerPlugin(ScrollTrigger)
 // TODO: make this exported via json, ordered not mattering (uses forEach callback rightnow)
 const projects = [
   {
-    title: "Autonomous Robot",
+    title: "Sentiment Analysis",
+    source: "sent.png",
+    color: "white",
+    category: "Machine Learning",
+    date: "DEC 2024"
+  },
+  {
+    title: "Gerbil Autonomous Robot",
     color: "blue",
     source: "sent.png",
     category: "Machine Learning",
-    date: "MAY 2026"
+    date: "NOV 2025"
+  },
+  {
+    title: "TSMC Computer Chip Tapeout",
+    color: "white",
+    source: "sent.png",
+    category: "Hardware",
+    date: "DEC 2025"
   },
   {  
     title: "Cozy Cubes",
@@ -25,40 +39,12 @@ const projects = [
     date: "JAN 2026"
   },
   {
-    title: "Futbol Object-Detection",
+    title: "Samplicity",
     source: "sent.png",
     color: "white",
-    category: "Computer Vision",
-    date: "APR 2025"
+    category: "Fullstack",
+    date: "MAR 2026"
   },
-  { 
-    title: "OCV Pose Estimation",
-    source: "pest.png",
-    color: "red",
-    category: "Computer Vision",
-    date: "DEC 2024"
-  },
-  {
-    title: "Flappy Bird Terminal",
-    source: "sent.png",
-    color: "white",
-    category: "CLI",
-    date: "DEC 2024"
-  },
-  {
-    title: "Game of Life Terminal",
-    source: "sent.png",
-    color: "white",
-    category: "CLI",
-    date: "NOV 2024"
-  },
-  {
-    title: "Sentiment Analysis",
-    source: "sent.png",
-    color: "white",
-    category: "Machine Learning",
-    date: "SEP 2024"
-  } 
 ]
 
 function Hero () {
@@ -171,8 +157,8 @@ function Hero () {
               <div className='g1'></div>
               <div className="g2"></div>
               <div className="g3"></div>
-              {/* <div className='g4'></div> */}
-              {/* <div className="g5"></div> */}
+              <div className='g4'></div>
+              <div className="g5"></div>
               <div className="interactive"></div>
           </div>
         </div>
