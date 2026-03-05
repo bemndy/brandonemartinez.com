@@ -1,4 +1,5 @@
-import React from 'react'; 
+import React from 'react';
+import { DarkModeProvider } from './DarkModeContext';
 import { LenisProvider } from './LenisContext'
 import ScrollToTop from './ScrollToTop';
 import Overlay from './components/overlay/overlay'
@@ -14,7 +15,7 @@ import './App.css';
 
 function App() {
   return (
-    <>
+    <DarkModeProvider>
     <Router>
       <LenisProvider>
           <ScrollToTop/>
@@ -30,7 +31,7 @@ function App() {
           <StickyFooter/>
       </LenisProvider>
     </Router>
-    </>
+    </DarkModeProvider>
   );
 }
 

@@ -16,7 +16,7 @@
   --color-interactive: 197, 139, 214;
   /* --color-interactive: 155, 255, 163; */
   --circle-size: 70%;
-  --blob-alpha: 0.5;
+  --blob-alpha: 0.7;
   --blending: screen;
 }
 
@@ -62,5 +62,125 @@ a:hover {
   opacity: 0.7;
 }
 ul, ol {
-  list-style: none; 
+  list-style: none;
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   Toggle by adding class="dark" to <html>
+   ============================================================ */
+
+html.dark {
+  --color-bg1: rgb(15, 15, 15);
+  --color-bg2: rgb(15, 15, 15);
+  --color-text: rgb(255, 255, 255);
+}
+
+/* --- Navbar --- */
+html.dark .nav-container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+html.dark .nav-logo {
+  color: rgb(255, 255, 255);
+}
+html.dark .nav-link {
+  color: rgb(255, 255, 255);
+}
+html.dark .nav-link:visited {
+  color: rgb(255, 255, 255);
+}
+html.dark .nav-link.active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
+}
+
+/* --- LinkWrap flip hover --- */
+html.dark .flip-container-b {
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
+}
+
+/* --- Hero intro borders --- */
+html.dark .intro-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+html.dark .typewriter-container {
+  color: rgb(255, 255, 255);
+}
+html.dark .typewriter-text {
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+/* --- Projects list --- */
+html.dark .project {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+html.dark .project:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
+  border-top: 2px solid rgb(15, 15, 15);
+}
+
+/* --- Footer --- */
+html.dark .footer-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* --- Music page --- */
+html.dark .song-entry {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+html.dark .song-entry-title {
+  color: rgb(255, 255, 255);
+}
+html.dark .song-entry-artist,
+html.dark .song-entry-date {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* --- NowPlaying (idle state) --- */
+html.dark .now-playing {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+html.dark .now-playing--idle:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+html.dark .now-playing-spotify-icon--idle {
+  fill: rgba(255, 255, 255, 0.3);
+}
+html.dark .now-playing-idle-text {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Like button --- */
+html.dark .heart-icon {
+  stroke: rgb(255, 255, 255);
+}
+html.dark .like-btn:focus-visible {
+  outline: 2px solid rgb(255, 255, 255);
+}
+html.dark .like-count {
+  color: rgb(255, 255, 255);
+}
+
+/* --- Header (email banner) --- */
+html.dark .header-text {
+  color: rgb(255, 255, 255);
+}
+
+/* --- Hero: semi-transparent dark overlay over full gradient section --- */
+html.dark .hero-wrapper {
+  background-color: rgba(15, 15, 15, 0.55);
+}
+
+/* ============================================================
+   GRADIENT TOGGLE
+   html.no-gradient hides the blob background
+   ============================================================ */
+html.no-gradient .gradient-bg {
+  display: none;
 }
