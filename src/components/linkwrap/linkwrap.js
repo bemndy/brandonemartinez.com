@@ -1,5 +1,5 @@
 import React from 'react'
-import './linkwrap.css'
+import './LinkWrap.css'
 import { motion } from 'framer-motion'
 
 export const FlipLink = ({ children, to }) => {

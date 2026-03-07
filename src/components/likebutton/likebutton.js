@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import './likebutton.css';
+import './LikeButton.css';
 
 function LikeButton() {
     const [count, setCount] = useState(null);
