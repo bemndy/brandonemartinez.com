@@ -1,18 +1,25 @@
 .header-wrapper {
-    width: 90%; 
-    margin: 0 auto;
-    padding: 0 0 50px;
+    width: 50%; 
+    margin: 8rem auto 0 auto;
 }
 .header-box {
     display: flex; 
-    flex-wrap: wrap; 
     flex-direction: column;
     align-items: flex-start;
 }
 .header-text {
-    text-transform: uppercase; 
+    text-transform: uppercase;
     font-size: 14px;
-    font-family: 'JetBrains Mono', monospace; 
+    font-family: var(--font-mono);
     font-weight: 500;
-    color: black;
+    color: var(--color-text);
+}
+
+.header-email {
+    transition: background-color 0.08s, color 0.08s;
+}
+
+.header-email:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg1);
 }

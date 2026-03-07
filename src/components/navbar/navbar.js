@@ -1,13 +1,11 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FlipLink } from '../linkwrap/linkwrap';
 import { useDarkMode } from '../../DarkModeContext';
-import './navbar.css';
+import './Navbar.css';
 
 function Navbar() {
   const { isDark, toggleDark, isGradientOn, toggleGradient } = useDarkMode();
   return (
-    <nav className="navbar">
+    <nav className="navbar-wrapper">
       <div className="nav-container">
         {/* <NavLink to="/" className="nav-logo">
           bem.
@@ -22,7 +20,7 @@ function Navbar() {
                 "nav-link" + (isActive ? " active" : "")
               }
             >
-              <FlipLink>Projects</FlipLink>
+              Projects
             </NavLink>
           </li>
           {/* <li className="nav-item">
@@ -48,19 +46,20 @@ function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FlipLink>CV</FlipLink>
+              CV
             </a>
-          </li> 
+          </li>
           <li className="nav-item">
             <NavLink
               to="/music"
               className="nav-link nav-icon-link"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Music">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Music">
                 <path d="M9 18V5l12-2v13"/>
                 <circle cx="6" cy="18" r="3"/>
                 <circle cx="18" cy="16" r="3"/>
-              </svg>
+              </svg> */}
+              music
             </NavLink>
           </li>
           <li className="nav-item">
