@@ -1,22 +1,34 @@
-This is the personal portfolio website for me, being migrated to the latest technology stack I am learning.
+# brandonemartinez.com
 
-this will encompass the UI style I intend my side projects to be based off. This is a growing document/project that will always have changes and write ups to showcase my adventures in greater detail :)
-​
-live: brandonemartinez.com
+Personal portfolio site. Live at [brandonemartinez.com](https://brandonemartinez.com).
 
-# Tech Stack
-Frontend: React.js, GSAP, Framermotion, Lenis
-Styling: TailwindCSS
-Hosting: Vercel (potential next.js migration)​
+## Stack
 
-# Project Structure
+- React 19, React Router
+- GSAP + ScrollTrigger — scroll animations
+- Lenis — smooth scroll
+- Motion — micro-interactions
+- CSS custom properties — theming (dark/light mode)
+- Vercel — hosting and serverless API routes
+- Upstash Redis — persistent like count and song of the day data
+
+## Structure
+
 ```
-brandonemartinez.com/
-├── archive/            # Old HTML boilerplate/files
-├── public/             # Assets being rendered on website
-├── src/                # React components, pages, and scripts
-├── package.json        # Project metadata and scripts
-└── README.md           # Project documentation
+src/
+├── components/     # Navbar, Footer, Header, NowPlaying, Overlay, etc.
+├── pages/          # Hero, Music, About, Misc
+├── App.js          # Routes and global layout
+├── App.css         # Global styles and CSS variables
+├── DarkModeContext.js
+└── LenisContext.js
 ```
-Deployment
-The site is deployed on Vercel, build status will be updated.​
+
+## Dev
+
+```bash
+npm install
+npm start
+```
+
+Deployed automatically on push to `main` via Vercel.
