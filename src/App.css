@@ -1,13 +1,89 @@
+/* ============================================================
+   GEIST SANS
+   ============================================================ */
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/geist-sans/Geist-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/geist-sans/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   GEIST MONO
+   ============================================================ */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./fonts/geist-mono/GeistMono-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./fonts/geist-mono/GeistMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./fonts/geist-mono/GeistMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./fonts/geist-mono/GeistMono-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-header: 'Prata', monospace, serif;
-  --font-body: 'Source Serif 4', 'Georgia', serif;
-  --font-link:  -apple-system, BlinkMacSystemFont, 'Inter', Arial;
-  --font-pixel: 'VT323', 'Georgia', serif;
+  /* Fonts */
+  --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+  --font-serif: 'Prata', 'Source Serif 4', Georgia, serif;
+  --font-header: var(--font-serif);
+  --font-body: var(--font-serif);
+  --font-link: var(--font-sans);
   /* Colors */
-  --color-bg1: rgb(238, 238, 238);
+  --color-bg1: rgb(246, 203, 215);
   --color-bg2: rgb(238, 238, 238);
   --color-text: rgb(28, 28, 28);
-  
+  --color-text-strong: rgb(0, 0, 0);
+  --color-text-muted: rgb(115, 115, 115);
+
   /* Blob/Gradient Colors */
   --color1: 255, 77, 133;  
   --color2: 163, 56, 131;      
@@ -54,12 +130,8 @@ p {
 a {
   font-family: var(--font-link);
   text-decoration: none;
-  color: inherit; /* Inherit color from parent by default */
+  color: inherit;
   cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-a:hover {
-  opacity: 0.7;
 }
 ul, ol {
   list-style: none;
@@ -71,110 +143,183 @@ ul, ol {
    ============================================================ */
 
 html.dark {
-  --color-bg1: rgb(15, 15, 15);
-  --color-bg2: rgb(15, 15, 15);
-  --color-text: rgb(255, 255, 255);
+  --color-bg1: rgb(18, 18, 18);
+  --color-bg2: rgb(18, 18, 18);
+  --color-text: rgb(232, 232, 232);
+  --color-text-strong: rgb(232, 232, 232);
+  --color-text-muted: rgba(232, 232, 232, 0.4);
 }
 
 /* --- Navbar --- */
 html.dark .nav-container {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-html.dark .nav-logo {
-  color: rgb(255, 255, 255);
-}
-html.dark .nav-link {
-  color: rgb(255, 255, 255);
-}
-html.dark .nav-link:visited {
-  color: rgb(255, 255, 255);
-}
-html.dark .nav-link.active {
-  background-color: rgb(255, 255, 255);
-  color: rgb(15, 15, 15);
+  border-top: 1px solid rgba(232, 232, 232, 0.12);
 }
 
-/* --- LinkWrap flip hover --- */
-html.dark .flip-container-b {
-  background-color: rgb(255, 255, 255);
-  color: rgb(15, 15, 15);
-}
-
-/* --- Hero intro borders --- */
-html.dark .intro-container {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
 html.dark .typewriter-container {
-  color: rgb(255, 255, 255);
+  color: var(--color-text);
 }
 html.dark .typewriter-text {
-  border-right: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid var(--color-text);
 }
 
-/* --- Projects list --- */
+/* --- Projects list (misc page cards) --- */
 html.dark .project {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(232, 232, 232, 0.12);
 }
 html.dark .project:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(15, 15, 15);
-  border-top: 2px solid rgb(15, 15, 15);
+  background-color: var(--color-text);
+  color: var(--color-bg1);
+  border-top: 2px solid var(--color-bg1);
 }
 
 /* --- Footer --- */
 html.dark .footer-container {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* --- Music page --- */
-html.dark .song-entry {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-html.dark .song-entry-title {
-  color: rgb(255, 255, 255);
-}
-html.dark .song-entry-artist,
-html.dark .song-entry-date {
-  color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid var(--color-text);
 }
 
 /* --- NowPlaying (idle state) --- */
 html.dark .now-playing {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 232, 232, 0.12);
+  background: rgba(232, 232, 232, 0.04);
 }
 html.dark .now-playing--idle:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(232, 232, 232, 0.06);
+  border-color: rgba(232, 232, 232, 0.2);
 }
 html.dark .now-playing-spotify-icon--idle {
-  fill: rgba(255, 255, 255, 0.3);
+  fill: rgba(232, 232, 232, 0.3);
 }
 html.dark .now-playing-idle-text {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(232, 232, 232, 0.4);
 }
 
 /* --- Like button --- */
 html.dark .heart-icon {
-  stroke: rgb(255, 255, 255);
+  stroke: var(--color-text);
 }
 html.dark .like-btn:focus-visible {
-  outline: 2px solid rgb(255, 255, 255);
+  outline: 2px solid var(--color-text);
 }
 html.dark .like-count {
-  color: rgb(255, 255, 255);
+  color: var(--color-text);
 }
 
-/* --- Header (email banner) --- */
-html.dark .header-text {
-  color: rgb(255, 255, 255);
+
+
+/* ============================================================
+   GRADIENT BACKGROUND (fixed, visible across all pages)
+   ============================================================ */
+@keyframes moveInCircle {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes moveVertical {
+  0%   { transform: translateY(-50%); }
+  50%  { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
+}
+@keyframes moveHorizontal {
+  0%   { transform: translateX(-50%) translateY(-10%); }
+  50%  { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
 }
 
-/* --- Hero: semi-transparent dark overlay over full gradient section --- */
-html.dark .hero-wrapper {
-  background-color: rgba(15, 15, 15, 0.55);
+.gradient-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+
+  svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .gradient-container {
+    filter: url(#goo) blur(40px);
+    position: relative;
+    width: 100%;
+    height: 65%;
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), var(--blob-alpha)) 0, rgba(var(--color1), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+    will-change: transform;
+  }
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), var(--blob-alpha)) 0, rgba(var(--color3), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+    will-change: transform;
+  }
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), var(--blob-alpha)) 0, rgba(var(--color2), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+    will-change: transform;
+  }
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), var(--blob-alpha)) 0, rgba(var(--color3), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+    will-change: transform;
+  }
+  .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), var(--blob-alpha)) 0, rgba(var(--color2), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+    will-change: transform;
+  }
+  .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), var(--blob-alpha)) 0, rgba(var(--color-interactive), 0) 60%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    will-change: transform;
+  }
 }
 
 /* ============================================================
@@ -183,4 +328,127 @@ html.dark .hero-wrapper {
    ============================================================ */
 html.no-gradient .gradient-bg {
   display: none;
+}
+
+/* ============================================================
+   SHARED SECTION STYLES (used on hero + music pages)
+   ============================================================ */
+.sections-wrapper {
+  width: 50%;
+  margin: 5rem auto 8rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.section-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-strong);
+  padding: 14px 0;
+}
+
+/* --- Work Experience --- */
+.work-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-text);
+  text-transform: uppercase;
+}
+
+.work-year {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  flex: 0 0 72px;
+}
+
+.work-role {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.work-company {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* --- Projects / Song rows --- */
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-text);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.project-row-left {
+  display: flex;
+  align-items: baseline;
+}
+
+.project-row-name {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.project-row:hover .project-row-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.project-row-sep {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  color: var(--color-text-muted);
+  margin: 0 6px;
+}
+
+.project-row-cat {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  color: var(--color-text-muted);
+}
+
+.project-row-date {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .sections-wrapper {
+    width: 90%;
+    gap: 3rem;
+  }
+  .project-row-cat {
+    display: none;
+  }
+  .work-role {
+    display: none;
+  }
 }

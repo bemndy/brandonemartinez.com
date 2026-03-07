@@ -1,15 +1,15 @@
-import React from 'react';
 import { DarkModeProvider } from './DarkModeContext';
 import { LenisProvider } from './LenisContext'
 import ScrollToTop from './ScrollToTop';
-import Overlay from './components/overlay/overlay'
-import Navbar from './components/navbar/navbar';
-import Hero from './pages/hero';
-import About from './pages/about';
-import Music from './pages/music';
-import Misc from './pages/misc';
-import StickyFooter from './components/footer/footer'
-import LikeButton from './components/likebutton/likebutton'
+import Overlay from './components/overlay/Overlay'
+import Navbar from './components/navbar/Navbar';
+import GradientBg from './components/gradientbg/GradientBg';
+import Hero from './pages/Hero';
+import About from './pages/About';
+import Music from './pages/Music';
+import Misc from './pages/Misc';
+import StickyFooter from './components/footer/Footer'
+import LikeButton from './components/likebutton/LikeButton'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -18,6 +18,7 @@ function App() {
     <DarkModeProvider>
     <Router>
       <LenisProvider>
+          <GradientBg/>
           <ScrollToTop/>
           <Overlay/>
           <Navbar/>
