@@ -1,5 +1,5 @@
 import React from 'react';
-import './misc.css'
+import './Misc.css'
 
 function Misc () {
     return (

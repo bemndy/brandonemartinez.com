@@ -2,19 +2,20 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NowPlaying from '../components/nowplaying/NowPlaying';
-import './music.css'
-import Header from '../components/header/header';
+import './Music.css'
+import Header from '../components/header/Header';
 
 gsap.registerPlugin(ScrollTrigger)
 
 function SongEntry({ title, artist, date }) {
     return (
-        <div className="song-entry">
-            <div className="song-entry-left">
-                <span className="song-entry-title">{title}</span>
-                <span className="song-entry-artist">{artist}</span>
+        <div className="project-row">
+            <div className="project-row-left">
+                <span className="project-row-name">{title}</span>
+                <span className="project-row-sep"> \ </span>
+                <span className="project-row-cat">{artist}</span>
             </div>
-            <span className="song-entry-date">{date}</span>
+            <span className="project-row-date">{date}</span>
         </div>
     );
 }
@@ -40,30 +41,65 @@ function Music() {
                     trigger: ".music-logo",
                     start: "top 30%",
                     end: "top 0%",
-                    scrub: true
+                    scrub: 1.5,
                 }
             }
         );
+
+        gsap.fromTo(".section-block",
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                stagger: 0.15,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".sections-wrapper",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                }
+            }
+        );
+
+        gsap.utils.toArray(".section-block").forEach(block => {
+            const rows = block.querySelectorAll(".project-row");
+            if (!rows.length) return;
+            gsap.fromTo(rows,
+                { opacity: 0, x: -50 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    stagger: 0.08,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: block,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse",
+                    }
+                }
+            );
+        });
     }, []);
 
     return (
         <div className="music-wrapper">
             <div className="music-container">
-                <div className="header-container">
-                    <Header/>
-                </div>
+                <Header/>
                 <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
-                <div className="now-playing-wrapper">
-                    <NowPlaying />
-                </div>
-                <div className="song-section">
-                    <div className="song-section-header">
-                        <h2 className="song-title">Song of the days</h2>
+                <div className="sections-wrapper">
+                    <div className="section-block">
+                        <div className="section-title" style={{ margin: '0 0 2rem 0' }}>● Listening</div>
+                        <NowPlaying />
                     </div>
-                    <div className="song-list">
-                        {songs.map((s, i) => (
-                            <SongEntry key={i} title={s.title} artist={s.artist} date={s.date} />
-                        ))}
+                    <div className="section-block">
+                        <div className="section-title">● Song of the Days</div>
+                        <div>
+                            {songs.map((s, i) => (
+                                <SongEntry key={i} title={s.title} artist={s.artist} date={s.date} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

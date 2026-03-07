@@ -1,193 +1,140 @@
-import { useEffect, useState } from 'react';
-// import Header from '../components/header/header';
-import Project from '../components/project/project'
+import { useEffect } from 'react';
+import NowPlaying from '../components/nowplaying/NowPlaying';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import './hero.css'
+import './Hero.css'
+import Header from '../components/header/Header';
 
-// initializating smooth scroll
 gsap.registerPlugin(ScrollTrigger)
 
-// TODO: make this exported via json, ordered not mattering (uses forEach callback rightnow)
-const projects = [
+const workExperience = [
   {
-    title: "Sentiment Analysis",
-    source: "sent.png",
-    color: "white",
-    category: "Machine Learning",
-    date: "DEC 2024"
+    year: "2025",
+    title: "Autonomous Navigation Research",
+    company: "Domer Rover",
+    url: "https://www.linkedin.com/company/domer-rover"
   },
   {
-    title: "Gerbil Autonomous Robot",
-    color: "blue",
-    source: "sent.png",
-    category: "Machine Learning",
-    date: "NOV 2025"
-  },
-  {
-    title: "TSMC Computer Chip Tapeout",
-    color: "white",
-    source: "sent.png",
-    category: "Hardware",
-    date: "DEC 2025"
-  },
-  {  
-    title: "Cozy Cubes",
-    source: "c2fy.png",
-    color: "blue",
-    category: "Fullstack",
-    date: "JAN 2026"
-  },
-  {
-    title: "Samplicity",
-    source: "sent.png",
-    color: "white",
-    category: "Fullstack",
-    date: "MAR 2026"
+    year: "2026",
+    title: "Software Engineering Intern",
+    company: "Bank of America",
+    url: null
   },
 ]
 
+const projects = [
+  { title: "Sentiment Analysis",       category: "Machine Learning", date: "DEC 2024" },
+  { title: "Gerbil Autonomous Robot",  category: "Machine Learning", date: "NOV 2025" },
+  { title: "TSMC Chip Tapeout",        category: "Hardware",         date: "DEC 2025" },
+  { title: "Cozy Cubes",               category: "Fullstack",        date: "JAN 2026" },
+  { title: "Samplicity",               category: "Fullstack",        date: "MAR 2026" },
+]
+
 function Hero () {
-    const [, setModal] = useState({active: false, index: 0})
     useEffect(() => {
-      const interBubble = document.querySelector('.interactive');
-      let curX = 0;
-      let curY = 0;
-      let tgX = 0;
-      let tgY = 0;
-      let rafId;
-
-      function move() {
-        curX += (tgX - curX) / 20;
-        curY += (tgY - curY) / 20;
-        if (interBubble) {
-          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-        }
-        rafId = requestAnimationFrame(move);
-      }
-
-      function handleMouseMove(event) {
-        tgX = event.clientX;
-        tgY = event.clientY;
-      }
-
-      window.addEventListener('mousemove', handleMouseMove);
-      move();
-
-      return () => {
-        cancelAnimationFrame(rafId);
-        window.removeEventListener('mousemove', handleMouseMove);
-      };
-    }, []);
-    useEffect(() => {
-      // Start each blob at a random point in its animation cycle on every load
-      document.querySelectorAll('.g1, .g2, .g3').forEach(blob => {
-        const duration = parseFloat(getComputedStyle(blob).animationDuration);
-        blob.style.animationDelay = `-${(Math.random() * duration).toFixed(2)}s`;
-      });
-    }, []);
-      useEffect(() => {
-        // Animate the projects container moving up
-        gsap.fromTo(".projects-container", 
-          { opacity: 0, y: 150 }, // Increased y for more dramatic "coming up"
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: ".projects-container",
-              start: "top 85%", // Start when top of container is near bottom of viewport
-              toggleActions: "play none none reverse",
-              // scrub: true // Removed scrub to let the animation play out naturally on trigger
-            }
-          }
-        );
-
-        // STAGGERED REVEAL FOR PROJECTS (Left to Right Wipe + Fade)
-        gsap.fromTo(".project", 
-          { 
-            opacity: 0, 
-            clipPath: "inset(0 100% 0 0)" // Hidden (clipped from right)
-          },
-          {
-            opacity: 1,
-            clipPath: "inset(0 0% 0 0)", // Fully visible
-            duration: 0.8,
-            stagger: 0.15, // Delay between each project
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: ".projects-container",
-              start: "top 80%",
-            }
-          }
-        );
-      }, []);
-      useEffect(() => {
         gsap.fromTo(".intro-container",
-          { opacity: 1, y: 0 },
-          {
-            opacity: 0,
-            y: -50, // Slight upward movement as it fades
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: ".intro-container", // Changed trigger to self
-              start: "top top", // Start fading when top of intro hits top of viewport
-              end: "bottom 60%", // Fade out quicker (by the time bottom is 60% up)
-              toggleActions: "play none none reverse",
-              scrub: true
+            { opacity: 1, y: 0 },
+            {
+                opacity: 0,
+                y: -40,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".intro-container",
+                    start: "top top",
+                    end: "bottom 50%",
+                    scrub: 1.5,
+                }
             }
-          }
         );
-      }, []);       
+    }, []);
+
+    useEffect(() => {
+        gsap.fromTo(".section-block",
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                stagger: 0.15,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".sections-wrapper",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                }
+            }
+        );
+
+        gsap.utils.toArray(".section-block").forEach(block => {
+            const rows = block.querySelectorAll(".work-entry, .project-row");
+            if (!rows.length) return;
+            gsap.fromTo(rows,
+                { opacity: 0, x: -50 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    stagger: 0.08,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: block,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse",
+                    }
+                }
+            );
+        });
+    }, []);
     return (
       <div className='hero-wrapper'>
-        <div className='gradient-bg'>
-          <svg xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                  <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="50" result="blur" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-                  <feBlend in="SourceGraphic" in2="goo" />
-                  </filter>
-              </defs>
-          </svg>
-          <div className='gradient-container'>
-              <div className='g1'></div>
-              <div className="g2"></div>
-              <div className="g3"></div>
-              <div className='g4'></div>
-              <div className="g5"></div>
-              <div className="interactive"></div>
-          </div>
-        </div>
+          <Header/>
           <div className="intro-container">
-              <h1 className="greeting-header">Brandon E Martinez</h1>
-              <h1 className="greeting-header" id="greeting-pixel">cs @ notre dame</h1>
-              <h1 className="greeting-header">Based in Philadelphia</h1>
-              <h1 className="greeting-header">BEM&copy;2026</h1>
-              <div className="typewriter-container"><span className="typewriter-text"></span>
+            <h1 className="greeting-header">brandon e martinez</h1>
+            {/* <h1 className="greeting-header">swe, ai solutions</h1> */}
+            <h1 className="greeting-header" style={{ fontStyle: 'italic' }}>cs @notredame</h1>
+            <h1 className="greeting-header">based in philadelphia</h1>
+            <h1 className="greeting-header">bem&copy;2026</h1>
+            <h1 className="greeting-header">◼</h1>
           </div>
-          </div>
-          {/* <Header className="header"/> */}
-          <div className='projects-container'>
-            <div className='project-header'>
-              <div className='projects-header'>project</div>
-              <div className='projects-header'>category</div>
-              <div className='projects-header'>date</div>
+          <div className="sections-wrapper">
+
+            <div className="section-block">
+              <div className="section-title">● Work Experience</div>
+              <div className="section-list">
+                {workExperience.map((item, i) => (
+                  <div className="work-entry" key={i}>
+                    <span className="work-year">{item.year}</span>
+                    <span className="work-role">{item.title}</span>
+                    {item.url
+                      ? <a className="work-company" href={item.url} target="_blank" rel="noopener noreferrer">{item.company}</a>
+                      : <span className="work-company">{item.company}</span>
+                    }
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className='project-header-mobile'>
-              <div className='projects-header'>project</div>
-              <div className='projects-header'>date</div>
+
+            <div className="section-block">
+              <div className="section-title">● Projects</div>
+              <div className="section-list">
+                {projects.map((project, i) => (
+                  <div className="project-row" key={i}>
+                    <div className="project-row-left">
+                      <span className="project-row-name">{project.title}</span>
+                      <span className="project-row-sep"> \ </span>
+                      <span className="project-row-cat">{project.category}</span>
+                    </div>
+                    <span className="project-row-date">{project.date}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            {
-              projects.map( (project, index) => { 
-                return <Project key={index} index={index} title={project.title} category={project.category}
-                date = {project.date} setModal={setModal}/>
-              })
-            }   
-            <div className='space'></div>
+
+            <div className="section-block">
+              <div className="section-title" style={{ margin: '0 0 2rem 0' }}>● Listening</div>
+              <NowPlaying />
+            </div>
+
           </div>
       </div>
     )

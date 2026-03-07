@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import Header from '../components/header/header';
+import Header from '../components/header/Header';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './about.css'
+import './About.css'
 
 gsap.registerPlugin(ScrollTrigger)
 

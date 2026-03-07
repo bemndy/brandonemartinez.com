@@ -4,7 +4,7 @@
     margin: 0 auto;
     overflow-x: hidden;
     z-index: 0;
-    background-color: var(--color-bg1);
+    background-color: transparent;
 }
 .about-container{
     display: flex;
