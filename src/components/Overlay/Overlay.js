@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './Overlay.css';
-import { preLoaderAnim } from '../preloader/Preloader';
+import { preLoaderAnim } from '../Preloader/Preloader';
 
 const Overlay = ({ onFinish }) => {
   useEffect(() => {

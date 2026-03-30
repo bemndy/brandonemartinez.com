@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import NowPlaying from '../components/nowplaying/NowPlaying';
+import NowPlaying from '../components/NowPlaying/NowPlaying';
 import './Music.css'
 
 gsap.registerPlugin(ScrollTrigger)
