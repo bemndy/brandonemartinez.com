@@ -78,11 +78,11 @@
   --font-body: var(--font-serif);
   --font-link: var(--font-sans);
   /* Colors */
-  --color-bg1: rgb(246, 203, 215);
+  --color-bg1: rgb(255, 178, 200);
   --color-bg2: rgb(238, 238, 238);
-  --color-text: rgb(28, 28, 28);
-  --color-text-strong: rgb(0, 0, 0);
-  --color-text-muted: rgb(115, 115, 115);
+  --color-text: rgb(75, 75, 75);
+  --color-text-strong: rgb(68, 68, 68);
+  --color-text-muted: rgb(135, 135, 135);
 
   /* Blob/Gradient Colors */
   --color1: 255, 77, 133;  
