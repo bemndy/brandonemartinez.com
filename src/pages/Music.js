@@ -34,28 +34,28 @@ function Music() {
             { opacity: 1, y: 0 },
             {
                 opacity: 0,
-                y: -30,
+                y: -40,
                 ease: "none",
                 scrollTrigger: {
                     trigger: ".music-logo",
-                    start: "top 30%",
-                    end: "top 0%",
-                    scrub: 1.5,
+                    start: "top top",
+                    end: "bottom 50%",
+                    scrub: 0.6,
                 }
             }
         );
 
         gsap.fromTo(".section-block",
-            { opacity: 0, y: 40 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.7,
-                stagger: 0.15,
-                ease: "power2.out",
+                duration: 0.5,
+                stagger: 0.08,
+                ease: "power1.out",
                 scrollTrigger: {
                     trigger: ".sections-wrapper",
-                    start: "top 85%",
+                    start: "top 65%",
                     toggleActions: "play none none reverse",
                 }
             }
@@ -65,16 +65,16 @@ function Music() {
             const rows = block.querySelectorAll(".project-row");
             if (!rows.length) return;
             gsap.fromTo(rows,
-                { opacity: 0, x: -50 },
+                { opacity: 0, x: -25 },
                 {
                     opacity: 1,
                     x: 0,
-                    duration: 0.5,
-                    stagger: 0.08,
-                    ease: "power2.out",
+                    duration: 0.35,
+                    stagger: 0.05,
+                    ease: "power1.out",
                     scrollTrigger: {
                         trigger: block,
-                        start: "top 85%",
+                        start: "top 65%",
                         toggleActions: "play none none reverse",
                     }
                 }
@@ -88,7 +88,7 @@ function Music() {
                 <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
                 <div className="sections-wrapper">
                     <div className="section-block">
-                        <div className="section-title" style={{ margin: '0 0 2rem 0' }}>● Listening</div>
+                        <div className="section-title" style={{ margin: '0 0 1rem 0' }}>● Listening</div>
                         <NowPlaying />
                     </div>
                     <div className="section-block">

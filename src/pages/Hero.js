@@ -41,7 +41,7 @@ function Hero () {
                     trigger: ".intro-container",
                     start: "top top",
                     end: "bottom 50%",
-                    scrub: 1.5,
+                    scrub: 0.6,
                 }
             }
         );
@@ -49,16 +49,16 @@ function Hero () {
 
     useEffect(() => {
         gsap.fromTo(".section-block",
-            { opacity: 0, y: 40 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.7,
-                stagger: 0.15,
-                ease: "power2.out",
+                duration: 0.5,
+                stagger: 0.08,
+                ease: "power1.out",
                 scrollTrigger: {
                     trigger: ".sections-wrapper",
-                    start: "top 85%",
+                    start: "top 65%",
                     toggleActions: "play none none reverse",
                 }
             }
@@ -68,16 +68,16 @@ function Hero () {
             const rows = block.querySelectorAll(".work-entry, .project-row");
             if (!rows.length) return;
             gsap.fromTo(rows,
-                { opacity: 0, x: -50 },
+                { opacity: 0, x: -25 },
                 {
                     opacity: 1,
                     x: 0,
-                    duration: 0.5,
-                    stagger: 0.08,
-                    ease: "power2.out",
+                    duration: 0.35,
+                    stagger: 0.05,
+                    ease: "power1.out",
                     scrollTrigger: {
                         trigger: block,
-                        start: "top 85%",
+                        start: "top 65%",
                         toggleActions: "play none none reverse",
                     }
                 }
@@ -129,7 +129,7 @@ function Hero () {
             </div>
 
             <div className="section-block">
-              <div className="section-title" style={{ margin: '0 0 2rem 0' }}>● Listening</div>
+              <div className="section-title" style={{ margin: '0rem 0 1rem 0' }}>● Listening</div>
               <NowPlaying />
             </div>
 

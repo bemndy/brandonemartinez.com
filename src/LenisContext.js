@@ -12,9 +12,10 @@ export const LenisProvider = ({ children }) => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 3.5,
+      duration: 2.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
+      wheelMultiplier: 0.7,
     });
 
     lenisRef.current = lenis;

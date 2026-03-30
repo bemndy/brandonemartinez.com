@@ -335,6 +335,7 @@ html.no-gradient .gradient-bg {
    ============================================================ */
 .sections-wrapper {
   width: 50%;
+  max-width: 900px;
   margin: 5rem auto 8rem auto;
   display: flex;
   flex-direction: column;

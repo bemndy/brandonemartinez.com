@@ -14,11 +14,14 @@
 }
 .music-logo {
     display: block;
-    width: 25%;
-    margin: 7rem auto;
+    width: 50%;
+    max-width: 480px;
+    margin: 12rem auto 4rem auto;
 }
 @media (max-width: 768px) {
     .music-logo {
         width: 70%;
+        max-width: none;
+        margin: 16rem auto;
     }
 }

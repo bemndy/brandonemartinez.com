@@ -8,8 +8,8 @@
 }
 .intro-container {
   width: 50%;
-  margin: 0 auto;
-  padding: 200px 0 75px 0; 
+  max-width: 900px;
+  margin: 12rem auto 0 auto;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 .greeting-header {
   font-family: var(--font-mono);
   text-transform: uppercase;
-  font-size: calc(3vw + 1vh);
+  font-size: calc(3vw + 1.5vh);
   line-height: 1.8;
   font-weight: 400;
   text-align: left;
@@ -29,12 +29,9 @@
 @media (max-width: 768px) {
   .intro-container {
     width: 90%;
-    padding: 100px 0 50px 0;
+    margin: 20rem auto;
   }
-}
-
-@media (min-width: 1940px) {
   .greeting-header {
-    font-size: calc(2.25vw + 1vh);
+    font-size: calc(5vw + 1vh);
   }
 }
