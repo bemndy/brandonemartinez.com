@@ -3,7 +3,6 @@ import NowPlaying from '../components/nowplaying/NowPlaying';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './Hero.css'
-import Header from '../components/header/Header';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -87,7 +86,6 @@ function Hero () {
     }, []);
     return (
       <div className='hero-wrapper'>
-          <Header/>
           <div className="intro-container">
             <h1 className="greeting-header">brandon e martinez</h1>
             {/* <h1 className="greeting-header">swe, ai solutions</h1> */}

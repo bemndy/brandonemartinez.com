@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Header from '../components/header/Header';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './About.css'
@@ -27,9 +26,6 @@ function About () {
         <>
         <div className="about-wrapper">
             <div className="about-container">
-                <div className="header-container">
-                    <Header/>
-                </div>
                 <img src="/images/lucky2.png" alt="2$ bill" className="about-logo"/>
                 <div className="biography-container">
                     <img src="/images/portrait.JPG" alt="portrait of me" className="portrait"/> 

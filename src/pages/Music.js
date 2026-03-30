@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NowPlaying from '../components/nowplaying/NowPlaying';
 import './Music.css'
-import Header from '../components/header/Header';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,7 +85,6 @@ function Music() {
     return (
         <div className="music-wrapper">
             <div className="music-container">
-                <Header/>
                 <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
                 <div className="sections-wrapper">
                     <div className="section-block">
