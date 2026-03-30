@@ -35,11 +35,9 @@ export function StickyFooter() {
                         </li>
                         <li className="footer-links">
                             <a
-                            href="https://twitter.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="mailto:brandonprvbox@gmail.com"
                             >
-                                Twitter
+                                Email
                             </a>
                         </li>
                         <li className="footer-links">
@@ -53,7 +51,7 @@ export function StickyFooter() {
                     </ul>
                 </div>
                 <div className="credit-container">
-                    <div className="copyright">updated: 3/5/26</div>
+                    <div className="copyright">updated: 03/29/26</div>
                     <div className="copyright">bem&copy;2026</div>
                 </div>
             </div>
