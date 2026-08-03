@@ -8,6 +8,7 @@ import Hero from './pages/Hero';
 import About from './pages/About';
 import Music from './pages/Music';
 import Misc from './pages/Misc';
+import NotFound from './pages/NotFound';
 import StickyFooter from './components/Footer/Footer'
 import LikeButton from './components/LikeButton/LikeButton'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -27,6 +28,7 @@ function App() {
               <Route path='/about' element={<About/>} />
               <Route path='/misc' element={<Misc/>} />
               <Route path='/music' element={<Music/>} />
+              <Route path='*' element={<NotFound/>} />
           </Routes>
           <LikeButton/>
           <StickyFooter/>
