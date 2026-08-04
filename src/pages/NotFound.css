@@ -22,14 +22,6 @@
     color: var(--color-text-muted);
 }
 
-.not-found-link {
-    margin-top: 1rem;
-    font-family: var(--font-link);
-    font-size: 1rem;
-    text-decoration: underline;
-    color: var(--color-text);
-}
-
 @media (max-width: 768px) {
     .not-found-code {
         font-size: 4rem;
