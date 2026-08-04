@@ -150,11 +150,6 @@ html.dark {
   --color-text-muted: rgba(232, 232, 232, 0.4);
 }
 
-/* --- Navbar --- */
-html.dark .nav-container {
-  border-top: 1px solid rgba(232, 232, 232, 0.12);
-}
-
 html.dark .typewriter-container {
   color: var(--color-text);
 }

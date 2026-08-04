@@ -11,10 +11,7 @@ const Overlay = ({ onFinish }) => {
 
   return (
     <div className="preloader">
-      <div className="texts-container"><span>Building</span></div>
-      <div className="texts-container"><span>.</span></div>
-      <div className="texts-container"><span>.</span></div>
-      <div className="texts-container"><span>.</span></div>
+      <div className="preloader-symbol" />
     </div>
   );
 };
