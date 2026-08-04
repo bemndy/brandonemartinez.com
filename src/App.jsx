@@ -8,29 +8,42 @@ import Hero from './pages/Hero';
 import About from './pages/About';
 import Music from './pages/Music';
 import Misc from './pages/Misc';
+import NotFound from './pages/NotFound';
 import StickyFooter from './components/Footer/Footer'
 import LikeButton from './components/LikeButton/LikeButton'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
+
+const KNOWN_ROUTES = ['/', '/about', '/misc', '/music'];
+
+function AppContent() {
+  const location = useLocation();
+  const isNotFound = !KNOWN_ROUTES.includes(location.pathname);
+
+  return (
+    <LenisProvider>
+        <GradientBg/>
+        <ScrollToTop/>
+        <Overlay/>
+        <Navbar/>
+        <Routes>
+            <Route path='/' element={<Hero/>} />
+            <Route path='/about' element={<About/>} />
+            <Route path='/misc' element={<Misc/>} />
+            <Route path='/music' element={<Music/>} />
+            <Route path='*' element={<NotFound/>} />
+        </Routes>
+        {!isNotFound && <LikeButton/>}
+        {!isNotFound && <StickyFooter/>}
+    </LenisProvider>
+  );
+}
 
 function App() {
   return (
     <DarkModeProvider>
     <Router>
-      <LenisProvider>
-          <GradientBg/>
-          <ScrollToTop/>
-          <Overlay/>
-          <Navbar/>
-          <Routes>
-              <Route path='/' element={<Hero/>} />
-              <Route path='/about' element={<About/>} />
-              <Route path='/misc' element={<Misc/>} />
-              <Route path='/music' element={<Music/>} />
-          </Routes>
-          <LikeButton/>
-          <StickyFooter/>
-      </LenisProvider>
+      <AppContent/>
     </Router>
     </DarkModeProvider>
   );

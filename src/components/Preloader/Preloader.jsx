@@ -79,24 +79,9 @@ export const preLoaderAnim = () => {
         duration: 0.05,
         css: { overflowY: "hidden", height: "90vh" },
       })
-      .to(".texts-container", {
-        duration: 0,
+      .to(".preloader-symbol", {
+        duration: 2.6,
         opacity: 1,
-        ease: "Power3.easeOut",
-      })
-      .from(".texts-container span", {
-        duration: 0.6,
-        delay: 0.3,
-        y: 50,
-        skewY: 10,
-        stagger: 0.3,
-        ease: "Power3.easeOut",
-      })
-      .to(".texts-container span", {
-        duration: 0.4,
-        y: 40,
-        skewY: -15,
-        stagger: 0.15,
         ease: "Power3.easeOut",
       })
       .to(".landing", {

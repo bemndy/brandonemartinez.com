@@ -1,5 +1,7 @@
 
 .preloader {
+    --bg-color-a: black;
+    --bg-color-b: black;
     position: fixed;
     display: flex;
     width: 100vw;
@@ -8,21 +10,34 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: black;
+    background-color: var(--bg-color-a);
+    animation: bg-flash 0.9s ease-in-out infinite;
     overflow: hidden;
 }
-.texts-container {
-    display: flex;
-    opacity: 1;
-    animation: fadeinout 3.5s forwards;
-    font-family: var(--font-mono);
-    font-size: clamp(16px, 3vw, 32px);
-    font-weight: 400;
-    align-self: center;
-    text-transform: lowercase;
-    color: white;
+.preloader-symbol {
+    --symbol-color-a: white;
+    --symbol-color-b: white;
+    width: clamp(18px, 3vw, 28px);
+    height: clamp(18px, 3vw, 28px);
+    background-color: var(--symbol-color-a);
+    transform: rotate(45deg);
+    animation: symbol-flash 0.9s ease-in-out infinite;
 }
-@keyframes fadeinout {
-    0%,100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
+@keyframes bg-flash {
+    0%, 100% { background-color: var(--bg-color-a); }
+    50% { background-color: var(--bg-color-b); }
+}
+@keyframes symbol-flash {
+    0%, 100% { opacity: 0.15; transform: rotate(45deg) scale(0.7); background-color: var(--symbol-color-a); }
+    50% { opacity: 1; transform: rotate(45deg) scale(1); background-color: var(--symbol-color-b); }
+}
+
+/* Pink mode: the gradient toggle is on (independent of dark/light) */
+html:not(.no-gradient) .preloader {
+    --bg-color-a: rgb(255, 77, 133);
+    --bg-color-b: rgb(75, 75, 75);
+}
+html:not(.no-gradient) .preloader-symbol {
+    --symbol-color-a: rgb(75, 75, 75);
+    --symbol-color-b: rgb(255, 77, 133);
+}
