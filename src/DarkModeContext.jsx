@@ -20,6 +20,11 @@ export function DarkModeProvider({ children }) {
       document.documentElement.classList.remove('dark');
     }
     localStorage.setItem('darkMode', isDark);
+
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', isDark ? '#121212' : '#ffb2c8');
+    }
   }, [isDark]);
 
   useEffect(() => {
