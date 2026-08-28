@@ -39,7 +39,7 @@ function BackToTop() {
                     aria-label="Back to top"
                 >
                     <svg viewBox="0 0 24 24" className="back-to-top-icon" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 19V5M5 12l7-7 7 7" />
+                        <path d="M12 19V5M4 11l8-8 8 8" />
                     </svg>
                 </motion.button>
             )}

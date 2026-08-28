@@ -8,8 +8,7 @@
     align-items: center;
     justify-content: center;
     background: none;
-    border: 1px solid var(--color-text-muted);
-    border-radius: 50%;
+    border: none;
     cursor: pointer;
     z-index: 100;
 }
@@ -20,11 +19,11 @@
 }
 
 .back-to-top-icon {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     fill: none;
     stroke: var(--color-text-strong);
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
 }
