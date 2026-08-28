@@ -11,6 +11,7 @@ import Misc from './pages/Misc';
 import NotFound from './pages/NotFound';
 import StickyFooter from './components/Footer/Footer'
 import LikeButton from './components/LikeButton/LikeButton'
+import BackToTop from './components/BackToTop/BackToTop'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 
@@ -34,6 +35,7 @@ function AppContent() {
             <Route path='*' element={<NotFound/>} />
         </Routes>
         {!isNotFound && <LikeButton/>}
+        {!isNotFound && <BackToTop/>}
         {!isNotFound && <StickyFooter/>}
     </LenisProvider>
   );
