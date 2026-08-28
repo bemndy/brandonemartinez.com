@@ -1,4 +1,30 @@
+import { useState } from 'react'
 import './Footer.css'
+
+const EMAIL = 'brandn.martinez5@gmail.com'
+
+function CopyEmailLink() {
+    const [copied, setCopied] = useState(false)
+
+    const handleClick = async (e) => {
+        // Let modifier-clicks / middle-clicks behave like a normal mailto link.
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return
+        e.preventDefault()
+        try {
+            await navigator.clipboard.writeText(EMAIL)
+            setCopied(true)
+            setTimeout(() => setCopied(false), 1500)
+        } catch {
+            window.location.href = `mailto:${EMAIL}`
+        }
+    }
+
+    return (
+        <a href={`mailto:${EMAIL}`} onClick={handleClick}>
+            {copied ? 'Copied!' : 'Email'}
+        </a>
+    )
+}
 
 export function StickyFooter() {
     return (
@@ -34,15 +60,11 @@ export function StickyFooter() {
                             </a>
                         </li>
                         <li className="footer-links">
-                            <a
-                            href="mailto:brandonprvbox@gmail.com"
-                            >
-                                Email
-                            </a>
+                            <CopyEmailLink />
                         </li>
                         <li className="footer-links">
                             <a
-                            href="/resume.pdf"
+                            href="/resume-2026-08-28.pdf"
                             target="_blank"
                             >
                                 Curriculum Vitae

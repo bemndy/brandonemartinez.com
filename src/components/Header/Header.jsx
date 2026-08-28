@@ -7,8 +7,8 @@ function Header() {
                 <div className='header-box'>
                     <div className='header-text'>Contact Me</div>
                     <a className='header-text header-email'
-                        href="mailto:brandonprvbox@gmail.com">
-                        brandonprvbox@gmail.com
+                        href="mailto:brandn.martinez5@gmail.com">
+                        brandn.martinez5@gmail.com
                     </a>
                 </div>
             </div>
