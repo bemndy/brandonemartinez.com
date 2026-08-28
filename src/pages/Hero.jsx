@@ -31,6 +31,8 @@ const projects = [
 
 function Hero () {
     useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         gsap.fromTo(".intro-container",
             { opacity: 1, y: 0 },
             {
@@ -48,6 +50,8 @@ function Hero () {
     }, []);
 
     useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         gsap.fromTo(".section-block",
             { opacity: 0, y: 30 },
             {
