@@ -2,10 +2,17 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const DarkModeContext = createContext();
 
+const THEMES = ['light', 'dark', 'intense'];
+const THEME_META = {
+  light: { color: '#ffb2c8' },
+  dark: { color: '#121212' },
+  intense: { color: '#d6116a' },
+};
+
 export function DarkModeProvider({ children }) {
-  const [isDark, setIsDark] = useState(() => {
-    const stored = localStorage.getItem('darkMode');
-    return stored === null ? true : stored === 'true';
+  const [theme, setTheme] = useState(() => {
+    const stored = localStorage.getItem('theme');
+    return THEMES.includes(stored) ? stored : 'light';
   });
 
   const [isGradientOn, setIsGradientOn] = useState(() => {
@@ -14,18 +21,17 @@ export function DarkModeProvider({ children }) {
   });
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    document.documentElement.classList.remove('dark', 'intense');
+    if (theme !== 'light') {
+      document.documentElement.classList.add(theme);
     }
-    localStorage.setItem('darkMode', isDark);
+    localStorage.setItem('theme', theme);
 
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute('content', isDark ? '#121212' : '#ffb2c8');
+      meta.setAttribute('content', THEME_META[theme].color);
     }
-  }, [isDark]);
+  }, [theme]);
 
   useEffect(() => {
     if (isGradientOn) {
@@ -36,11 +42,22 @@ export function DarkModeProvider({ children }) {
     localStorage.setItem('gradientOn', isGradientOn);
   }, [isGradientOn]);
 
-  const toggleDark = () => setIsDark(prev => !prev);
+  const cycleTheme = () => {
+    setTheme(prev => THEMES[(THEMES.indexOf(prev) + 1) % THEMES.length]);
+  };
   const toggleGradient = () => setIsGradientOn(prev => !prev);
 
   return (
-    <DarkModeContext.Provider value={{ isDark, toggleDark, isGradientOn, toggleGradient }}>
+    <DarkModeContext.Provider
+      value={{
+        theme,
+        isDark: theme === 'dark',
+        isIntense: theme === 'intense',
+        cycleTheme,
+        isGradientOn,
+        toggleGradient,
+      }}
+    >
       {children}
     </DarkModeContext.Provider>
   );

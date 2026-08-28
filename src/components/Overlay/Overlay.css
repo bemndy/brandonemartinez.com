@@ -32,12 +32,12 @@
     50% { opacity: 1; transform: rotate(45deg) scale(1); background-color: var(--symbol-color-b); }
 }
 
-/* Pink mode: the gradient toggle is on (independent of dark/light) */
-html:not(.no-gradient) .preloader {
+/* Pink mode: light theme is active */
+html:not(.dark) .preloader {
     --bg-color-a: rgb(255, 77, 133);
     --bg-color-b: rgb(75, 75, 75);
 }
-html:not(.no-gradient) .preloader-symbol {
+html:not(.dark) .preloader-symbol {
     --symbol-color-a: rgb(75, 75, 75);
     --symbol-color-b: rgb(255, 77, 133);
 }

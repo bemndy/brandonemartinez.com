@@ -13,7 +13,7 @@
     display: flex; 
     justify-content: space-between;
     width: 50%;
-    padding: 35px 0px 25px; /* Consistently apply padding everywhere */
+    padding: 24px 0px 18px; /* Consistently apply padding everywhere */
     border-bottom: 1px solid var(--color-text);
 }
 
@@ -86,7 +86,7 @@
 @media (max-width: 768px) {
     .nav-container {
         width: 90%;
-        padding: 25px 0;
+        padding: 18px 0;
     }
     .nav-list {
         gap: 20px;

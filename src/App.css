@@ -78,7 +78,7 @@
   --font-body: var(--font-serif);
   --font-link: var(--font-sans);
   /* Colors */
-  --color-bg1: rgb(255, 178, 200);
+  --color-bg1: rgb(255, 140, 175);
   --color-bg2: rgb(238, 238, 238);
   --color-text: rgb(75, 75, 75);
   --color-text-strong: rgb(68, 68, 68);
@@ -92,8 +92,34 @@
   --color-interactive: 197, 139, 214;
   /* --color-interactive: 155, 255, 163; */
   --circle-size: 70%;
-  --blob-alpha: 0.7;
+  --blob-alpha: 0.55;
   --blending: screen;
+}
+
+/* Dark mode: dulled but still visible gradient blobs */
+html.dark {
+  --color1: 130, 95, 115;
+  --color2: 100, 75, 105;
+  --color3: 75, 90, 120;
+  --color4: 150, 135, 90;
+  --color-interactive: 110, 100, 125;
+  --blob-alpha: 0.35;
+}
+
+/* Intense theme: darker, saturated pink background, white text */
+html.intense {
+  --color-bg1: rgb(202, 74, 130);
+  --color-bg2: rgb(184, 66, 118);
+  --color-text: rgb(248, 236, 222);
+  --color-text-strong: rgb(250, 241, 229);
+  --color-text-muted: rgba(248, 236, 222, 0.6);
+
+  --color1: 255, 140, 180;
+  --color2: 255, 180, 205;
+  --color3: 230, 100, 150;
+  --color4: 255, 210, 150;
+  --color-interactive: 255, 160, 195;
+  --blob-alpha: 0.45;
 }
 
 * {
@@ -150,52 +176,64 @@ html.dark {
   --color-text-muted: rgba(232, 232, 232, 0.4);
 }
 
-html.dark .typewriter-container {
+html.dark .typewriter-container,
+html.intense .typewriter-container {
   color: var(--color-text);
 }
-html.dark .typewriter-text {
+html.dark .typewriter-text,
+html.intense .typewriter-text {
   border-right: 2px solid var(--color-text);
 }
 
 /* --- Projects list (misc page cards) --- */
-html.dark .project {
+html.dark .project,
+html.intense .project {
   border-top: 1px solid rgba(232, 232, 232, 0.12);
 }
-html.dark .project:hover {
+html.dark .project:hover,
+html.intense .project:hover {
   background-color: var(--color-text);
   color: var(--color-bg1);
   border-top: 2px solid var(--color-bg1);
 }
 
 /* --- Footer --- */
-html.dark .footer-container {
+html.dark .footer-container,
+html.intense .footer-container {
   border-top: 1px solid var(--color-text);
 }
 
 /* --- NowPlaying (idle state) --- */
-html.dark .now-playing {
+html.dark .now-playing,
+html.intense .now-playing {
   border: 1px solid rgba(232, 232, 232, 0.12);
   background: rgba(232, 232, 232, 0.04);
 }
-html.dark .now-playing--idle:hover {
+html.dark .now-playing--idle:hover,
+html.intense .now-playing--idle:hover {
   background: rgba(232, 232, 232, 0.06);
   border-color: rgba(232, 232, 232, 0.2);
 }
-html.dark .now-playing-spotify-icon--idle {
+html.dark .now-playing-spotify-icon--idle,
+html.intense .now-playing-spotify-icon--idle {
   fill: rgba(232, 232, 232, 0.3);
 }
-html.dark .now-playing-idle-text {
+html.dark .now-playing-idle-text,
+html.intense .now-playing-idle-text {
   color: rgba(232, 232, 232, 0.4);
 }
 
 /* --- Like button --- */
-html.dark .heart-icon {
+html.dark .heart-icon,
+html.intense .heart-icon {
   stroke: var(--color-text);
 }
-html.dark .like-btn:focus-visible {
+html.dark .like-btn:focus-visible,
+html.intense .like-btn:focus-visible {
   outline: 2px solid var(--color-text);
 }
-html.dark .like-count {
+html.dark .like-count,
+html.intense .like-count {
   color: var(--color-text);
 }
 
@@ -331,10 +369,10 @@ html.no-gradient .gradient-bg {
 .sections-wrapper {
   width: 50%;
   max-width: 900px;
-  margin: 5rem auto 8rem auto;
+  margin: 3.5rem auto 5.5rem auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.75rem;
 }
 
 .section-block {
@@ -349,7 +387,7 @@ html.no-gradient .gradient-bg {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-text-strong);
-  padding: 14px 0;
+  padding: 10px 0;
 }
 
 /* --- Work Experience --- */
@@ -357,7 +395,7 @@ html.no-gradient .gradient-bg {
   display: flex;
   align-items: baseline;
   gap: 0;
-  padding: 16px 0;
+  padding: 11px 0;
   border-bottom: 1px solid var(--color-text);
   text-transform: uppercase;
 }
@@ -392,7 +430,7 @@ html.no-gradient .gradient-bg {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 16px 0;
+  padding: 11px 0;
   border-bottom: 1px solid var(--color-text);
   cursor: pointer;
   text-transform: uppercase;

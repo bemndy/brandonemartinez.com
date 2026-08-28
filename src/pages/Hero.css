@@ -9,7 +9,7 @@
 .intro-container {
   width: 50%;
   max-width: 900px;
-  margin: 12rem auto 0 auto;
+  margin: 9.5rem auto 0 auto;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 .greeting-header {
   font-family: var(--font-mono);
   text-transform: uppercase;
-  font-size: calc(3vw + 1.5vh);
+  font-size: calc(2.6vw + 1.3vh);
   line-height: 1.8;
   font-weight: 400;
   text-align: left;
@@ -29,7 +29,7 @@
 @media (max-width: 768px) {
   .intro-container {
     width: 90%;
-    margin: 20rem auto;
+    margin: 14rem auto;
   }
   .greeting-header {
     font-size: calc(5vw + 1vh);
