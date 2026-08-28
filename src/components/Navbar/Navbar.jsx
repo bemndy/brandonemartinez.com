@@ -41,7 +41,7 @@ function Navbar() {
           </li> */} 
           <li className="nav-item">
             <a
-              href="/resume.pdf"
+              href="/resume-2026-08-28.pdf"
               className="nav-link"
               target="_blank"
               rel="noopener noreferrer"

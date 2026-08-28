@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Footer.css'
 
-const EMAIL = 'brandonprvbox@gmail.com'
+const EMAIL = 'brandn.martinez5@gmail.com'
 
 function CopyEmailLink() {
     const [copied, setCopied] = useState(false)
@@ -64,7 +64,7 @@ export function StickyFooter() {
                         </li>
                         <li className="footer-links">
                             <a
-                            href="/resume.pdf"
+                            href="/resume-2026-08-28.pdf"
                             target="_blank"
                             >
                                 Curriculum Vitae
