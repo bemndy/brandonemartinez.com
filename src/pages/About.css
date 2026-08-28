@@ -9,20 +9,20 @@
 .about-container{
     display: flex;
     width: 100%;
-    margin: 10rem 0 0 0; 
+    margin: 7rem 0 0 0;
     flex-wrap: wrap;
     flex-direction: column;
 }
 .about-logo {
     display: block;
     width: 35%;
-    margin: 4rem auto 0 auto;
+    margin: 2.75rem auto 0 auto;
 }
 .biography-container {
     display: flex;
     flex-direction: row;
     width: 50%;
-    margin: 12rem auto 5rem auto;
+    margin: 8rem auto 3.5rem auto;
     align-items: center;
     gap: 3rem;
 }

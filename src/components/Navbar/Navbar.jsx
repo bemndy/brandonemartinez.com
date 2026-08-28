@@ -3,7 +3,7 @@ import { useDarkMode } from '../../DarkModeContext';
 import './Navbar.css';
 
 function Navbar() {
-  const { isDark, toggleDark, isGradientOn, toggleGradient } = useDarkMode();
+  const { theme, cycleTheme, isGradientOn, toggleGradient } = useDarkMode();
   return (
     <nav className="navbar-wrapper">
       <div className="nav-container">
@@ -82,11 +82,11 @@ function Navbar() {
           <li className="nav-item">
             <button
               className="nav-link dark-toggle nav-icon-link"
-              onClick={toggleDark}
-              aria-label="Toggle dark mode"
+              onClick={cycleTheme}
+              aria-label="Cycle theme"
             >
-              {isDark ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Light mode">
+              {theme === 'light' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Light theme">
                   <circle cx="12" cy="12" r="5"/>
                   <line x1="12" y1="1" x2="12" y2="3"/>
                   <line x1="12" y1="21" x2="12" y2="23"/>
@@ -97,9 +97,15 @@ function Navbar() {
                   <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                   <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                 </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Dark mode">
+              )}
+              {theme === 'dark' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="Dark theme">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              )}
+              {theme === 'intense' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-label="Intense pink theme">
+                  <path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0112 5.5 5.5 5.5 0 0121.5 12c-2.5 4.4-9.5 9-9.5 9z"/>
                 </svg>
               )}
             </button>
