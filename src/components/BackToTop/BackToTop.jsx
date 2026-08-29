@@ -9,7 +9,9 @@ function BackToTop() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setVisible(window.scrollY > window.innerHeight * 0.75);
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const threshold = Math.min(window.innerHeight * 0.75, maxScroll * 0.5);
+            setVisible(maxScroll > 0 && window.scrollY > threshold);
         };
 
         handleScroll();

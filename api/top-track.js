@@ -15,6 +15,11 @@ const getAccessToken = async () => {
         }),
     });
 
+    if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(`spotify token refresh failed: ${res.status} ${body.error ?? ''}`);
+    }
+
     return res.json();
 };
 
@@ -25,28 +30,33 @@ export default async function handler(req, res) {
         const { access_token } = await getAccessToken();
 
         const response = await fetch(
-            'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=1',
+            'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',
             { headers: { Authorization: `Bearer ${access_token}` } }
         );
 
         if (!response.ok) {
-            return res.status(200).json({ found: false });
+            return res.status(200).json({ found: false, error: `spotify top-tracks failed: ${response.status}` });
         }
 
         const data = await response.json();
 
         if (!data.items || data.items.length === 0) {
-            return res.status(200).json({ found: false });
+            return res.status(200).json({ found: false, tracks: [] });
         }
-
-        const track = data.items[0];
 
         return res.status(200).json({
             found: true,
-            title: track.name,
-            artist: track.artists.map(a => a.name).join(', '),
+            tracks: data.items.map(track => ({
+                id: track.id,
+                title: track.name,
+                artist: track.artists.map(a => a.name).join(', '),
+                album: track.album.name,
+                albumArt: track.album.images[0]?.url ?? null,
+                songUrl: track.external_urls.spotify,
+            })),
         });
-    } catch {
-        return res.status(200).json({ found: false });
+    } catch (err) {
+        console.error('top-track error:', err.message);
+        return res.status(200).json({ found: false, error: err.message });
     }
 }

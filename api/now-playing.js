@@ -15,6 +15,11 @@ const getAccessToken = async () => {
         }),
     });
 
+    if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(`spotify token refresh failed: ${res.status} ${body.error ?? ''}`);
+    }
+
     return res.json();
 };
 
@@ -48,7 +53,8 @@ export default async function handler(req, res) {
             albumArt: data.item.album.images[0]?.url ?? null,
             songUrl: data.item.external_urls.spotify,
         });
-    } catch {
-        return res.status(200).json({ isPlaying: false });
+    } catch (err) {
+        console.error('now-playing error:', err.message);
+        return res.status(200).json({ isPlaying: false, error: err.message });
     }
 }
