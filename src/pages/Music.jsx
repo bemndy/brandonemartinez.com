@@ -6,7 +6,7 @@ import './Music.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function SongEntry({ title, artist, date }) {
+function SongEntry({ title, artist, rank }) {
     return (
         <div className="project-row">
             <div className="project-row-left">
@@ -14,7 +14,7 @@ function SongEntry({ title, artist, date }) {
                 <span className="project-row-sep"> \ </span>
                 <span className="project-row-cat">{artist}</span>
             </div>
-            <span className="project-row-date">{date}</span>
+            <span className="project-row-date">#{rank}</span>
         </div>
     );
 }
@@ -23,9 +23,9 @@ function Music() {
     const [songs, setSongs] = useState([]);
 
     useEffect(() => {
-        fetch('/api/songs')
+        fetch('/api/top-track')
             .then(r => r.json())
-            .then(data => setSongs(data))
+            .then(data => setSongs(data.tracks ?? []))
             .catch(() => {});
     }, []);
 
@@ -92,10 +92,10 @@ function Music() {
                         <NowPlaying />
                     </div>
                     <div className="section-block">
-                        <div className="section-title">● Song of the Days</div>
+                        <div className="section-title">● Top Tracks</div>
                         <div>
                             {songs.map((s, i) => (
-                                <SongEntry key={i} title={s.title} artist={s.artist} date={s.date} />
+                                <SongEntry key={s.id ?? i} title={s.title} artist={s.artist} rank={i + 1} />
                             ))}
                         </div>
                     </div>
