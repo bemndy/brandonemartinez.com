@@ -27,3 +27,9 @@
     stroke-linecap: square;
     stroke-linejoin: miter;
 }
+
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        display: none;
+    }
+}
