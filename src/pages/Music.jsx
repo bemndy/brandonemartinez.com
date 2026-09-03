@@ -21,12 +21,15 @@ function SongEntry({ title, artist, rank }) {
 
 function Music() {
     const [songs, setSongs] = useState([]);
+    const [tracksLoading, setTracksLoading] = useState(true);
+    const [tracksError, setTracksError] = useState(false);
 
     useEffect(() => {
         fetch('/api/top-track')
             .then(r => r.json())
             .then(data => setSongs(data.tracks ?? []))
-            .catch(() => {});
+            .catch(() => setTracksError(true))
+            .finally(() => setTracksLoading(false));
     }, []);
 
     useEffect(() => {
@@ -94,9 +97,17 @@ function Music() {
                     <div className="section-block">
                         <div className="section-title">● Top Tracks</div>
                         <div>
-                            {songs.map((s, i) => (
-                                <SongEntry key={s.id ?? i} title={s.title} artist={s.artist} rank={i + 1} />
-                            ))}
+                            {tracksLoading ? (
+                                <span className="top-tracks-status">Loading top tracks…</span>
+                            ) : tracksError ? (
+                                <span className="top-tracks-status">Couldn't load top tracks</span>
+                            ) : songs.length === 0 ? (
+                                <span className="top-tracks-status">No top tracks yet</span>
+                            ) : (
+                                songs.map((s, i) => (
+                                    <SongEntry key={s.id ?? i} title={s.title} artist={s.artist} rank={i + 1} />
+                                ))
+                            )}
                         </div>
                     </div>
                 </div>
