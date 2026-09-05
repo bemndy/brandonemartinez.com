@@ -1,6 +1,6 @@
 .music-wrapper {
     position: relative;
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
     overflow-x: hidden;
     z-index: 0;
@@ -24,4 +24,8 @@
         max-width: none;
         margin: 11rem auto;
     }
+}
+/* Song rows carry no date column, so drop the fourth track. */
+.music-wrapper .project-row {
+    grid-template-columns: 1.75rem 1fr auto;
 }

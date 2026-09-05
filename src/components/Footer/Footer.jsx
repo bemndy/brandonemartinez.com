@@ -73,7 +73,7 @@ export function StickyFooter() {
                     </ul>
                 </div>
                 <div className="credit-container">
-                    <div className="copyright">updated: 08/29/26</div>
+                    <div className="copyright">updated: 09/05/26</div>
                     <div className="copyright">bem&copy;2026</div>
                 </div>
             </div>
