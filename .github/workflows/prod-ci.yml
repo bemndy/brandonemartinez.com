@@ -1,9 +1,12 @@
 name: prod-ci
 
-# Every pull request targeting main. ('branches' filters the PR's *target*
+# Every pull request targeting main, plus main itself after a merge so the
+# merged result is actually built. ('branches' filters the PR's *target*
 # branch, not the source, so this covers PRs from any feature/bugfix branch.)
 on:
   pull_request:
+    branches: [main]
+  push:
     branches: [main]
 
 jobs:
@@ -12,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20, 22, 24, 26]
+        node-version: [22, 24, 26]
 
     steps:
       - uses: actions/checkout@v4
