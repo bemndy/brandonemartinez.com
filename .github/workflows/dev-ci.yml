@@ -1,10 +1,9 @@
-name: CI
+name: dev-ci
 
 on:
   push:
+    # Only run on bugfix branches, every push
     branches:
-      - 'main'
-      - 'feature/*'
       - 'bugfix/*'
   pull_request:
     branches: 
@@ -21,10 +20,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+      - run: npm test --if-present
