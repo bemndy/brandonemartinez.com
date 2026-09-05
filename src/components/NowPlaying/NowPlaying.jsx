@@ -20,8 +20,22 @@ function NowPlaying() {
 
     useEffect(() => {
         fetchNowPlaying();
-        const interval = setInterval(fetchNowPlaying, 30000);
-        return () => clearInterval(interval);
+        let interval = setInterval(fetchNowPlaying, 30000);
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                clearInterval(interval);
+            } else {
+                fetchNowPlaying();
+                interval = setInterval(fetchNowPlaying, 30000);
+            }
+        };
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            clearInterval(interval);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
     }, []);
 
     if (loading) return null;
