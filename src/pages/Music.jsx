@@ -9,12 +9,9 @@ gsap.registerPlugin(ScrollTrigger)
 function SongEntry({ title, artist, rank }) {
     return (
         <div className="project-row">
-            <div className="project-row-left">
-                <span className="project-row-name">{title}</span>
-                <span className="project-row-sep"> \ </span>
-                <span className="project-row-cat">{artist}</span>
-            </div>
-            <span className="project-row-date">#{rank}</span>
+            <span className="project-row-index">{String(rank).padStart(2, '0')}</span>
+            <span className="project-row-name">{title}</span>
+            <span className="project-row-cat">{artist}</span>
         </div>
     );
 }
@@ -88,12 +85,12 @@ function Music() {
                 <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
                 <div className="sections-wrapper">
                     <div className="section-block">
-                        <div className="section-title" style={{ margin: '0 0 1rem 0' }}>● Listening</div>
+                        <div className="section-title" style={{ margin: '0 0 1rem 0' }}>Listening</div>
                         <NowPlaying />
                     </div>
                     <div className="section-block">
-                        <div className="section-title">● Top Tracks</div>
-                        <div>
+                        <div className="section-title">Top Tracks</div>
+                        <div className="section-list">
                             {songs.map((s, i) => (
                                 <SongEntry key={s.id ?? i} title={s.title} artist={s.artist} rank={i + 1} />
                             ))}
