@@ -2,13 +2,23 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - 'main'
+      - 'feature/*'
+      - 'bugfix/*'
   pull_request:
-    branches: [main]
+    branches: 
+      - 'feature/*'
+      - 'bugfix/*'  
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20, 24, 26, 27]
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
