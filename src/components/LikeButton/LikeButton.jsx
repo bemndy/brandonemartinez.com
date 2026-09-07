@@ -2,9 +2,27 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import './LikeButton.css';
 
+const LIKED_STORAGE_KEY = 'emc-liked';
+
+function hasAlreadyLiked() {
+    try {
+        return localStorage.getItem(LIKED_STORAGE_KEY) === 'true';
+    } catch {
+        return false;
+    }
+}
+
+function rememberLiked() {
+    try {
+        localStorage.setItem(LIKED_STORAGE_KEY, 'true');
+    } catch {
+        // Storage unavailable (private mode, disabled, etc.) — like still counts server-side.
+    }
+}
+
 function LikeButton() {
     const [count, setCount] = useState(null);
-    const [liked, setLiked] = useState(false);
+    const [liked, setLiked] = useState(hasAlreadyLiked);
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
@@ -13,13 +31,16 @@ function LikeButton() {
             .then(data => setCount(data.count))
             .catch(() => setCount(0));
 
+        if (liked) return;
+
         const timer = setTimeout(() => setVisible(true), 60000);
         return () => clearTimeout(timer);
-    }, []);
+    }, [liked]);
 
     const handleLike = async () => {
         if (liked) return;
         setLiked(true);
+        rememberLiked();
         try {
             const res = await fetch('/api/likes', { method: 'POST' });
             const data = await res.json();
