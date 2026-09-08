@@ -1,6 +1,7 @@
 import { DarkModeProvider } from './DarkModeContext';
 import { LenisProvider } from './LenisContext'
 import ScrollToTop from './ScrollToTop';
+import SkipToContent from './components/SkipToContent/SkipToContent'
 import Overlay from './components/Overlay/Overlay'
 import Navbar from './components/Navbar/Navbar';
 import GradientBg from './components/GradientBg/GradientBg';
@@ -23,17 +24,20 @@ function AppContent() {
 
   return (
     <LenisProvider>
+        <SkipToContent/>
         <GradientBg/>
         <ScrollToTop/>
         <Overlay/>
         <Navbar/>
-        <Routes>
-            <Route path='/' element={<Hero/>} />
-            <Route path='/about' element={<About/>} />
-            <Route path='/misc' element={<Misc/>} />
-            <Route path='/music' element={<Music/>} />
-            <Route path='*' element={<NotFound/>} />
-        </Routes>
+        <main id="main-content" tabIndex={-1}>
+            <Routes>
+                <Route path='/' element={<Hero/>} />
+                <Route path='/about' element={<About/>} />
+                <Route path='/misc' element={<Misc/>} />
+                <Route path='/music' element={<Music/>} />
+                <Route path='*' element={<NotFound/>} />
+            </Routes>
+        </main>
         {!isNotFound && <LikeButton/>}
         {!isNotFound && <BackToTop/>}
         {!isNotFound && <StickyFooter/>}
