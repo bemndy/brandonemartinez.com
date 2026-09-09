@@ -552,6 +552,13 @@ html.no-gradient .gradient-bg {
   color: var(--color-text);
 }
 
+.about-bio a::after {
+  content: ' ↗';
+  font-size: 1.2em;
+  vertical-align: super;
+  line-height: 0;
+}
+
 .about-bio a {
   font-family: inherit;
   text-decoration: underline;
@@ -614,6 +621,15 @@ a.work-company {
 a.work-company:hover {
   background-color: var(--color-text);
   color: var(--color-bg1);
+}
+
+/* Same external-link affordance used in the footer, so it reads consistently site-wide. */
+a.work-company::after,
+a.project-row-name::after {
+  content: ' ↗';
+  font-size: 1.2em;
+  vertical-align: super;
+  line-height: 0;
 }
 
 /* --- Projects --- */
