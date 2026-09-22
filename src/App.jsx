@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { DarkModeProvider } from './DarkModeContext';
 import { LenisProvider } from './LenisContext'
 import ScrollToTop from './ScrollToTop';
@@ -14,25 +13,15 @@ import StickyFooter from './components/Footer/Footer'
 import LikeButton from './components/LikeButton/LikeButton'
 import BackToTop from './components/BackToTop/BackToTop'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { KNOWN_ROUTES } from './pageMeta';
+import { usePageMeta } from './usePageMeta';
 import './App.css';
-
-const KNOWN_ROUTES = ['/', '/about', '/misc', '/music'];
-
-const PAGE_TITLES = {
-  '/': 'BEM.',
-  '/about': 'About | BEM.',
-  '/misc': 'Misc | BEM.',
-  '/music': 'Music | BEM.',
-};
-const NOT_FOUND_TITLE = '404 | BEM.';
 
 function AppContent() {
   const location = useLocation();
   const isNotFound = !KNOWN_ROUTES.includes(location.pathname);
 
-  useEffect(() => {
-    document.title = PAGE_TITLES[location.pathname] ?? NOT_FOUND_TITLE;
-  }, [location.pathname]);
+  usePageMeta();
 
   return (
     <LenisProvider>
