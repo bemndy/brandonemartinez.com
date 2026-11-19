@@ -38,6 +38,17 @@
 
 /* Individual Link Item Styles */
 .nav-link {
+    /* Every item lays out the same way, so the row aligns on one rule.
+       Before this, only `.nav-icon-link` was a flex box and the plain text
+       links were left inline. An inline link's <li> is as tall as the line
+       box the list item's own font sets (24px), while a flex link's <li> is
+       only as tall as the 13px link inside it (19.5px) — and `.nav-list`
+       centres those two different heights against each other, which dropped
+       the text links ~1.75px below MUSIC. Making every link the same kind of
+       box means each <li> is exactly its own content height and they all
+       centre together, whether a link holds text, an icon, or both. */
+    display: flex;
+    align-items: center;
     font-size: 13px;
     font-weight: 500;
     font-family: var(--font-mono);
@@ -73,11 +84,6 @@
     cursor: pointer;
     padding: 0;
     line-height: 1;
-}
-
-.nav-icon-link {
-    display: flex;
-    align-items: center;
 }
 
 .nav-icon-link svg {
