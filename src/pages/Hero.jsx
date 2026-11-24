@@ -12,25 +12,31 @@ const workExperience = [
     year: "Present",
     title: "Autonomous Navigation Research",
     company: "Domer Rover",
-    url: "https://www.linkedin.com/company/domer-rover"
+    url: "https://sites.nd.edu/domerrover-club/"
   },
   {
     year: "Present",
     title: "Undergraduate Teaching Assistant",
     company: "ND CSE Dept.",
-    url: null
+    url: "https://cse.nd.edu/"
+  },
+  {
+    year: "Present",
+    title: "Undergraduate Research Assistant",
+    company: "ND CRC Dept.",
+    url: "https://crc.nd.edu/"
   },
   {
     year: "2026",
     title: "Software Engineering",
     company: "Bank of America",
-    url: null
+    url: "https://www.bankofamerica.com/"
   },
   {
     year: "2025",
     title: "IT and Technology",
     company: "Coaction",
-    url: null
+    url: "https://www.coactionspecialty.com/"
   },
 ]
 
@@ -38,20 +44,12 @@ const workExperience = [
 const PRIMARY_ORDER = ['demo', 'repo', 'slides']
 const primaryHref = (links) => PRIMARY_ORDER.map(k => links[k]).find(Boolean) ?? null
 
-// Newest first.
+// Ranked by significance, not date: flagship and hardest work first.
 const projects = [
   {
     title: "Samplicity",
     date: "Mar 2026",
     links: { repo: "https://github.com/bemndy/samplicity" },
-  },
-  {
-    title: "Cozy Cubes",
-    date: "Jan 2026",
-    links: {
-      repo: "https://github.com/bemndy/cozycubes",
-      demo: "https://cozy1.1.brandonemartinez.com/",
-    },
   },
   {
     title: "TSMC Chip Tapeout",
@@ -64,6 +62,21 @@ const projects = [
     title: "Gerbil Autonomous Robot",
     date: "Nov 2025",
     links: { repo: "https://github.com/Domer-Rover/gerbil-software" },
+  },
+  {
+    title: "Cozy Cubes",
+    date: "Jan 2026",
+    links: {
+      repo: "https://github.com/bemndy/cozycubes",
+      demo: "https://cozy1.1.brandonemartinez.com/",
+    },
+  },
+  {
+    title: "worNDly",
+    // Rows title-case their text; this name's casing is the point (ND).
+    keepCase: true,
+    date: "Apr 2026",
+    links: { repo: "https://github.com/bemndy/worNDly" },
   },
   {
     title: "Sentiment Analysis",
@@ -152,7 +165,7 @@ function Hero () {
                 I'm a software engineer based in Philadelphia, PA, finishing my Bachelor of
                 Science in Computer Science at the University of Notre Dame. I'm currently an
                 autonomous navigation researcher at{' '}
-                <a href="https://www.linkedin.com/company/domer-rover" target="_blank" rel="noopener noreferrer">Domer Rover</a>.
+                <a href="https://sites.nd.edu/domerrover-club/" target="_blank" rel="noopener noreferrer">Domer Rover</a>.
               </p>
               <p>
                 In my free time I speedcube on{' '}
@@ -186,12 +199,13 @@ function Hero () {
               <div className="section-list">
                 {projects.map((project, i) => {
                   const href = primaryHref(project.links)
+                  const nameClass = 'project-row-name' + (project.keepCase ? ' keep-case' : '')
                   return (
                   <div className="project-row" key={i}>
                     <span className="project-row-index">{String(i + 1).padStart(2, '0')}</span>
                     {href
-                      ? <a className="project-row-name" href={href} target="_blank" rel="noopener noreferrer">{project.title}</a>
-                      : <span className="project-row-name">{project.title}</span>}
+                      ? <a className={nameClass} href={href} target="_blank" rel="noopener noreferrer">{project.title}</a>
+                      : <span className={nameClass}>{project.title}</span>}
                     <span className="project-row-date">{project.date}</span>
                   </div>
                   )

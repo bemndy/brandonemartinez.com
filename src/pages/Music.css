@@ -42,11 +42,6 @@
     opacity: 0.45;
 }
 
-/* The track list sits under the now-playing card inside the same section. */
-.songs-list {
-    margin-top: 0.75rem;
-}
-
 /* Play count beside the artist: mono and muted so it reads as metadata. */
 .song-plays {
     font-family: var(--font-mono);

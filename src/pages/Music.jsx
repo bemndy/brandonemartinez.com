@@ -29,6 +29,12 @@ const CASSETTE_ART = [
     '╰──╱──────────╲──╯',
 ].join('\n');
 
+const EQ_ART = [
+    '   ▖ ▗   ▖ ',
+    ' ▗ ▌ █ ▖ ▌ ',
+    ' █ █ █ █ █▖',
+].join('\n');
+
 const READ_ART = [
     '  ·  ✦    · ',
     ' ✧   ·  ✦   ',
@@ -148,13 +154,21 @@ function Music() {
                 <div className="sections-wrapper">
                     <div className="section-block">
                         <SectionMark
+                            title="Listening now"
+                            art={EQ_ART}
+                            caption="listening"
+                            sub="right now"
+                        />
+                        <NowPlaying />
+                    </div>
+                    <div className="section-block">
+                        <SectionMark
                             title="Tracks this week"
                             art={CASSETTE_ART}
                             caption="on repeat"
                             sub={week.range === 'week' ? 'the past 7 days' : 'the past 4 weeks'}
                         />
-                        <NowPlaying />
-                        <div className="section-list songs-list">
+                        <div className="section-list">
                             {week.tracks.map((s, i) => (
                                 <SongEntry key={s.id ?? i} {...s} rank={i + 1} />
                             ))}
