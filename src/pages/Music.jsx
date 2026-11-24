@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import NowPlaying from '../components/NowPlaying/NowPlaying';
-import WeekInSound from '../components/WeekInSound/WeekInSound';
+import ListeningInsights from '../components/ListeningInsights/ListeningInsights';
 import './Music.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -122,8 +122,8 @@ function Music() {
                         <NowPlaying />
                     </div>
                     <div className="section-block">
-                        <div className="section-title">This Week</div>
-                        <WeekInSound />
+                        <div className="section-title">This Month</div>
+                        <ListeningInsights />
                     </div>
                     <div className="section-block">
                         <div className="section-title">Piano</div>
