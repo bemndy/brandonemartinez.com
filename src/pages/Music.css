@@ -29,3 +29,15 @@
 .music-wrapper .project-row {
     grid-template-columns: 1.75rem 1fr auto;
 }
+
+/* The pending marker for a piano entry with no recording behind it yet.
+   Mono and bracketed so it reads as a slot waiting to be filled rather than
+   as a track's metadata, and text-transform: none because .project-row
+   capitalises its cells — which would otherwise title-case the marker. */
+.piano-pending {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    opacity: 0.45;
+}
