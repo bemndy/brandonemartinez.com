@@ -1,0 +1,57 @@
+.smark {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.25rem;
+    padding: 0 0 14px 0;
+}
+
+/* Visually hidden, still in the outline. */
+.smark-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* line-height 1 and zero tracking so box-drawing glyphs join into lines
+   instead of breaking into dashes. */
+.smark-art {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.05;
+    letter-spacing: 0;
+    color: var(--color-text);
+    opacity: 0.8;
+    margin: 0;
+    white-space: pre;
+    user-select: none;
+}
+
+.smark-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.smark-caption-main {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+}
+
+.smark-caption-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}

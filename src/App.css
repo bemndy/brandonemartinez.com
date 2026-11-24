@@ -576,6 +576,13 @@ html.no-gradient .gradient-bg {
   padding: 9px 0;
   border-bottom: 1px solid var(--color-rule);
   text-transform: capitalize;
+  transition: opacity 0.15s ease;
+}
+
+.work-entry:hover .work-role {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 .work-year {
@@ -628,8 +635,12 @@ a.work-company:hover {
   transition: opacity 0.15s ease;
 }
 
-/* Dim the siblings so the hovered row steps forward on its own. */
-.section-list:hover .project-row:not(:hover) {
+/* Dim the siblings so the hovered row steps forward on its own. Shared by
+   every row style that sits in a .section-list: projects, work entries,
+   tracks and the listening meters. */
+.section-list:hover .project-row:not(:hover),
+.section-list:hover .work-entry:not(:hover),
+.section-list:hover .wis-row:not(:hover) {
   opacity: 0.45;
 }
 

@@ -5,8 +5,7 @@
     width: 100%;
 }
 
-/* Marks the numbers below as placeholders. Kept above the rows rather than
-   below them so it is read before the values it qualifies, not after. */
+/* Footnote: where the numbers come from. */
 .wis-note {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -31,6 +30,7 @@
     align-items: baseline;
     padding: 9px 0;
     border-bottom: 1px solid var(--color-rule);
+    transition: opacity 0.15s ease;
 }
 
 .wis-label {
@@ -74,6 +74,95 @@
     justify-self: end;
 }
 
+/* The conclusions: full sentences in the body serif, so the section reads as
+   an analysis first and a chart second. */
+.wis-reads {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.wis-reads li {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--color-text);
+}
+
+.wis-reads li::before {
+    content: '↳ ';
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+/* Listening clock. Each hour is a fixed 1ch cell so the axis labels below
+   can be placed on the same grid. */
+.wis-clock {
+    margin: 0.5rem 0 0.25rem 0;
+    --cell: 1.6ch;
+}
+
+.wis-clock-bars,
+.wis-clock-axis {
+    font-family: var(--font-mono);
+    letter-spacing: 0;
+    display: grid;
+    grid-template-columns: repeat(24, var(--cell));
+    width: max-content;
+}
+
+.wis-clock-bars {
+    font-size: 22px;
+    line-height: 1;
+    color: var(--color-text);
+}
+
+.wis-clock-bar {
+    text-align: center;
+    opacity: 0.55;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    cursor: default;
+}
+
+.wis-clock-bar.is-peak,
+.wis-clock-bar:hover {
+    opacity: 1;
+}
+
+.wis-clock-bar:hover {
+    transform: translateY(-2px);
+}
+
+.wis-clock-axis {
+    font-size: 22px;
+    margin-top: 4px;
+}
+
+/* Axis labels are 10px text sitting in 22px-wide cells: 00 at hour 0, 06 at
+   6, and so on, 23 in the last cell. */
+.wis-clock-axis span {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+.wis-clock-axis span:nth-child(1) { grid-column: 1; }
+.wis-clock-axis span:nth-child(2) { grid-column: 7; }
+.wis-clock-axis span:nth-child(3) { grid-column: 13; }
+.wis-clock-axis span:nth-child(4) { grid-column: 19; }
+.wis-clock-axis span:nth-child(5) { grid-column: 24; }
+
+.wis-clock-caption {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 6px;
+}
+
 /* Below the breakpoint the meter is the first thing to go: the label, the
    summary and the percentage together already say everything it does, and
    keeping it would squeeze the summary text to a couple of words. */
@@ -84,5 +173,9 @@
     }
     .wis-meter {
         display: none;
+    }
+    .wis-clock-bars,
+    .wis-clock-axis {
+        font-size: 14px;
     }
 }

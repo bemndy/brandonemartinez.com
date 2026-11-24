@@ -6,28 +6,53 @@ import './WeekInSound.css';
  */
 const METER_CELLS = 12;
 
-/**
- * Placeholder insights.
- *
- * These are sample values, not real listening data — the section is labelled
- * as such in the UI so nothing here reads as a genuine stat. The shape is the
- * point: `{ label, value, level }` is what a later `/api/listening-insights`
- * route can return directly, with `level` a 0–1 fraction the meter renders and
- * `value` the human-readable summary beside it. Swapping the constant for a
- * fetch should not need any markup changes.
- */
-const INSIGHTS = [
-    { label: 'mood', value: 'mellow', level: 0.68 },
-    { label: 'energy', value: 'low–mid', level: 0.41 },
-    { label: 'tempo', value: '92 bpm median', level: 0.47 },
-    { label: 'genre', value: 'neo-soul', level: 0.74 },
+/** Eight heights of block, lowest to tallest, for the listening clock. */
+const BLOCKS = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
+
+const PERIODS = [
+    { name: 'night', from: 22, to: 4, line: 'Mostly a night listener' },
+    { name: 'morning', from: 5, to: 11, line: 'Mostly a morning listener' },
+    { name: 'afternoon', from: 12, to: 16, line: 'Mostly an afternoon listener' },
+    { name: 'evening', from: 17, to: 21, line: 'Mostly an evening listener' },
 ];
+
+const inPeriod = (h, { from, to }) => (from <= to ? h >= from && h <= to : h >= from || h <= to);
+const pad = (h) => String(h).padStart(2, '0');
+
+/**
+ * Turn the week's raw counts into a few plain-language conclusions. Each one
+ * states the number it rests on, so nothing reads as a guess.
+ */
+function conclusions(stats) {
+    const { plays, distinctTracks, distinctArtists, topArtist, repeatRate, hours } = stats;
+    const lines = [];
+
+    const period = PERIODS
+        .map(p => ({ ...p, n: hours.reduce((s, c, h) => s + (inPeriod(h, p) ? c : 0), 0) }))
+        .sort((a, b) => b.n - a.n)[0];
+    if (period.n / plays >= 0.4) {
+        lines.push(`${period.line}: ${Math.round((period.n / plays) * 100)}% of plays land between ${pad(period.from)}:00 and ${pad(period.to)}:59.`);
+    }
+
+    if (repeatRate >= 0.35) {
+        lines.push(`On repeat. ${Math.round(repeatRate * 100)}% of plays were songs already played this week.`);
+    } else if (distinctArtists / plays >= 0.5) {
+        lines.push(`Wandering. ${distinctArtists} different artists across ${plays} plays, with little repetition.`);
+    } else {
+        lines.push(`A steady rotation of ${distinctTracks} songs from ${distinctArtists} artists.`);
+    }
+
+    if (topArtist && topArtist.plays >= 3) {
+        lines.push(`Leaning on ${topArtist.name}: ${topArtist.plays} of ${plays} plays.`);
+    }
+
+    return lines;
+}
 
 /**
  * Bare ASCII bar — filled and empty block characters in the mono face, no
  * border, no fill colour, no SVG. Hidden from assistive tech because the
- * percentage beside it already carries the same number, and a screen reader
- * reading twelve block glyphs aloud is noise.
+ * percentage beside it already carries the same number.
  */
 function Meter({ level }) {
     const filled = Math.round(level * METER_CELLS);
@@ -40,19 +65,61 @@ function Meter({ level }) {
 }
 
 /**
- * A compact summary of the past week's listening, as four labelled meters.
- *
- * Deliberately text-and-rules only, to sit alongside the other music sections
- * without competing with them.
+ * Listening clock: one block per hour of the day, height scaled to the
+ * busiest hour. Empty hours are a dot, so the baseline still shows.
  */
-function WeekInSound() {
+function ListeningClock({ hours }) {
+    const max = Math.max(...hours, 1);
+    const busiest = hours.indexOf(Math.max(...hours));
+    return (
+        <figure className="wis-clock">
+            <div className="wis-clock-bars" role="img" aria-label={`Plays by hour of day, busiest around ${pad(busiest)}:00.`}>
+                {hours.map((count, h) => (
+                    <span
+                        key={h}
+                        className={`wis-clock-bar${h === busiest ? ' is-peak' : ''}`}
+                        title={`${pad(h)}:00 · ${count} play${count === 1 ? '' : 's'}`}
+                    >
+                        {count === 0 ? '·' : BLOCKS[Math.min(BLOCKS.length - 1, Math.ceil((count / max) * BLOCKS.length) - 1)]}
+                    </span>
+                ))}
+            </div>
+            <div className="wis-clock-axis" aria-hidden="true">
+                <span>00</span><span>06</span><span>12</span><span>18</span><span>23</span>
+            </div>
+            <figcaption className="wis-clock-caption">when the week was played · philadelphia time</figcaption>
+        </figure>
+    );
+}
+
+/**
+ * What the past week of listening says, in a few sentences, a listening clock
+ * and three meters. Fed by /api/recent-tracks (via the Music page) so it
+ * always describes the same plays as the track list above it.
+ */
+function WeekInSound({ stats }) {
+    if (!stats) {
+        return (
+            <p className="wis-note">
+                The breakdown fills in once this week&apos;s plays come through.
+            </p>
+        );
+    }
+
+    const meters = [
+        { label: 'repeat', value: 'replayed songs', level: stats.repeatRate },
+        { label: 'variety', value: `${stats.distinctArtists} artists`, level: stats.distinctArtists / stats.plays },
+        { label: 'late', value: '22:00 – 04:59', level: stats.nightRate },
+    ];
+
     return (
         <div className="wis">
-            <p className="wis-note">
-                Sample values — not yet wired to listening data.
-            </p>
-            <div className="wis-rows">
-                {INSIGHTS.map(({ label, value, level }) => (
+            <ul className="wis-reads">
+                {conclusions(stats).map(line => <li key={line}>{line}</li>)}
+            </ul>
+            <ListeningClock hours={stats.hours} />
+            <div className="wis-rows section-list">
+                {meters.map(({ label, value, level }) => (
                     <div className="wis-row" key={label}>
                         <span className="wis-label">{label}</span>
                         <span className="wis-value">{value}</span>
@@ -61,6 +128,7 @@ function WeekInSound() {
                     </div>
                 ))}
             </div>
+            <p className="wis-note">Based on the last {stats.plays} plays from the past 7 days.</p>
         </div>
     );
 }
