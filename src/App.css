@@ -313,18 +313,6 @@ html.intense .typewriter-text {
   border-right: 2px solid var(--color-text);
 }
 
-/* --- Projects list (misc page cards) --- */
-html.dark .project,
-html.intense .project {
-  border-top: 1px solid rgba(232, 232, 232, 0.12);
-}
-html.dark .project:hover,
-html.intense .project:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg1);
-  border-top: 2px solid var(--color-bg1);
-}
-
 /* --- Footer --- */
 html.dark .footer-container,
 html.intense .footer-container {
