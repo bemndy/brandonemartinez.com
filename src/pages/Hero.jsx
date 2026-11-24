@@ -18,19 +18,25 @@ const workExperience = [
     year: "Present",
     title: "Undergraduate Teaching Assistant",
     company: "ND CSE Dept.",
-    url: null
+    url: "https://cse.nd.edu/"
+  },
+  {
+    year: "Present",
+    title: "Undergraduate Research Assistant",
+    company: "ND CRC Dept.",
+    url: "https://crc.nd.edu/"
   },
   {
     year: "2026",
     title: "Software Engineering",
     company: "Bank of America",
-    url: null
+    url: "https://www.bankofamerica.com/"
   },
   {
     year: "2025",
     title: "IT and Technology",
     company: "Coaction",
-    url: null
+    url: "https://www.coactionspecialty.com/"
   },
 ]
 
@@ -40,6 +46,13 @@ const primaryHref = (links) => PRIMARY_ORDER.map(k => links[k]).find(Boolean) ??
 
 // Newest first.
 const projects = [
+  {
+    title: "worNDly",
+    // Rows title-case their text; this name's casing is the point (ND).
+    keepCase: true,
+    date: "Apr 2026",
+    links: { repo: "https://github.com/bemndy/worNDly" },
+  },
   {
     title: "Samplicity",
     date: "Mar 2026",
@@ -186,12 +199,13 @@ function Hero () {
               <div className="section-list">
                 {projects.map((project, i) => {
                   const href = primaryHref(project.links)
+                  const nameClass = 'project-row-name' + (project.keepCase ? ' keep-case' : '')
                   return (
                   <div className="project-row" key={i}>
                     <span className="project-row-index">{String(i + 1).padStart(2, '0')}</span>
                     {href
-                      ? <a className="project-row-name" href={href} target="_blank" rel="noopener noreferrer">{project.title}</a>
-                      : <span className="project-row-name">{project.title}</span>}
+                      ? <a className={nameClass} href={href} target="_blank" rel="noopener noreferrer">{project.title}</a>
+                      : <span className={nameClass}>{project.title}</span>}
                     <span className="project-row-date">{project.date}</span>
                   </div>
                   )

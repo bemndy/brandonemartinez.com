@@ -716,6 +716,12 @@ a.project-row-name {
   cursor: pointer;
 }
 
+/* For names whose casing matters (e.g. worNDly), opt out of the row's
+   capitalize. */
+.project-row-name.keep-case {
+  text-transform: none;
+}
+
 .project-row-cat {
   font-family: var(--font-sans);
   font-size: var(--text-small);
