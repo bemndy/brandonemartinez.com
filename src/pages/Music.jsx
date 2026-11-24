@@ -41,13 +41,35 @@ const READ_ART = [
     '   ·    ✧  ·',
 ].join('\n');
 
+/* An eight-step sequencer, filled on the steps that sound. Box-drawing like
+   the cassette above it, and the one piece of art on the page that says
+   "programmed beat" rather than "recording". */
+const BEATS_ART = [
+    '┌─┬─┬─┬─┬─┬─┬─┬─┐',
+    '│●│ │●│ │●│●│ │ │',
+    '└─┴─┴─┴─┴─┴─┴─┴─┘',
+].join('\n');
+
 const pianoRecordings = [
     { title: 'Untitled improvisation' },
     { title: 'Late night voicings' },
     { title: 'Something slower' },
 ];
 
-function PianoEntry({ title, href, duration, rank }) {
+/*
+ * Playing over other people's beats, with the original vocals stemmed out so
+ * what's left is the playing. Same rule as the piano list above: a slot with
+ * no `href` renders the pending marker rather than a dead link, and no beat is
+ * named here until there's a recording to name it against.
+ */
+const overBeats = [
+    { title: 'Untitled take' },
+    { title: 'Second pass' },
+    { title: 'Something looser' },
+];
+
+/* One row of a recording list — piano or over-beats. */
+function RecordingEntry({ title, href, duration, rank }) {
     return (
         <div className="project-row">
             <span className="project-row-index">{String(rank).padStart(2, '0')}</span>
@@ -56,7 +78,7 @@ function PianoEntry({ title, href, duration, rank }) {
                 : <span className="project-row-name">{title}</span>}
             {href
                 ? <span className="project-row-cat">{duration}</span>
-                : <span className="project-row-cat piano-pending">[ recording pending ]</span>}
+                : <span className="project-row-cat recording-pending">[ recording pending ]</span>}
         </div>
     );
 }
@@ -189,7 +211,20 @@ function Music() {
                         </SectionMark>
                         <div className="section-list">
                             {pianoRecordings.map((entry, i) => (
-                                <PianoEntry key={entry.title} {...entry} rank={i + 1} />
+                                <RecordingEntry key={entry.title} {...entry} rank={i + 1} />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="section-block">
+                        <SectionMark
+                            title="Playing over beats"
+                            art={BEATS_ART}
+                            caption="over beats"
+                            sub="vocals stemmed out"
+                        />
+                        <div className="section-list">
+                            {overBeats.map((entry, i) => (
+                                <RecordingEntry key={entry.title} {...entry} rank={i + 1} />
                             ))}
                         </div>
                     </div>
