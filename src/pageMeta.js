@@ -12,11 +12,6 @@ export const PAGE_META = {
     description:
       "Brandon E Martinez — CS student at Notre Dame, software lead on Domer Rover, and builder of things at the intersection of technical rigor and creative expression.",
   },
-  '/about': {
-    title: 'About | BEM.',
-    description:
-      "About Brandon E Martinez: CS at Notre Dame, Undergraduate Software Lead for Domer Rover, building clean systems that enable unique user experiences.",
-  },
   '/misc': {
     title: 'Misc | BEM.',
     description: "Odds and ends from Brandon E Martinez. Coming soon.",
