@@ -2,7 +2,7 @@ import './SectionMark.css';
 
 /**
  * A section header drawn instead of written: a small piece of ASCII art (or
- * any child graphic) beside a lowercase italic serif caption.
+ * any child graphic) beside a lowercase serif caption styled like .section-title.
  *
  * The real heading text still exists for screen readers and the document
  * outline; the art is aria-hidden because box-drawing characters read aloud

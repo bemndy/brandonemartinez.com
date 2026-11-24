@@ -77,7 +77,7 @@
    computer keys work. */
 .mp-hint {
     font-family: var(--font-mono);
-    font-size: 8px;
+    font-size: var(--text-label);
     line-height: 1;
     text-transform: uppercase;
     color: var(--color-text-muted);

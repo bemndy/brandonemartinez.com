@@ -8,7 +8,7 @@
 /* Footnote: where the numbers come from. */
 .wis-note {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-label);
     font-weight: 400;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -35,7 +35,7 @@
 
 .wis-label {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-label);
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -44,7 +44,7 @@
 
 .wis-value {
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: var(--text-row);
     font-weight: 600;
     letter-spacing: -0.005em;
     color: var(--color-text);
@@ -56,7 +56,7 @@
    would split the bar into dashes. */
 .wis-meter {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: var(--text-meta);
     line-height: 1;
     letter-spacing: 0;
     color: var(--color-text);
@@ -66,7 +66,7 @@
 
 .wis-pct {
     font-family: var(--font-sans);
-    font-size: 12px;
+    font-size: var(--text-meta);
     font-weight: 500;
     letter-spacing: 0.02em;
     font-variant-numeric: tabular-nums;
@@ -86,8 +86,9 @@
 }
 
 .wis-reads li {
-    font-family: var(--font-serif);
-    font-size: 16px;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--font-serif-weight);
     line-height: 1.45;
     color: var(--color-text);
 }
@@ -95,7 +96,7 @@
 .wis-reads li::before {
     content: '↳ ';
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: var(--text-meta);
     color: var(--color-text-muted);
 }
 
@@ -116,7 +117,7 @@
 }
 
 .wis-clock-bars {
-    font-size: 22px;
+    font-size: var(--text-title);
     line-height: 1;
     color: var(--color-text);
 }
@@ -138,14 +139,14 @@
 }
 
 .wis-clock-axis {
-    font-size: 22px;
+    font-size: var(--text-title);
     margin-top: 4px;
 }
 
-/* Axis labels are 10px text sitting in 22px-wide cells: 00 at hour 0, 06 at
+/* Axis labels are label-size text sitting in title-size cells: 00 at hour 0, 06 at
    6, and so on, 23 in the last cell. */
 .wis-clock-axis span {
-    font-size: 10px;
+    font-size: var(--text-label);
     color: var(--color-text-muted);
     line-height: 1;
 }
@@ -156,9 +157,9 @@
 .wis-clock-axis span:nth-child(5) { grid-column: 24; }
 
 .wis-clock-caption {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 13px;
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: var(--font-serif-weight);
     color: var(--color-text-muted);
     margin-top: 6px;
 }
@@ -176,6 +177,6 @@
     }
     .wis-clock-bars,
     .wis-clock-axis {
-        font-size: 14px;
+        font-size: var(--text-small);
     }
 }

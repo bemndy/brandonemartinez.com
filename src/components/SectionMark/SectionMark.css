@@ -22,7 +22,7 @@
    instead of breaking into dashes. */
 .smark-art {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-label);
     line-height: 1.05;
     letter-spacing: 0;
     color: var(--color-text);
@@ -38,19 +38,20 @@
     gap: 2px;
 }
 
+/* Same face, size and weight as .section-title, so a drawn mark and a
+   plain title read as the same heading. */
 .smark-caption-main {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.01em;
+    font-family: var(--font-header);
+    font-size: var(--text-title);
+    font-weight: var(--font-serif-weight);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
     color: var(--color-text);
 }
 
 .smark-caption-sub {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: var(--text-label);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text-muted);

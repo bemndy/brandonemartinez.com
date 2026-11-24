@@ -139,6 +139,22 @@
   --font-header: var(--font-serif);
   --font-body: var(--font-serif);
   --font-link: var(--font-sans);
+
+  /* --- Serif treatment: one weight everywhere the serif shows up (section
+     marks, bio, analysis copy), upright, so it reads as one voice. Lora only
+     ships 400 italic, so an italic or a different weight would mean a second
+     face or a browser-faked bold. --- */
+  --font-serif-weight: 600;
+
+  /* --- Type scale for the section components (rows, lists, marks). Every
+     size used in a section comes from here, smallest to largest. --- */
+  --text-label: 11px;  /* mono uppercase labels, notes, key hints, ASCII art */
+  --text-meta: 12px;   /* indexes, dates, counts, percentages */
+  --text-small: 13px;  /* row categories, artists, captions */
+  --text-row: 15px;    /* row names and values */
+  --text-body: 16px;   /* serif body copy: bio, analysis */
+  --text-title: 17px;  /* section marks and titles */
+
   /* Colors */
   --color-bg1: rgb(255, 140, 175);
   --color-bg2: rgb(238, 238, 238);
@@ -528,9 +544,9 @@ html.no-gradient .gradient-bg {
 }
 
 .section-title {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 600;
+  font-family: var(--font-header);
+  font-size: var(--text-title);
+  font-weight: var(--font-serif-weight);
   text-transform: capitalize;
   letter-spacing: 0.02em;
   color: var(--color-text);
@@ -545,9 +561,9 @@ html.no-gradient .gradient-bg {
 }
 
 .about-bio p {
-  font-family: var(--font-serif);
-  font-size: 16px;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--font-serif-weight);
   line-height: 1.65;
   color: var(--color-text);
 }
@@ -587,7 +603,7 @@ html.no-gradient .gradient-bg {
 
 .work-year {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text-meta);
   font-weight: 500;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -596,14 +612,14 @@ html.no-gradient .gradient-bg {
 
 .work-role {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--text-row);
   font-weight: 600;
   letter-spacing: -0.005em;
 }
 
 .work-company {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--text-row);
   font-weight: 400;
   color: var(--color-text);
   justify-self: end;
@@ -646,7 +662,7 @@ a.work-company:hover {
 
 .project-row-index {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text-meta);
   font-weight: 500;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -655,7 +671,7 @@ a.work-company:hover {
 
 .project-row-name {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--text-row);
   font-weight: 600;
   letter-spacing: -0.005em;
   text-decoration: none;
@@ -673,14 +689,14 @@ a.project-row-name {
 
 .project-row-cat {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: var(--text-small);
   font-weight: 400;
   color: var(--color-text);
 }
 
 .project-row-date {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text-meta);
   font-weight: 500;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -697,7 +713,7 @@ a.project-row-name {
     width: var(--content-width-mobile);
   }
   .about-bio p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .work-entry {
     grid-template-columns: 2.5rem 1fr;
