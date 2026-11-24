@@ -139,6 +139,31 @@
   --font-header: var(--font-serif);
   --font-body: var(--font-serif);
   --font-link: var(--font-sans);
+
+  /* --- Serif treatment: one weight everywhere the serif shows up (section
+     marks, bio, analysis copy), upright, so it reads as one voice. Lora only
+     ships 400 italic, so an italic or a different weight would mean a second
+     face or a browser-faked bold. --- */
+  --font-serif-weight: 600;
+
+  /* --- Type scale for the section components (rows, lists, marks). Every
+     size used in a section comes from here, smallest to largest. --- */
+  --text-label: 11px;  /* mono uppercase labels, notes, key hints, ASCII art */
+  --text-meta: 12px;   /* indexes, dates, counts, percentages */
+  --text-small: 13px;  /* row categories, artists, captions */
+  --text-chrome: 13px; /* navbar and footer: mono, uppercase */
+  --text-row: 15px;    /* row names and values */
+  --text-body: 16px;   /* serif body copy: bio, analysis */
+  --text-title: 17px;  /* every section heading, on every page */
+
+  /* Line height for paragraph copy on every page. */
+  --leading-body: 1.65;
+
+  /* Corner radius: small for little things (keys, album art, buttons),
+     medium for cards. */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+
   /* Colors */
   --color-bg1: rgb(255, 140, 175);
   --color-bg2: rgb(238, 238, 238);
@@ -164,6 +189,17 @@
      --section-gap is the single spacing unit used between every block. */
   --nav-height: 5.85rem;
   --section-gap: 4.25rem;
+
+  /* The first fold. Every page opens with one main component alone on
+     screen: .page-fold is exactly one screen tall, starts its content at
+     --fold-top (the hero's offset under the navbar), and everything else
+     sits below it in .sections-wrapper. --fold-room is the most height the
+     main component may take without spilling past the fold.
+     svh = the visible height with mobile browser toolbars showing, so the
+     fold is never taller than what a phone actually shows. */
+  --fold-height: 100vh;
+  --fold-top: calc(var(--nav-height) + var(--section-gap));
+  --fold-room: calc(var(--fold-height) - var(--fold-top) - var(--section-gap));
 
   /* Hero type: scales with the viewport only until it hits the cap, so 16:9 and
      ultrawide render at the same size. Mobile gets its own smaller range. */
@@ -224,10 +260,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-header);
 }
+/* Every paragraph on the site shares this: same face, size, weight and
+   line height as the hero bio. */
 p {
   font-family: var(--font-body);
-  font-weight: normal;
-  font-size: 19px;
+  font-weight: var(--font-serif-weight);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 a {
   font-family: var(--font-link);
@@ -272,18 +311,6 @@ html.intense .typewriter-container {
 html.dark .typewriter-text,
 html.intense .typewriter-text {
   border-right: 2px solid var(--color-text);
-}
-
-/* --- Projects list (misc page cards) --- */
-html.dark .project,
-html.intense .project {
-  border-top: 1px solid rgba(232, 232, 232, 0.12);
-}
-html.dark .project:hover,
-html.intense .project:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg1);
-  border-top: 2px solid var(--color-bg1);
 }
 
 /* --- Footer --- */
@@ -513,10 +540,28 @@ html.no-gradient .gradient-bg {
 /* ============================================================
    SHARED SECTION STYLES (used on hero + music pages)
    ============================================================ */
+@supports (height: 100svh) {
+  :root {
+    --fold-height: 100svh;
+  }
+}
+
+.page-fold {
+  box-sizing: border-box;
+  width: var(--content-width);
+  max-width: var(--content-max);
+  min-height: var(--fold-height);
+  margin: 0 auto;
+  padding-top: var(--fold-top);
+  position: relative;
+  z-index: 1;
+}
+
+/* One gap above, between and below every section, on every page. */
 .sections-wrapper {
   width: var(--content-width);
   max-width: var(--content-max);
-  margin: 3.5rem auto var(--section-gap) auto;
+  margin: var(--section-gap) auto;
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
@@ -528,16 +573,16 @@ html.no-gradient .gradient-bg {
 }
 
 .section-title {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 600;
+  font-family: var(--font-header);
+  font-size: var(--text-title);
+  font-weight: var(--font-serif-weight);
   text-transform: capitalize;
   letter-spacing: 0.02em;
   color: var(--color-text);
   padding: 0 0 10px 0;
 }
 
-/* --- About / bio --- */
+/* --- Hero bio --- */
 .about-bio {
   display: flex;
   flex-direction: column;
@@ -545,10 +590,10 @@ html.no-gradient .gradient-bg {
 }
 
 .about-bio p {
-  font-family: var(--font-serif);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.65;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--font-serif-weight);
+  line-height: var(--leading-body);
   color: var(--color-text);
 }
 
@@ -576,11 +621,18 @@ html.no-gradient .gradient-bg {
   padding: 9px 0;
   border-bottom: 1px solid var(--color-rule);
   text-transform: capitalize;
+  transition: opacity 0.15s ease;
+}
+
+.work-entry:hover .work-role {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 .work-year {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text-meta);
   font-weight: 500;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -589,14 +641,14 @@ html.no-gradient .gradient-bg {
 
 .work-role {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--text-row);
   font-weight: 600;
   letter-spacing: -0.005em;
 }
 
 .work-company {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--text-row);
   font-weight: 400;
   color: var(--color-text);
   justify-self: end;
@@ -628,14 +680,18 @@ a.work-company:hover {
   transition: opacity 0.15s ease;
 }
 
-/* Dim the siblings so the hovered row steps forward on its own. */
-.section-list:hover .project-row:not(:hover) {
+/* Dim the siblings so the hovered row steps forward on its own. Shared by
+   every row style that sits in a .section-list: projects, work entries,
+   tracks and the listening meters. */
+.section-list:hover .project-row:not(:hover),
+.section-list:hover .work-entry:not(:hover),
+.section-list:hover .wis-row:not(:hover) {
   opacity: 0.45;
 }
 
 .project-row-index {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text-meta);
   font-weight: 500;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -644,7 +700,7 @@ a.work-company:hover {
 
 .project-row-name {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--text-row);
   font-weight: 600;
   letter-spacing: -0.005em;
   text-decoration: none;
@@ -662,14 +718,14 @@ a.project-row-name {
 
 .project-row-cat {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: var(--text-small);
   font-weight: 400;
   color: var(--color-text);
 }
 
 .project-row-date {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text-meta);
   font-weight: 500;
   color: var(--color-text);
   letter-spacing: 0.02em;
@@ -682,11 +738,12 @@ a.project-row-name {
     --nav-height: 5.45rem;
     --section-gap: 3rem;
   }
-  .sections-wrapper {
+  .sections-wrapper,
+  .page-fold {
     width: var(--content-width-mobile);
   }
   .about-bio p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .work-entry {
     grid-template-columns: 2.5rem 1fr;

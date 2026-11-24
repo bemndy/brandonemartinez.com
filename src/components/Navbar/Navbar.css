@@ -49,7 +49,7 @@
        centre together, whether a link holds text, an icon, or both. */
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-size: var(--text-chrome);
     font-weight: 500;
     font-family: var(--font-mono);
     color: var(--color-text);

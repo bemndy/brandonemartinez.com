@@ -122,6 +122,10 @@ function Hero () {
                     duration: 0.35,
                     stagger: 0.05,
                     ease: "power1.out",
+                    // Drop the inline opacity/transform once the rows are in:
+                    // left behind, inline opacity: 1 beats the stylesheet and
+                    // kills the hover dim (.section-list:hover ... opacity).
+                    clearProps: "opacity,transform",
                     scrollTrigger: {
                         trigger: block,
                         start: "top 65%",
@@ -133,6 +137,7 @@ function Hero () {
     }, []);
     return (
       <div className='hero-wrapper'>
+          <div className="page-fold">
           <div className="intro-container">
             <div className="intro-headline">
               <h1 className="greeting-header">brandon e martinez</h1>
@@ -156,6 +161,7 @@ function Hero () {
                 fine-tuned models.
               </p>
             </div>
+          </div>
           </div>
           <div className="sections-wrapper">
 

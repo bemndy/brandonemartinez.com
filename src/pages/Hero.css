@@ -6,13 +6,10 @@
     z-index: 0;
     background-color: transparent;
 }
-/* Top-aligned and hugging its content, so the gap under the navbar is exactly
-   --section-gap - the same unit used between every section below. */
+/* Lives inside .page-fold, which handles the width and the offset under the
+   navbar. This box hugs its content so the scroll fade below is timed to
+   the text, not to the full-screen fold. */
 .intro-container {
-  width: var(--content-width);
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: calc(var(--nav-height) + var(--section-gap)) 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,11 +23,6 @@
   flex-direction: column;
 }
 
-/* Hero only — Music shares .sections-wrapper and keeps its wider top margin. */
-.hero-wrapper .sections-wrapper {
-  margin-top: var(--section-gap);
-}
-
 .greeting-header {
   font-family: var(--font-mono);
   text-transform: uppercase;
@@ -42,8 +34,6 @@
 
 @media (max-width: 768px) {
   .intro-container {
-    width: var(--content-width-mobile);
-    margin: 0 auto;
     gap: 2rem;
   }
   .greeting-header {

@@ -1,14 +1,15 @@
 .misc-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* full viewport height */
+    width: 100%;
     background-color: #f7f7f7;
-    height: 300vh;
 }
+
+/* The page's one main component: top-aligned in the fold like every other
+   page, and never taller than the room the fold leaves for it. */
 .coming-soon-logo {
-    width: auto;
-    max-width: 30%;
+    display: block;
+    width: 60%;
     height: auto;
+    max-height: var(--fold-room);
     object-fit: contain;
+    margin: 0 auto;
 }

@@ -5,7 +5,6 @@ import Overlay from './components/Overlay/Overlay'
 import Navbar from './components/Navbar/Navbar';
 import GradientBg from './components/GradientBg/GradientBg';
 import Hero from './pages/Hero';
-import About from './pages/About';
 import Music from './pages/Music';
 import Misc from './pages/Misc';
 import NotFound from './pages/NotFound';
@@ -31,7 +30,6 @@ function AppContent() {
         <Navbar/>
         <Routes>
             <Route path='/' element={<Hero/>} />
-            <Route path='/about' element={<About/>} />
             <Route path='/misc' element={<Misc/>} />
             <Route path='/music' element={<Music/>} />
             <Route path='*' element={<NotFound/>} />

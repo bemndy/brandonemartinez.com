@@ -3,7 +3,7 @@
  * Delete along with api/spotify-callback.js once you have a fresh refresh token.
  */
 
-const SCOPES = ['user-read-currently-playing', 'user-top-read'].join(' ');
+const SCOPES = ['user-read-currently-playing', 'user-top-read', 'user-read-recently-played'].join(' ');
 
 export default function handler(req, res) {
     const REDIRECT_URI = `https://${req.headers.host}/api/spotify-callback`;

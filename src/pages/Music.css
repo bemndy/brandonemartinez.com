@@ -14,15 +14,15 @@
 }
 .music-logo {
     display: block;
-    width: 50%;
-    max-width: 480px;
-    margin: 8rem auto 2.75rem auto;
+    width: min(480px, 50vw);
+    height: auto;
+    max-height: var(--fold-room);
+    object-fit: contain;
+    margin: 0 auto;
 }
 @media (max-width: 768px) {
     .music-logo {
-        width: 70%;
-        max-width: none;
-        margin: 11rem auto;
+        width: 70vw;
     }
 }
 /* Song rows carry no date column, so drop the fourth track. */
@@ -36,8 +36,22 @@
    capitalises its cells — which would otherwise title-case the marker. */
 .piano-pending {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: var(--text-meta);
     letter-spacing: 0.02em;
     text-transform: none;
     opacity: 0.45;
+}
+
+/* The track list sits under the now-playing card inside the same section. */
+.songs-list {
+    margin-top: 0.75rem;
+}
+
+/* Play count beside the artist: mono and muted so it reads as metadata. */
+.song-plays {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--color-text-muted);
 }
