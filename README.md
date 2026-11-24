@@ -20,7 +20,7 @@ Personal portfolio site. Live at [brandonemartinez.com](https://brandonemartinez
 - Motion — micro-interactions
 - CSS custom properties — theming (dark/light mode)
 - Vercel — hosting and serverless API routes
-- Upstash Redis — persistent like count and song of the day data
+- Upstash Redis — persistent like count
 
 # Structure
 
