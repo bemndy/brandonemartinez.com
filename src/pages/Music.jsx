@@ -142,7 +142,9 @@ function Music() {
     return (
         <div className="music-wrapper">
             <div className="music-container">
-                <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
+                <div className="page-fold">
+                    <img src="/images/vinyl2.png" alt="a vinyl record" className="music-logo"/>
+                </div>
                 <div className="sections-wrapper">
                     <div className="section-block">
                         <SectionMark

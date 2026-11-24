@@ -137,6 +137,7 @@ function Hero () {
     }, []);
     return (
       <div className='hero-wrapper'>
+          <div className="page-fold">
           <div className="intro-container">
             <div className="intro-headline">
               <h1 className="greeting-header">brandon e martinez</h1>
@@ -160,6 +161,7 @@ function Hero () {
                 fine-tuned models.
               </p>
             </div>
+          </div>
           </div>
           <div className="sections-wrapper">
 
