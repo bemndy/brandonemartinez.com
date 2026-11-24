@@ -12,7 +12,7 @@ const workExperience = [
     year: "Present",
     title: "Autonomous Navigation Research",
     company: "Domer Rover",
-    url: "https://www.linkedin.com/company/domer-rover"
+    url: "https://sites.nd.edu/domerrover-club/"
   },
   {
     year: "Present",
@@ -165,7 +165,7 @@ function Hero () {
                 I'm a software engineer based in Philadelphia, PA, finishing my Bachelor of
                 Science in Computer Science at the University of Notre Dame. I'm currently an
                 autonomous navigation researcher at{' '}
-                <a href="https://www.linkedin.com/company/domer-rover" target="_blank" rel="noopener noreferrer">Domer Rover</a>.
+                <a href="https://sites.nd.edu/domerrover-club/" target="_blank" rel="noopener noreferrer">Domer Rover</a>.
               </p>
               <p>
                 In my free time I speedcube on{' '}
