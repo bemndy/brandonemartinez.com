@@ -7,6 +7,38 @@ import './Music.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
+/*
+ * Piano recordings.
+ *
+ * Deliberately a data array rather than markup: the only thing standing
+ * between this section and the real thing is the audio, so adding a recording
+ * should be one line here and nothing else. An entry with an `href` renders as
+ * a link with its duration; an entry without one renders the pending marker
+ * instead, which is honest about the fact that nothing is there yet rather
+ * than quietly shipping a dead link.
+ *
+ * Titles only — no invented links, no invented durations.
+ */
+const pianoRecordings = [
+    { title: 'Untitled improvisation' },
+    { title: 'Late night voicings' },
+    { title: 'Something slower' },
+];
+
+function PianoEntry({ title, href, duration, rank }) {
+    return (
+        <div className="project-row">
+            <span className="project-row-index">{String(rank).padStart(2, '0')}</span>
+            {href
+                ? <a className="project-row-name" href={href} target="_blank" rel="noopener noreferrer">{title}</a>
+                : <span className="project-row-name">{title}</span>}
+            {href
+                ? <span className="project-row-cat">{duration}</span>
+                : <span className="project-row-cat piano-pending">[ recording pending ]</span>}
+        </div>
+    );
+}
+
 function SongEntry({ title, artist, rank }) {
     return (
         <div className="project-row">
@@ -92,6 +124,12 @@ function Music() {
                     <div className="section-block">
                         <div className="section-title">This Week</div>
                         <WeekInSound />
+                        <div className="section-title">Piano</div>
+                        <div className="section-list">
+                            {pianoRecordings.map((entry, i) => (
+                                <PianoEntry key={entry.title} {...entry} rank={i + 1} />
+                            ))}
+                        </div>
                     </div>
                     <div className="section-block">
                         <div className="section-title">Top Tracks</div>
