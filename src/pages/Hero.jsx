@@ -44,27 +44,12 @@ const workExperience = [
 const PRIMARY_ORDER = ['demo', 'repo', 'slides']
 const primaryHref = (links) => PRIMARY_ORDER.map(k => links[k]).find(Boolean) ?? null
 
-// Newest first.
+// Ranked by significance, not date: flagship and hardest work first.
 const projects = [
-  {
-    title: "worNDly",
-    // Rows title-case their text; this name's casing is the point (ND).
-    keepCase: true,
-    date: "Apr 2026",
-    links: { repo: "https://github.com/bemndy/worNDly" },
-  },
   {
     title: "Samplicity",
     date: "Mar 2026",
     links: { repo: "https://github.com/bemndy/samplicity" },
-  },
-  {
-    title: "Cozy Cubes",
-    date: "Jan 2026",
-    links: {
-      repo: "https://github.com/bemndy/cozycubes",
-      demo: "https://cozy1.1.brandonemartinez.com/",
-    },
   },
   {
     title: "TSMC Chip Tapeout",
@@ -77,6 +62,21 @@ const projects = [
     title: "Gerbil Autonomous Robot",
     date: "Nov 2025",
     links: { repo: "https://github.com/Domer-Rover/gerbil-software" },
+  },
+  {
+    title: "Cozy Cubes",
+    date: "Jan 2026",
+    links: {
+      repo: "https://github.com/bemndy/cozycubes",
+      demo: "https://cozy1.1.brandonemartinez.com/",
+    },
+  },
+  {
+    title: "worNDly",
+    // Rows title-case their text; this name's casing is the point (ND).
+    keepCase: true,
+    date: "Apr 2026",
+    links: { repo: "https://github.com/bemndy/worNDly" },
   },
   {
     title: "Sentiment Analysis",
