@@ -151,9 +151,18 @@
   --text-label: 11px;  /* mono uppercase labels, notes, key hints, ASCII art */
   --text-meta: 12px;   /* indexes, dates, counts, percentages */
   --text-small: 13px;  /* row categories, artists, captions */
+  --text-chrome: 13px; /* navbar and footer: mono, uppercase */
   --text-row: 15px;    /* row names and values */
   --text-body: 16px;   /* serif body copy: bio, analysis */
-  --text-title: 17px;  /* section marks and titles */
+  --text-title: 17px;  /* every section heading, on every page */
+
+  /* Line height for paragraph copy on every page. */
+  --leading-body: 1.65;
+
+  /* Corner radius: small for little things (keys, album art, buttons),
+     medium for cards. */
+  --radius-sm: 4px;
+  --radius-md: 10px;
 
   /* Colors */
   --color-bg1: rgb(255, 140, 175);
@@ -240,10 +249,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-header);
 }
+/* Every paragraph on the site shares this: same face, size, weight and
+   line height as the hero bio. */
 p {
   font-family: var(--font-body);
-  font-weight: normal;
-  font-size: 19px;
+  font-weight: var(--font-serif-weight);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 a {
   font-family: var(--font-link);
@@ -564,7 +576,7 @@ html.no-gradient .gradient-bg {
   font-family: var(--font-body);
   font-size: var(--text-body);
   font-weight: var(--font-serif-weight);
-  line-height: 1.65;
+  line-height: var(--leading-body);
   color: var(--color-text);
 }
 

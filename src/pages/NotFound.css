@@ -18,13 +18,13 @@
 
 .not-found-message {
     font-family: var(--font-body);
-    font-size: 1.15rem;
+    font-size: var(--text-body);
     color: var(--color-text);
 }
 
 .not-found-home-link {
     font-family: var(--font-body);
-    font-size: 1.05rem;
+    font-size: var(--text-body);
     color: var(--color-text-strong);
     text-decoration: underline;
     text-underline-offset: 0.25rem;

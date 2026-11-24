@@ -89,7 +89,7 @@
     font-family: var(--font-body);
     font-size: var(--text-body);
     font-weight: var(--font-serif-weight);
-    line-height: 1.45;
+    line-height: var(--leading-body);
     color: var(--color-text);
 }
 
