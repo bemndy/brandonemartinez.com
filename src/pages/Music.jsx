@@ -41,6 +41,19 @@ const READ_ART = [
     '   ·    ✧  ·',
 ].join('\n');
 
+/*
+ * How many of the week's tracks the section shows before it is asked for the
+ * rest.
+ *
+ * /api/recent-tracks returns up to ten, and listing all ten made the page's
+ * second section longer than the three sections under it put together — the
+ * page is meant to read as a handful of short sections, not as one chart with
+ * some notes attached. Five is a short read and still enough to see a week's
+ * shape; the rest are a click away rather than cut, since the API already
+ * counted them and the fold says how many there are.
+ */
+const WEEK_TRACKS_SHOWN = 5;
+
 const pianoRecordings = [
     { title: 'Untitled improvisation' },
     { title: 'Late night voicings' },
@@ -76,8 +89,31 @@ function SongEntry({ title, artist, songUrl, plays, rank }) {
     );
 }
 
+/**
+ * The line that ends a folded list: the count in the index column, the action
+ * in the name column, so it sits on the same two columns as the tracks above
+ * it rather than as a button bolted under them. A real <button> — it changes
+ * what is on the page, it is not a destination.
+ */
+function TrackFold({ hidden, expanded, onToggle }) {
+    return (
+        <button
+            type="button"
+            className="project-row track-fold"
+            onClick={onToggle}
+            aria-expanded={expanded}
+        >
+            <span className="project-row-index" aria-hidden="true">{expanded ? '\u2212' : '+'}</span>
+            <span className="project-row-name">
+                {expanded ? 'show fewer' : `${hidden} more`}
+            </span>
+        </button>
+    );
+}
+
 function Music() {
     const [week, setWeek] = useState({ tracks: [], stats: null, range: 'week' });
+    const [allTracks, setAllTracks] = useState(false);
 
     // One request feeds both the track list and the analysis, so they always
     // describe the same plays.
@@ -145,6 +181,9 @@ function Music() {
         });
     }, []);
 
+    const visibleTracks = allTracks ? week.tracks : week.tracks.slice(0, WEEK_TRACKS_SHOWN);
+    const hiddenTracks = week.tracks.length - visibleTracks.length;
+
     return (
         <div className="music-wrapper">
             <div className="music-container">
@@ -169,9 +208,16 @@ function Music() {
                             sub={week.range === 'week' ? 'the past 7 days' : 'the past 4 weeks'}
                         />
                         <div className="section-list">
-                            {week.tracks.map((s, i) => (
+                            {visibleTracks.map((s, i) => (
                                 <SongEntry key={s.id ?? i} {...s} rank={i + 1} />
                             ))}
+                            {(hiddenTracks > 0 || allTracks) && (
+                                <TrackFold
+                                    hidden={hiddenTracks}
+                                    expanded={allTracks}
+                                    onToggle={() => setAllTracks(v => !v)}
+                                />
+                            )}
                         </div>
                     </div>
                     <div className="section-block">
