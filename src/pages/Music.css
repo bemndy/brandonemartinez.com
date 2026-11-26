@@ -50,3 +50,36 @@
     text-transform: none;
     color: var(--color-text-muted);
 }
+
+/* The fold that ends the week's track list. Inherits .project-row's grid, so
+   the +/count lands in the index column and the label in the name column; the
+   rest is undoing what a <button> brings with it (its own background, border,
+   font and centred text) so it reads as one more row rather than as a
+   control. Muted until hovered, since it is the one row on the page that is
+   not a song. */
+.track-fold {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-rule);
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.15s ease;
+}
+
+.track-fold:hover,
+.track-fold:focus-visible {
+    opacity: 1;
+}
+
+/* The count reads as metadata, not as a track's rank. */
+.track-fold .project-row-name {
+    font-family: var(--font-mono);
+    font-size: var(--text-meta);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+}
