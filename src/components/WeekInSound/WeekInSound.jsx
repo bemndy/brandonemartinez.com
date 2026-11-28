@@ -16,6 +16,37 @@ const PERIODS = [
     { name: 'evening', from: 17, to: 21, line: 'Mostly an evening listener' },
 ];
 
+/**
+ * The week's mood, in one word.
+ *
+ * A headline over the reads below rather than a sixth read: the sentences in
+ * `conclusions` each state the number they rest on, and this is the label that
+ * sits on top of them. It is derived from the same stats the rest of the
+ * section already has — nothing extra is fetched, and nothing is guessed from
+ * data that isn't here (there is no tempo or energy in this payload, so no
+ * mood here claims any).
+ *
+ * Ordered rather than scored: the first rule that matches wins. A week that is
+ * both nocturnal and repetitive reads as nocturnal, which is the more unusual
+ * of the two and so the more worth saying. The thresholds are the ones
+ * `conclusions` already leans on, so the headline cannot contradict the
+ * sentences underneath it.
+ *
+ * The last entry matches unconditionally — this always returns a word.
+ */
+const MOODS = [
+    { name: 'nocturnal', when: s => s.nightRate >= 0.4 },
+    { name: 'on a loop', when: s => s.repeatRate >= 0.35 },
+    { name: 'one artist deep', when: s => s.topArtist && s.topArtist.plays / s.plays >= 0.4 },
+    { name: 'restless', when: s => s.distinctArtists / s.plays >= 0.5 },
+    { name: 'steady', when: () => true },
+];
+
+/** Characters in the rule between the label and the mood. */
+const MOOD_RULE_CELLS = 4;
+
+const moodFor = stats => MOODS.find(m => m.when(stats)).name;
+
 const inPeriod = (h, { from, to }) => (from <= to ? h >= from && h <= to : h >= from || h <= to);
 const pad = (h) => String(h).padStart(2, '0');
 
@@ -114,6 +145,11 @@ function WeekInSound({ stats }) {
 
     return (
         <div className="wis">
+            <p className="wis-mood">
+                <span className="wis-mood-label">mood</span>
+                <span className="wis-mood-rule" aria-hidden="true">{'\u2500'.repeat(MOOD_RULE_CELLS)}</span>
+                <span className="wis-mood-name">{moodFor(stats)}</span>
+            </p>
             <ul className="wis-reads">
                 {conclusions(stats).map(line => <li key={line}>{line}</li>)}
             </ul>

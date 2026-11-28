@@ -180,3 +180,37 @@
         font-size: var(--text-small);
     }
 }
+
+/* The week's mood: the section's one-word headline, sitting above the
+   sentences that carry its numbers. Mono caps and a short rule of box-drawing
+   characters — the same bare-ASCII treatment the meters and the listening
+   clock already use, rather than a badge or a coloured pill. */
+.wis-mood {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0;
+    font-family: var(--font-mono);
+}
+
+.wis-mood-label,
+.wis-mood-rule {
+    font-size: var(--text-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+/* No tracking on the rule: letter-spacing would split the box-drawing run
+   into dashes, the same reason .wis-meter zeroes it. */
+.wis-mood-rule {
+    letter-spacing: 0;
+}
+
+.wis-mood-name {
+    font-size: var(--text-row);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
